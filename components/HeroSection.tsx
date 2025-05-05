@@ -122,10 +122,10 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-black/30" />
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
-                <h1 data-aos={index === selectedIndex ? slide.aosType : ""} className="text-4xl md:text-5xl font-bold max-w-4xl leading-tight">
+                <h1 data-aos={index === selectedIndex ? slide.aosType : ""} className="lg:text-4xl text-2xl md:text-5xl font-bold max-w-4xl leading-tight">
                   {slide.heading}
                 </h1>
-                <p data-aos={index === selectedIndex ? slide.aosType : ""} className="mt-5 text-lg max-w-2xl">{slide.subtext}</p>
+                <p data-aos={index === selectedIndex ? slide.aosType : ""} className="mt-5 lg:text-lg text-md max-w-2xl">{slide.subtext}</p>
                 <div data-aos="fade-up" className="mt-9 flex gap-4">
                   <button className="bg-[#CC2837] text-white px-6 py-2 rounded-full font-semibold">
                     View Product
