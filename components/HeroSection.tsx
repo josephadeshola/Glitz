@@ -32,7 +32,7 @@ const heroImages = [
      aosType:"flip-up"
   },
   {
-    image: "/images/Sesame-Seeds.jpg",
+    image: "/images/Sesame-Seed1.jpg",
     heading: "Oil-rich seeds, great for food production and seasoning.",
     subtext: "Oil-rich and clean, great for food and oil extraction.",
      aosType:"zoom-in"
@@ -122,7 +122,7 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-black/30" />
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
-                <h1 data-aos={index === selectedIndex ? slide.aosType : ""}className="text-4xl md:text-5xl font-bold max-w-4xl leading-tight">
+                <h1 data-aos={index === selectedIndex ? slide.aosType : ""} className="text-4xl md:text-5xl font-bold max-w-4xl leading-tight">
                   {slide.heading}
                 </h1>
                 <p data-aos={index === selectedIndex ? slide.aosType : ""} className="mt-5 text-lg max-w-2xl">{slide.subtext}</p>
