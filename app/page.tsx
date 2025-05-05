@@ -4,7 +4,7 @@ import NavbarComponent from "@/components/NavbarComponent";
 
 export default function Home() {
   return (
-    <div className="relative h-screen">
+    <div className="relative bg-light h-screen">
      <NavbarComponent />
      <HeroSection/>
     </div>
