@@ -92,7 +92,7 @@ const HeroSection = () => {
   
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[70vh] lg:h-screen border border-red-500 h-screen overflow-hidden">
       <button
         onClick={() => emblaApi?.scrollPrev()}
         className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
@@ -125,7 +125,7 @@ const HeroSection = () => {
                 <h1 data-aos={index === selectedIndex ? slide.aosType : ""} className="lg:text-4xl text-2xl md:text-5xl font-bold max-w-4xl leading-tight">
                   {slide.heading}
                 </h1>
-                <p data-aos={index === selectedIndex ? slide.aosType : ""} className="mt-5 lg:text-lg text-md max-w-2xl">{slide.subtext}</p>
+                <p data-aos={index === selectedIndex ? slide.aosType : ""} className="lg:mt-5 mt-2 lg:text-lg text-md max-w-2xl">{slide.subtext}</p>
                 <div data-aos="fade-up" className="mt-9 flex gap-4">
                   <button className="bg-[#CC2837] text-white px-6 py-2 rounded-full font-semibold">
                     View Product
