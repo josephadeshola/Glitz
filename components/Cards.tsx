@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; // Export Services
 import { FaHandshake } from "react-icons/fa6"; // Procurement
+import Customers from "./Customers";
 
 const productData = [
     {
@@ -132,7 +133,7 @@ const Cards = () => {
                     <div className="embla__container flex mx-auto justify-around">
                         {productData.map((slide, index) => (
                             <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
-                                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
+                                <div className="bg-[#F9F9F9] cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl py-7 px-10 rounded-md">
                                     <div className="w-72 mx-auto">
                                         <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
                                         <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
@@ -153,7 +154,7 @@ const Cards = () => {
                     <div className="embla__container flex mx-auto justify-around">
                         {stepTwoProduct.map((slide, index) => (
                             <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
-                                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
+                                <div className="bg-[#F9F9F9] cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl py-7 px-10 rounded-md">
                                     <div className="w-72 mx-auto">
                                         <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
                                         <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
@@ -164,7 +165,7 @@ const Cards = () => {
                                             alt={slide.title}
                                             width={300}
                                             height={200}
-                                            className="object-cover w-full h-full"
+                                            className="object-cover  w-full h-full"
                                         />
                                     </div>
 
@@ -215,7 +216,7 @@ const Cards = () => {
                 </div>
             </div>
             <div className="text-black">
-                <div className="max-w-6xl mx-auto my-8 rounded-xl overflow-hidden shadow-lg">
+                <div className="max-w-6xl mx-auto my-8 mt-24 rounded-xl overflow-hidden shadow-lg">
                     <div className="flex flex-col md:flex-row">
                         <div className="w-full md:w-1/2">
                             <img src="/images/let-build.png" alt="Warehouse worker checking commodity bags"
@@ -230,18 +231,13 @@ const Cards = () => {
                             </p>
 
                             <div className="mb-4">
-                                <Button className="bg-[#FFFFFF] text-black rounded-md px-10 font-semibold">Generate</Button>
+                                <Button className="bg-[#FFFFFF] text-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl rounded-md px-10 font-semibold">Generate</Button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="text-center text-black mt-20">
-                <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">What Our Customers are saying</p>
-                <p className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">Has been used by more than 100,00 customers. Listen to what they are saying!</p>
-                </div>
-            </div>
+            <Customers/>
         </>
     );
 };
