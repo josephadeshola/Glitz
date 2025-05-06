@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Customers = () => {
@@ -97,7 +98,14 @@ const Customers = () => {
 
                         <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
                             <div className="h-48 overflow-hidden relative">
-                                <img src="/images/news.png" alt="Cocoa pod" className="w-full h-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl object-cover" />
+
+                                <Image
+                                    src="/images/news.png"
+                                    alt="Farm field"
+                                    width={400}
+                                    height={200}
+                                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                                />
                             </div>
 
                             <div className="p-4">
@@ -119,7 +127,13 @@ const Customers = () => {
 
                         <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
                             <div className="h-48 overflow-hidden relative">
-                                <img src="/images/rectangle.png" alt="Farm field" className="w-full h-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl  object-cover" />
+                                <Image
+                                    src="/images/rectangle.png"
+                                    alt="Farm field"
+                                    width={400}
+                                    height={200}
+                                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                                />
                             </div>
 
                             <div className="p-4 ">
@@ -141,7 +155,13 @@ const Customers = () => {
 
                         <div className="bg-white rounded-lg overflow-hidden borde cursor-pointer border-gray-200">
                             <div className="h-48 overflow-hidden relative">
-                                <img src="/images/rectangle.png" alt="Cocoa pod" className="w-full h-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl object-cover" />
+                                <Image
+                                    src="/images/rectangle.png"
+                                    alt="Farm field"
+                                    width={400}
+                                    height={200}
+                                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                                />
                             </div>
 
                             <div className="p-4">
@@ -163,7 +183,13 @@ const Customers = () => {
 
                         <div className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
                             <div className="h-48 overflow-hidden relative">
-                                <img src="/images/rectangle.png" alt="Cocoa pod" className="w-full h-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl object-cover" />
+                                <Image
+                                    src="/images/rectangle.png"
+                                    alt="Farm field"
+                                    width={400}
+                                    height={200}
+                                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                                />
                             </div>
 
                             <div className="p-4">
