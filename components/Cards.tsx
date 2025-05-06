@@ -1,7 +1,11 @@
+"use client";
+import { Button } from "@heroui/button";
 import Aos from "aos";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; // Export Services
+import { FaHandshake } from "react-icons/fa6"; // Procurement
 
 const productData = [
     {
@@ -25,178 +29,220 @@ const productData = [
         image: "/images/shea-nuts.png",
     },
     {
-        title: "Sesame Seeds",
+        title: "Yam",
         description: "Cleaned & hulled. High oil content.",
-        image: "/images/sesame-seeds.png",
+        image: "/images/yam.png",
     },
-    {
-        title: "Soybeans",
-        description: "GMO-free, protein-rich.",
-        image: "/images/soybeans.png",
-    },
+
+
 ];
 
 const stepTwoProduct = [
     {
-        title:"Maize",
-        description:"Organic, butter-grade, traceable origin.",
-        image:"/images/maize.png",
-        
+        title: "Maize",
+        description: "Organic, butter-grade, traceable origin.",
+        image: "/images/maize.png",
+
     },
     {
-        title:"Tiger nut",
-        description:"Cleaned & hulled. High oil content.",
-        image:"/images/tiger-nut.png",
-        
+        title: "Tiger nut",
+        description: "Cleaned & hulled. High oil content.",
+        image: "/images/tiger-nut.png",
+
     },
     {
-        title:"bitter kola",
-        description:"GMO-free, protein-rich.",
-        image:"/images/bitter-kola.png",
-        
+        title: "bitter kola",
+        description: "GMO-free, protein-rich.",
+        image: "/images/bitter-kola.png",
+
     },
     {
-        title:"kola nut",
-        description:"Organic, butter-grade, traceable origin.",
-        image:"/images/kola-nut.png",
-        
+        title: "kola nut",
+        description: "Organic, butter-grade, traceable origin.",
+        image: "/images/kola-nut.png",
+
     },
     {
-        title:"Groundnut",
-        description:"Cleaned & hulled. High oil content.",
-        image:"/images/groundnut.png",
-        
+        title: "Groundnut",
+        description: "Cleaned & hulled. High oil content.",
+        image: "/images/groundnut.png",
+
     },
     {
-        title:"Garlic",
-        description:"GMO-free, protein-rich.",
-        image:"/images/garlic.png",
-        
+        title: "Garlic",
+        description: "GMO-free, protein-rich.",
+        image: "/images/garlic.png",
+
+    },
+    {
+        title: "Ginger",
+        description: "Organic, butter-grade, traceable origin.",
+        image: "/images/ginger1.png",
+
     }
 ]
 
-    const Cards = () => {
-        const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
-        const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true });
-    
-        const intervalRef1 = useRef<ReturnType<typeof setInterval> | null>(null);
-        const intervalRef2 = useRef<ReturnType<typeof setInterval> | null>(null);
-    
-        const [selectedIndex1, setSelectedIndex1] = useState(0);
-        const [selectedIndex2, setSelectedIndex2] = useState(0);
-    
-        const autoScroll1 = useCallback(() => {
-            if (!emblaApi1) return;
+const Cards = () => {
+    const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
+    const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true });
+
+    const intervalRef1 = useRef<ReturnType<typeof setInterval> | null>(null);
+    const intervalRef2 = useRef<ReturnType<typeof setInterval> | null>(null);
+
+    useEffect(() => {
+        Aos.init({ once: false });
+    }, []);
+
+    useEffect(() => {
+        if (emblaApi1) {
             intervalRef1.current = setInterval(() => {
                 emblaApi1.scrollNext();
             }, 4000);
-        }, [emblaApi1]);
-    
-        const autoScroll2 = useCallback(() => {
-            if (!emblaApi2) return;
+        }
+
+        return () => {
+            if (intervalRef1.current) clearInterval(intervalRef1.current);
+        };
+    }, [emblaApi1]);
+
+    useEffect(() => {
+        if (emblaApi2) {
             intervalRef2.current = setInterval(() => {
                 emblaApi2.scrollPrev();
             }, 4000);
-        }, [emblaApi2]);
-    
-        useEffect(() => {
-            Aos.init({ once: false });
-        }, []);
-    
-        useEffect(() => {
-            if (emblaApi1) {
-                autoScroll1();
-    
-                const onSelect1 = () => {
-                    setSelectedIndex1(emblaApi1.selectedScrollSnap());
-                    setTimeout(() => Aos.refresh(), 100);
-                };
-    
-                emblaApi1.on("select", onSelect1);
-                emblaApi1.on("pointerDown", () => {
-                    if (intervalRef1.current) clearInterval(intervalRef1.current);
-                });
-    
-                onSelect1();
-            }
-    
-            return () => {
-                if (intervalRef1.current) clearInterval(intervalRef1.current);
-            };
-        }, [emblaApi1, autoScroll1]);
-    
-        useEffect(() => {
-            if (emblaApi2) {
-                autoScroll2();
-    
-                const onSelect2 = () => {
-                    setSelectedIndex2(emblaApi2.selectedScrollSnap());
-                    setTimeout(() => Aos.refresh(), 100);
-                };
-    
-                emblaApi2.on("select", onSelect2);
-                emblaApi2.on("pointerDown", () => {
-                    if (intervalRef2.current) clearInterval(intervalRef2.current);
-                });
-    
-                onSelect2();
-            }
-    
-            return () => {
-                if (intervalRef2.current) clearInterval(intervalRef2.current);
-            };
-        }, [emblaApi2, autoScroll2]);
-    
+        }
+
+        return () => {
+            if (intervalRef2.current) clearInterval(intervalRef2.current);
+        };
+    }, [emblaApi2]);
+
     return (
         <>
-        <div className="text-black lg:py-20 py-14">
-            <p className="text-center lg:text-5xl text-3xl font-bold ">Featured Products</p>
-            <p className="text-center lg:text-md text-sm mx-auto lg:w-1/2 mt-3">
-                Carefully sourced, expertly processed—our top-selling agricultural
-                commodities are trusted by buyers worldwide for their quality,
-                consistency, and compliance.
-            </p>
-        </div>
-
-        {/* First Carousel (productData) */}
-        <div className="relative w-full overflow-hidden">
-            <div className="embla lg:px-8 mx-auto" ref={emblaRef1}>
-                <div className="embla__container flex mx-auto justify-around">
-                    {productData.map((slide, index) => (
-                        <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
-                            <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
-                                <div className="w-72 mx-auto">
-                                    <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
-                                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+            <div className="text-black lg:py-20 py-14">
+                <p className="text-center lg:text-5xl text-[#CC2837] text-3xl font-bold ">Featured Products</p>
+                <p className="text-center lg:text-lg text-sm mx-auto lg:w-1/2 mt-3">
+                    Carefully sourced, expertly processed—our top-selling agricultural
+                    commodities are trusted by buyers worldwide for their quality,
+                    consistency, and compliance.
+                </p>
+            </div>
+            <div className="relative w-full overflow-hidden">
+                <div className="embla lg:px-8 mx-auto" ref={emblaRef1}>
+                    <div className="embla__container flex mx-auto justify-around">
+                        {productData.map((slide, index) => (
+                            <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
+                                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
+                                    <div className="w-72 mx-auto">
+                                        <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
+                                        <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                                    </div>
+                                    <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
+                                        <Image src={slide.image} alt={slide.title} height={200} width={300} className="object-cover mx-auto rounded-md" />
+                                    </div>
                                 </div>
-                                <Image src={slide.image} alt={slide.title} height={200} width={300} className="object-cover mx-auto rounded-md" />
                             </div>
-                        </div>
-                    ))}
+
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {/* Second Carousel (stepTwoProduct) */}
-        <div className="relative w-full overflow-hidden mt-10">
-            <div className="embla lg:px-8 mx-auto" ref={emblaRef2}>
-                <div className="embla__container flex mx-auto justify-around">
-                    {stepTwoProduct.map((slide, index) => (
-                        <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
-                            <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
-                                <div className="w-72 mx-auto">
-                                    <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
-                                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+            <div className="relative w-full overflow-hidden">
+                <div className="embla lg:px-8 mx-auto" ref={emblaRef2}>
+                    <div className="embla__container flex mx-auto justify-around">
+                        {stepTwoProduct.map((slide, index) => (
+                            <div key={index} className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4">
+                                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
+                                    <div className="w-72 mx-auto">
+                                        <h3 className="text-lg text-black font-semibold mb-1">{slide.title}</h3>
+                                        <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                                    </div>
+                                    <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
+                                        <Image
+                                            src={slide.image}
+                                            alt={slide.title}
+                                            width={300}
+                                            height={200}
+                                            className="object-cover w-full h-full"
+                                        />
+                                    </div>
+
                                 </div>
-                                <Image src={slide.image} alt={slide.title} height={200} width={300} className="object-cover mx-auto rounded-md" />
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-    </>
+            <div>
+                <div className="text-center text-black px-4 lg:mt-20 mt-14">
+                    <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">What We Offer</p>
+                    <p className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">GLITZ COMMODITIES NIG. LTD connects African producers to global buyers, exporting traceable, high-quality agricultural goods to 15+ countries.</p>
+                </div>
+                <div className="text-black flex flex-col lg:flex-row gap-6 px-6 lg:px-20 py-10 justify-center items-stretch">
 
+                    <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
+                        <div className="grid grid-cols-1 items-center gap-4 mb-4">
+                            <FaGlobe className="text-blue-600 text-3xl" />
+                            <h3 className="text-xl font-semibold">Export Services</h3>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                            Global logistics, certified documentation, and port-to-port handling.
+                        </p>
+                    </div>
+
+
+                    <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
+                        <div className="grid grid-cols-1 items-center  gap-4 mb-4">
+                            <FaHandshake className="text-green-600 text-3xl" />
+                            <h3 className="text-xl font-semibold">Procurement</h3>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                            Sourcing directly from farmers, with aggregation, storage, and QA controls.
+                        </p>
+                    </div>
+
+
+                    <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
+                        <div className="grid grid-cols-1 items-center gap-4 mb-4">
+                            <FaExchangeAlt className="text-yellow-600 text-3xl" />
+                            <h3 className="text-xl font-semibold">Trading</h3>
+                        </div>
+                        <p className="text-sm text-gray-600">
+                            Spot and forward contract options for high-volume B2B deals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="text-black">
+                <div className="max-w-6xl mx-auto my-8 rounded-xl overflow-hidden shadow-lg">
+                    <div className="flex flex-col md:flex-row">
+                        <div className="w-full md:w-1/2">
+                            <img src="/images/let-build.png" alt="Warehouse worker checking commodity bags"
+                                className="w-full h-full object-cover" />
+                        </div>
+
+                        <div className="w-full md:w-1/2 bg-[#CC2837] text-white p-8 flex flex-col justify-center">
+                            <h1 className="lg:text-4xl text-3xl font-bold mb-7">Let's Build Your Next Commodity Deal Together</h1>
+
+                            <p className="lg:text-lg text mb-7 ">
+                                Lets Build Your Next Commodity Deal Together From inquiry to delivery—your trusted export partner in Africa
+                            </p>
+
+                            <div className="mb-4">
+                                <Button className="bg-[#FFFFFF] text-black rounded-md px-10 font-semibold">Generate</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div className="text-center">
+                <p>What Our Customers are saying</p>
+                <p>Has been used by more than 100,00 customers. Listen to what they’re saying!</p>
+                </div>
+            </div>
+        </>
     );
 };
 
