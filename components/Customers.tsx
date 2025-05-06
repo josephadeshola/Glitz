@@ -223,7 +223,7 @@ const Customers = () => {
           News & Update
         </p>
 
-        <div className="max-w-7xl mx-auto mt-14">
+        <div className="max-w-7xl mx-auto px-2 mt-14">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
               <div className="h-48 overflow-hidden relative">
