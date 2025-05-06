@@ -4,8 +4,8 @@ import Aos from "aos";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; // Export Services
-import { FaHandshake } from "react-icons/fa6"; // Procurement
+import { FaExchangeAlt, FaGlobe } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa6";
 
 import Customers from "./Customers";
 import Footer from "./Footer";
@@ -125,7 +125,7 @@ const Cards = () => {
       </div>
       <div className="relative w-full overflow-hidden">
         <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
-          <div className="embla__container flex mx-auto justify-around">
+          {/* <div className="embla__container flex mx-auto justify-around">
             {productData.map((slide, index) => (
               <div
                 key={index}
@@ -152,7 +152,7 @@ const Cards = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 
