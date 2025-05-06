@@ -8,6 +8,7 @@ import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; // Export Services
 import { FaHandshake } from "react-icons/fa6"; // Procurement
 
 import Customers from "./Customers";
+import Footer from "./Footer";
 
 const productData = [
   {
@@ -263,6 +264,7 @@ const Cards = () => {
         </div>
       </div>
       <Customers />
+      <Footer />
     </>
   );
 };

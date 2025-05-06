@@ -297,7 +297,7 @@ const Customers = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden borde cursor-pointer border-gray-200">
+            <div className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"

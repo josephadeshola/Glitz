@@ -88,10 +88,12 @@ export default function NavbarComponent() {
           </Button>
         </NavbarItem>
       </NavbarContent>
+      <div className="px-2 py-4 lg:hidden rounded-sm bg-[#CC2837]/80 hover:bg-[#CC2837] transition duration-300">
       <NavbarMenuToggle
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        className="sm:hidden"
-      />
+        className="sm:hidden px-2 "
+        />
+        </div>
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
