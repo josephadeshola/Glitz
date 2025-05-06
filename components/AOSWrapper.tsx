@@ -10,7 +10,7 @@ const AOSWrapper = () => {
     });
   }, []);
 
-  return null; 
+  return null;
 };
 
 export default AOSWrapper;

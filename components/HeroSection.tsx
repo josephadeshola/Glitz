@@ -164,7 +164,9 @@ const HeroSection = () => {
         </div>
         <div className="w-full lg:w-1/3">
           <p className="text-5xl text-gray-800 font-semibold">72K</p>
-          <p className="text-gray-500 mt-2">Trusted by over 300 global clients</p>
+          <p className="text-gray-500 mt-2">
+            Trusted by over 300 global clients
+          </p>
         </div>
       </div>
 
