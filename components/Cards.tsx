@@ -223,7 +223,7 @@ const Cards = () => {
                         </div>
 
                         <div className="w-full md:w-1/2 bg-[#CC2837] text-white p-8 flex flex-col justify-center">
-                            <h1 className="lg:text-4xl text-3xl font-bold mb-7">Let's Build Your Next Commodity Deal Together</h1>
+                            <h1 className="lg:text-4xl text-3xl font-bold mb-7">Lets Build Your Next Commodity Deal Together</h1>
 
                             <p className="lg:text-lg text mb-7 ">
                                 Lets Build Your Next Commodity Deal Together From inquiry to delivery—your trusted export partner in Africa
@@ -237,9 +237,9 @@ const Cards = () => {
                 </div>
             </div>
             <div>
-                <div className="text-center">
-                <p>What Our Customers are saying</p>
-                <p>Has been used by more than 100,00 customers. Listen to what they’re saying!</p>
+                <div className="text-center text-black mt-20">
+                <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">What Our Customers are saying</p>
+                <p className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">Has been used by more than 100,00 customers. Listen to what they are saying!</p>
                 </div>
             </div>
         </>
