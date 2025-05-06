@@ -4,7 +4,7 @@ import Aos from "aos";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { FaExchangeAlt, FaGlobe } from "react-icons/fa";
+import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; 
 import { FaHandshake } from "react-icons/fa6";
 
 import Customers from "./Customers";
@@ -129,7 +129,7 @@ const Cards = () => {
             {productData.map((slide, index) => (
               <div
                 key={index}
-                className="embla__slide flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4"
+                className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4"
               >
                 <div className="bg-[#F9F9F9] cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl py-7 px-10 rounded-md">
                   <div className="w-72 mx-auto">
@@ -162,7 +162,7 @@ const Cards = () => {
             {stepTwoProduct.map((slide, index) => (
               <div
                 key={index}
-                className="embla__slide flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4"
+                className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4"
               >
                 <div className="bg-[#F9F9F9] cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl py-7 px-10 rounded-md">
                   <div className="w-72 mx-auto">
