@@ -124,8 +124,8 @@ const Cards = () => {
         </p>
       </div>
       <div className="relative w-full overflow-hidden">
-        <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
-          {/* <div className="embla__container flex mx-auto justify-around">
+        {/* <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
+          <div className="embla__container flex mx-auto justify-around">
             {productData.map((slide, index) => (
               <div
                 key={index}
@@ -152,8 +152,8 @@ const Cards = () => {
                 </div>
               </div>
             ))}
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
 
       <div className="relative w-full overflow-hidden">
