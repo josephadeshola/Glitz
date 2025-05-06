@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; // Export Services
 import { FaHandshake } from "react-icons/fa6"; // Procurement
+
 import Customers from "./Customers";
 
 const productData = [
@@ -122,7 +123,7 @@ const Cards = () => {
         </p>
       </div>
       <div className="relative w-full overflow-hidden">
-        <div className="embla lg:px-8 mx-auto" ref={emblaRef1}>
+        <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
           <div className="embla__container flex mx-auto justify-around">
             {productData.map((slide, index) => (
               <div
@@ -140,11 +141,11 @@ const Cards = () => {
                   </div>
                   <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
                     <Image
-                      src={slide.image}
                       alt={slide.title}
-                      height={200}
-                      width={300}
                       className="object-cover mx-auto rounded-md"
+                      height={200}
+                      src={slide.image}
+                      width={300}
                     />
                   </div>
                 </div>
@@ -155,7 +156,7 @@ const Cards = () => {
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div className="embla lg:px-8 mx-auto" ref={emblaRef2}>
+        <div ref={emblaRef2} className="embla lg:px-8 mx-auto">
           <div className="embla__container flex mx-auto justify-around">
             {stepTwoProduct.map((slide, index) => (
               <div
@@ -173,11 +174,11 @@ const Cards = () => {
                   </div>
                   <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
                     <Image
-                      src={slide.image}
                       alt={slide.title}
-                      width={300}
-                      height={200}
                       className="object-cover  w-full h-full"
+                      height={200}
+                      src={slide.image}
+                      width={300}
                     />
                   </div>
                 </div>
@@ -236,9 +237,9 @@ const Cards = () => {
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-1/2">
               <img
-                src="/images/let-build.png"
                 alt="Warehouse worker checking commodity bags"
                 className="w-full h-full object-cover"
+                src="/images/let-build.png"
               />
             </div>
 

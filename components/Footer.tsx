@@ -15,9 +15,9 @@ const Footer = () => {
 
           <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
             <input
-              type="email"
-              placeholder="Enter email"
               className="flex-grow px-4 py-2 text-gray-800 rounded-md focus:outline-none"
+              placeholder="Enter email"
+              type="email"
             />
             <button className="bg-white text-red-600 font-medium px-6 py-2 rounded-md hover:bg-gray-100 transition">
               Subscribe
@@ -39,8 +39,8 @@ const Footer = () => {
 
               <div className="flex gap-3 mt-2">
                 <a
-                  href="#"
                   className="bg-red-600 w-8 h-8 rounded-full flex items-center justify-center"
+                  href="#"
                 >
                   <svg
                     className="w-4 h-4 text-white"
@@ -51,8 +51,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
                   className="bg-red-600 w-8 h-8 rounded-full flex items-center justify-center"
+                  href="#"
                 >
                   <svg
                     className="w-4 h-4 text-white"
@@ -63,8 +63,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
                   className="bg-red-600 w-8 h-8 rounded-full flex items-center justify-center"
+                  href="#"
                 >
                   <svg
                     className="w-4 h-4 text-white"
@@ -75,8 +75,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
                   className="bg-red-600 w-8 h-8 rounded-full flex items-center justify-center"
+                  href="#"
                 >
                   <svg
                     className="w-4 h-4 text-white"
@@ -95,32 +95,32 @@ const Footer = () => {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       About
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Blog
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Pricing
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Contact Us
                     </a>
@@ -133,24 +133,24 @@ const Footer = () => {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Legal
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Terms and Condition
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
                       className="text-gray-400 hover:text-white transition"
+                      href="#"
                     >
                       Privacy Policy
                     </a>
@@ -164,16 +164,16 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#"
                     className="text-gray-400 hover:text-white transition"
+                    href="#"
                   >
                     Others
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
                     className="text-gray-400 hover:text-white transition"
+                    href="#"
                   >
                     Secured Payment Gateways
                   </a>

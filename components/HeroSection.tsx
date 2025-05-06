@@ -4,6 +4,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Aos from "aos";
+
 import "aos/dist/aos.css";
 import Cards from "./Cards";
 
@@ -66,6 +67,7 @@ const HeroSection = () => {
       emblaApi.scrollNext();
     }, 4000);
   }, [emblaApi]);
+
   useEffect(() => {
     Aos.init({ once: false });
   }, []);
@@ -98,19 +100,19 @@ const HeroSection = () => {
     <>
       <div className="relative w-full h-screen overflow-hidden">
         <button
-          onClick={() => emblaApi?.scrollPrev()}
           className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
+          onClick={() => emblaApi?.scrollPrev()}
         >
           <FaChevronLeft size={20} />
         </button>
         <button
-          onClick={() => emblaApi?.scrollNext()}
           className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
+          onClick={() => emblaApi?.scrollNext()}
         >
           <FaChevronRight size={20} />
         </button>
 
-        <div className="embla" ref={emblaRef}>
+        <div ref={emblaRef} className="embla">
           <div className="embla__container flex h-screen">
             {heroImages.map((slide, index) => (
               <div
@@ -118,27 +120,27 @@ const HeroSection = () => {
                 className="embla__slide relative flex-shrink-0 w-full h-full"
               >
                 <Image
-                  src={slide.image}
-                  alt={`Slide ${index + 1}`}
                   fill
-                  className="object-cover"
                   priority
+                  alt={`Slide ${index + 1}`}
+                  className="object-cover"
+                  src={slide.image}
                 />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
                   <h1
-                    data-aos={index === selectedIndex ? slide.aosType : ""}
                     className="lg:text-5xl text-2xl md:text-5xl font-bold max-w-4xl leading-tight"
+                    data-aos={index === selectedIndex ? slide.aosType : ""}
                   >
                     {slide.heading}
                   </h1>
                   <p
-                    data-aos={index === selectedIndex ? slide.aosType : ""}
                     className="lg:mt-5 mt-2 lg:text-lg text-md max-w-2xl"
+                    data-aos={index === selectedIndex ? slide.aosType : ""}
                   >
                     {slide.subtext}
                   </p>
-                  <div data-aos="fade-up" className="mt-9 flex gap-4">
+                  <div className="mt-9 flex gap-4" data-aos="fade-up">
                     <button className="bg-[#CC2837] transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white px-6 py-2 rounded-full font-semibold">
                       View Product
                     </button>

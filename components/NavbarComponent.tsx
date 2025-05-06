@@ -11,15 +11,16 @@ import {
   Button,
 } from "@heroui/react";
 import Image from "next/image";
+
 import heroImage from "../public/images/black-logo.jpg";
 
 export const AcmeLogo = () => {
   return (
     <Image
-      src={heroImage}
-      height={50}
       alt="Company Logo"
       className="object-contain rounded-md"
+      height={50}
+      src={heroImage}
     />
   );
 };
@@ -53,7 +54,7 @@ export default function NavbarComponent() {
 
       <NavbarContent className="hidden sm:flex gap-7" justify="center">
         <NavbarItem isActive>
-          <Link className="text-[#CC2837]" aria-current="page" href="#">
+          <Link aria-current="page" className="text-[#CC2837]" href="#">
             Home
           </Link>
         </NavbarItem>
@@ -78,10 +79,10 @@ export default function NavbarComponent() {
         <NavbarItem className="hidden lg:block">
           <Button
             as={Link}
+            className="rounded-full font-semibold text-[#FFFFFF] bg-[#CC2837] transition-transform duration-300 hover:scale-105"
+            data-aos="bounce"
             href="#"
             variant="flat"
-            data-aos="bounce"
-            className="rounded-full font-semibold text-[#FFFFFF] bg-[#CC2837] transition-transform duration-300 hover:scale-105"
           >
             Book a session
           </Button>
