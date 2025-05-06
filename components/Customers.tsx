@@ -71,7 +71,7 @@ const Customers = () => {
 
 
                                 <p className="text-gray-700 mb-4">
-                                    RealAgri's cocoa beans made it into our finest blends. Excellent partnership!
+                                    RealAgris cocoa beans made it into our finest blends. Excellent partnership!
                                 </p>
 
                                 <div className="flex items-center mb-1">
@@ -139,7 +139,7 @@ const Customers = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-lg overflow-hidden borde cursor-pointerr border-gray-200">
+                        <div className="bg-white rounded-lg overflow-hidden borde cursor-pointer border-gray-200">
                             <div className="h-48 overflow-hidden relative">
                                 <img src="/images/rectangle.png" alt="Cocoa pod" className="w-full h-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl object-cover" />
                             </div>

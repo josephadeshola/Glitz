@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import NavbarComponent from "@/components/NavbarComponent";
 
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="relative bg-light h-screen">
      <NavbarComponent />
      <HeroSection/>
+     <Footer/>
     </div>
   );
 }
