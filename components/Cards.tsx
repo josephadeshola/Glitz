@@ -68,16 +68,16 @@ const stepTwoProduct = [
     description: "GMO-free, protein-rich.",
     image: "/images/garlic.png",
   },
-  // {
-  //   title: "Ginger",
-  //   description: "Organic, butter-grade, traceable origin.",
-  //   image: "/images/ginger1.png",
-  // },
+  {
+    title: "Ginger",
+    description: "Organic, butter-grade, traceable origin.",
+    image: "/images/ginger1.png",
+  },
 ];
 
 
 const Cards = () => {
-  
+
   const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
   const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true });
 
@@ -125,6 +125,27 @@ const Cards = () => {
         </p>
       </div>
       <div className="relative w-full overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 -mt-2 md:grid-cols-3 gap-6 lg:px-14 mx-auto">
+          {productData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#F9F9F9] shadow-sm cursor-pointer mx-auto rounded-lg py-8 px-7 hover:shadow-md transition"
+            >
+              <h3 className="text-lg text-black font-semibold mb-1">
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-500 mb-3">{item.description}</p>
+              <Image
+                src={item.image}
+                alt={item.title}
+                height={200}
+                width={300}
+                className=" object-cover rounded-md"
+              />
+            </div>
+          ))}
+        </div>
+
         {/* <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
           <div className="embla__container flex mx-auto justify-around">
             {productData.map((slide, index) => (
@@ -158,7 +179,7 @@ const Cards = () => {
       </div>
 
       <div className="relative w-full overflow-hidden">
-        <div ref={emblaRef2} className="embla lg:px-8 mx-auto">
+        {/* <div ref={emblaRef2} className="embla lg:px-8 mx-auto">
           <div className="embla__container flex mx-auto justify-around">
             {stepTwoProduct.map((slide, index) => (
               <div
@@ -188,7 +209,7 @@ const Cards = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-14">
