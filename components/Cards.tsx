@@ -164,10 +164,12 @@ const Cards = () => {
                   className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
                 >
                   <div className="bg-[#FFFFFF] py-7 px-6  rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                    <div className="mx-auto lg:w-72">
                     <h3 className="text-lg text-black font-semibold mb-1">
                       {slide.title}
                     </h3>
                     <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                    </div>
                     <div className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
                       <Image
                         alt={slide.title}
