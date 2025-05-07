@@ -14,44 +14,44 @@ const heroImages = [
       "Empowering Global Trade in Premium African Agricultural Commodities",
     subtext:
       "From sourcing to export, we deliver quality, compliance, and transparency in every shipment.",
-    aosType: "fade-up",
+    animationClass: "fade-in",
   },
   {
     image: "/images/cashew-tree2.avif",
     heading: "Quality Cashew Nuts Ready For Export",
     subtext: "Streamlining the process from farm to shipment.",
-    aosType: "flip-left",
+    animationClass: "slide-in",
   },
   {
     image: "/images/raw-cashew.jpg",
     heading:
       "Naturally sun-dried and unprocessed, ideal for industrial use and export.",
     subtext: "Sun-dried and unprocessed, ideal for export and processing.",
-    aosType: "flip-right",
+    animationClass: "zoom-in",
   },
   {
     image: "/images/Sheanut.jpg",
     heading: "Rich in natural fats, widely used in cosmetics and skincare.",
     subtext: "Streamlining the process from farm to shipment.",
-    aosType: "flip-up",
+    animationClass: "fade-left",
   },
   {
     image: "/images/Sesame-seed.jpg",
     heading: "Oil-rich seeds, great for food production and seasoning.",
     subtext: "Oil-rich and clean, great for food and oil extraction.",
-    aosType: "zoom-in",
+    animationClass: "flip-in",
   },
   {
     image: "/images/soyabeans.jpg",
     heading: "Protein-packed and versatile—ideal for feed, tofu, and more.",
     subtext: "Nutritious, versatile, and ideal for feed or food.",
-    aosType: "zoom-in-up",
+    animationClass: "slide-up ",
   },
   {
     image: "/images/cocoa-beans.avif",
     heading: "Premium cocoa beans for chocolate and beverages, farm-sourced.",
     subtext: "Top-grade beans used in chocolate and beverages.",
-    aosType: "zoom-out-down",
+    animationClass: "bounce-in",
   },
 ];
 
@@ -96,61 +96,42 @@ const HeroSection = () => {
     };
   }, [emblaApi, autoScroll]);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentSlide = heroImages[currentIndex];
+
+
   return (
     <>
       <div className="relative top-0  w-full h-screen overflow-hidden">
-        <button
-          className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
-          onClick={() => emblaApi?.scrollPrev()}
-        >
-          <FaChevronLeft size={20} />
-        </button>
-        <button
-          className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
-          onClick={() => emblaApi?.scrollNext()}
-        >
-          <FaChevronRight size={20} />
-        </button>
-
-        <div ref={emblaRef} className="embla">
-          <div className="embla__container flex h-screen">
-            {heroImages.map((slide, index) => (
-              <div
-                key={index}
-                className="embla__slide relative flex-shrink-0 w-full h-full"
-              >
-                <Image
-                  fill
-                  priority
-                  alt={`Slide ${index + 1}`}
-                  className="object-cover"
-                  src={slide.image}
-                />
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
-                  <h1
-                    className="lg:text-5xl text-2xl md:text-5xl font-bold max-w-4xl leading-tight"
-                    data-aos={index === selectedIndex ? slide.aosType : ""}
-                  >
-                    {slide.heading}
-                  </h1>
-                  <p
-                    className="lg:mt-5 mt-2 lg:text-lg text-md max-w-2xl"
-                    data-aos={index === selectedIndex ? slide.aosType : ""}
-                  >
-                    {slide.subtext}
-                  </p>
-                  <div className="mt-9 flex gap-4" data-aos="fade-up">
-                    <button className="bg-[#CC2837] transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white px-6 py-2 rounded-full font-semibold">
-                      View Product
-                    </button>
-                    <button className="border border-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black">
-                      Request a Quote
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide.animationClass}`}>
+          <Image
+            src={currentSlide.image}
+            fill
+            alt="Hero Background"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+            <h1 className="lg:text-5xl text-2xl md:text-5xl max-w-4xl leading-tight font-bold mb-4">{currentSlide.heading}</h1>
+            <p className="max-w-2xl lg:mt-5 mt-2 lg:text-lg text-md">{currentSlide.subtext}</p>
+            <div className="mt-6 flex gap-4">
+              <button className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
+                View Product
+              </button>
+              <button className="border text-sm border-white hover:bg-white hover:text-black transition px-6 py-3 rounded-full font-semibold">
+                Request a Quote
+              </button>
+            </div>
           </div>
         </div>
       </div>
