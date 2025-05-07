@@ -68,11 +68,11 @@ const stepTwoProduct = [
     description: "GMO-free, protein-rich.",
     image: "/images/garlic.png",
   },
-  {
-    title: "Ginger",
-    description: "Organic, butter-grade, traceable origin.",
-    image: "/images/ginger1.png",
-  },
+  // {
+  //   title: "Ginger",
+  //   description: "Organic, butter-grade, traceable origin.",
+  //   image: "/images/ginger1.png",
+  // },
 ];
 
 
