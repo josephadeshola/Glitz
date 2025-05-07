@@ -10,7 +10,7 @@ const Footer = () => {
         <>
 
             <div className="bg-black lg:mt-80 mt-32 text-white py-1     px-2 lg:p-8">
-                <div className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border border-4 lg:px-10 px-5 text-center lg:-mt-48   mx-auto rounded-lg ">
+                <div className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border-4 lg:px-10 px-5 text-center lg:-mt-48   mx-auto rounded-lg ">
                     <div className="lg:mt-10">
                         <h2 className="lg:text-4xl text-3xl font-bold text-white mb-3">
                             Subscribe to our Newsletter

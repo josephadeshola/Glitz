@@ -1,7 +1,6 @@
 "use client";
 import "@/styles/globals.css";
 import "aos/dist/aos.css";
-
 import { Providers } from "./providers";
 
 export default function RootLayout({

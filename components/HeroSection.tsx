@@ -144,7 +144,7 @@ const HeroSection = () => {
                     <button className="bg-[#CC2837] transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white px-6 py-2 rounded-full font-semibold">
                       View Product
                     </button>
-                    <button className="border border-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                    <button className="border border-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black">
                       Request a Quote
                     </button>
                   </div>
