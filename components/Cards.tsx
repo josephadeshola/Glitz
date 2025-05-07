@@ -145,6 +145,32 @@ const Cards = () => {
             </div>
           ))}
         </div>
+        {/* Carousel for productData */}
+<div ref={emblaRef1} className="embla overflow-hidden px-4">
+  <div className="embla__container flex gap-6">
+    {productData.map((slide, index) => (
+      <div
+        key={index}
+        className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
+      >
+        <div className="bg-[#F9F9F9] cursor-pointer py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
+          <h3 className="text-lg text-black font-semibold mb-1">
+            {slide.title}
+          </h3>
+          <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+          <Image
+            alt={slide.title}
+            src={slide.image}
+            width={300}
+            height={200}
+            className="object-cover rounded-md"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
           <div className="embla__container flex mx-auto justify-around">
