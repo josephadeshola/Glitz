@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@heroui/button";
-import Aos from "aos";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -85,10 +84,6 @@ const Cards = () => {
   const intervalRef2 = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    Aos.init({ once: false });
-  }, []);
-
-  useEffect(() => {
     if (emblaApi1) {
       intervalRef1.current = setInterval(() => {
         emblaApi1.scrollNext();
@@ -114,22 +109,23 @@ const Cards = () => {
 
   return (
     <>
-      <div className="text-black lg:py-20 py-14">
+      <div data-aos="fade-up" className="text-black lg:py-20 py-14">
         <p className="text-center lg:text-5xl text-[#CC2837] text-3xl font-bold ">
           Featured Products
         </p>
-        <p className="text-center lg:text-lg font-semibold text-sm mx-auto lg:w-1/2 mt-3">
+        <p className="text-center lg:text-lg text-sm mx-auto lg:w-1/2 mt-3">
           Carefully sourced, expertly processed—our top-selling agricultural
           commodities are trusted by buyers worldwide for their quality,
           consistency, and compliance.
         </p>
       </div>
-      <div className="bg-[#F9F9F9] ">
+      <div data-aos="fade-up" className="bg-[#F9F9F9] ">
         <div className="relative w-full overflow-hidden">
           <div ref={emblaRef1} className="embla overflow-hidden lg:px-4">
             <div className="embla__container flex gap-6">
               {productData.map((slide, index) => (
                 <div
+                data-aos="fade-up"
                   key={index}
                   className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
                 >
@@ -138,7 +134,7 @@ const Cards = () => {
                       {slide.title}
                     </h3>
                     <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-                    <div className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                    <div data-aos="zoom-in-up" className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
                       <Image
                         alt={slide.title}
                         src={slide.image}
@@ -160,6 +156,7 @@ const Cards = () => {
             <div className="embla__container flex w-full gap-6">
               {stepTwoProduct.map((slide, index) => (
                 <div
+                  data-aos="fade-up"
                   key={index}
                   className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
                 >
@@ -170,7 +167,7 @@ const Cards = () => {
                     </h3>
                     <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
                     </div>
-                    <div className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                    <div data-aos="zoom-in-up" className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
                       <Image
                         alt={slide.title}
                         src={slide.image}
@@ -191,10 +188,10 @@ const Cards = () => {
 
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-5">
-          <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
+          <p data-aos="fade-up" className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
             What We Offer
           </p>
-          <p className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
+          <p data-aos="fade-up" className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
             GLITZ COMMODITIES NIG. LTD connects African producers to global
             buyers, exporting traceable, high-quality agricultural goods to 15+
             countries.
@@ -202,33 +199,33 @@ const Cards = () => {
         </div>
         <div className="text-black flex flex-col lg:flex-row gap-6 px-6 lg:px-20 py-10 justify-center items-stretch">
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div className="grid grid-cols-1 items-center gap-4 mb-4">
-              <FaGlobe className="text-blue-600 text-3xl" />
+            <div data-aos="fade-up" className="grid grid-cols-1 items-center gap-4 mb-4">
+              <FaGlobe data-aos="zoom-in-up" className="text-blue-600 text-3xl" />
               <h3 className="text-xl font-semibold">Export Services</h3>
             </div>
-            <p className="text-sm text-gray-600">
+            <p data-aos="fade-up" className="text-sm text-gray-600">
               Global logistics, certified documentation, and port-to-port
               handling.
             </p>
           </div>
 
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div className="grid grid-cols-1 items-center  gap-4 mb-4">
-              <FaHandshake className="text-green-600 text-3xl" />
+            <div data-aos="fade-up" className="grid grid-cols-1 items-center  gap-4 mb-4">
+              <FaHandshake  data-aos="zoom-in-up" className="text-green-600 text-3xl" />
               <h3 className="text-xl font-semibold">Procurement</h3>
             </div>
-            <p className="text-sm text-gray-600">
+            <p data-aos="fade-up" className="text-sm text-gray-600">
               Sourcing directly from farmers, with aggregation, storage, and QA
               controls.
             </p>
           </div>
 
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div className="grid grid-cols-1 items-center gap-4 mb-4">
-              <FaExchangeAlt className="text-yellow-600 text-3xl" />
+            <div data-aos="fade-up" className="grid grid-cols-1 items-center gap-4 mb-4">
+              <FaExchangeAlt  data-aos="zoom-in-up" className="text-yellow-600 text-3xl" />
               <h3 className="text-xl font-semibold">Trading</h3>
             </div>
-            <p className="text-sm text-gray-600">
+            <p data-aos="fade-up" className="text-sm text-gray-600">
               Spot and forward contract options for high-volume B2B deals.
             </p>
           </div>
@@ -237,7 +234,7 @@ const Cards = () => {
       <div className="text-black">
         <div className="max-w-6xl mx-auto my-8 mt-24 lg:rounded-xl overflow-hidden shadow-lg">
           <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2">
+            <div data-aos="fade-up" className="w-full md:w-1/2">
               <img
                 alt="Warehouse worker checking commodity bags"
                 className="w-full h-full rounded-tl-none object-cover"
@@ -246,16 +243,16 @@ const Cards = () => {
             </div>
 
             <div className="w-full md:w-1/2 bg-[#CC2837] text-white p-8 flex flex-col justify-center">
-              <h1 className="lg:text-4xl text-3xl font-bold mb-7">
+              <h1 data-aos="fade-up" className="lg:text-4xl text-3xl font-bold mb-7">
                 Lets Build Your Next Commodity Deal Together
               </h1>
 
-              <p className="lg:text-lg text mb-7 ">
+              <p data-aos="fade-up" className="lg:text-lg text mb-7 ">
                 Lets Build Your Next Commodity Deal Together From inquiry to
                 delivery—your trusted export partner in Africa
               </p>
 
-              <div className="mb-4">
+              <div data-aos="fade-up" className="mb-4">
                 <Button className="bg-[#FFFFFF] text-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl rounded-md px-10 font-semibold">
                   Generate
                 </Button>

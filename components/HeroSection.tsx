@@ -3,11 +3,9 @@ import React, { useEffect, useCallback, useState, useRef } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Aos from "aos";
 import CountUp from "react-countup";
-
-import "aos/dist/aos.css";
 import Cards from "./Cards";
+
 
 const heroImages = [
   {
@@ -57,7 +55,13 @@ const heroImages = [
   },
 ];
 
+const stats = [
+  { value: 100, suffix: "%", label: "Client satisfaction" },
+  { value: 5, suffix: "k", label: "Happy clients" },
+  { value: 72, suffix: "k", label: "Trusted by over 300 global clients" },
+];
 const HeroSection = () => {
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -70,17 +74,12 @@ const HeroSection = () => {
   }, [emblaApi]);
 
   useEffect(() => {
-    Aos.init({ once: false });
-  }, []);
-
-  useEffect(() => {
     if (emblaApi) {
       autoScroll();
 
       const onSelect = () => {
         setSelectedIndex(emblaApi.selectedScrollSnap());
         setTimeout(() => {
-          Aos.refresh();
         }, 100);
       };
 
@@ -156,26 +155,43 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="bg-[#F9F9F9] text-black flex flex-col lg:flex-row items-center justify-center text-center px-4 lg:px-24 py-8 gap-6">
-        <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">
-          <CountUp end={100} duration={5} suffix="%" />
-          </p>
-          <p className="text-gray-500 mt-2">Client satisfaction</p>
+
+
+      <div className="bg-[#F9F9F9] text-black py-8 px-4 lg:px-2">
+        <div className="lg:hidden">
+          <div ref={emblaRef} className="embla overflow-hidden">
+            <div className="embla__container flex">
+              {stats.map((item, index) => (
+                <div
+                  key={index}
+                  className="embla__slide flex-shrink-0 w-full flex justify-center"
+                >
+                  <div className="h-48 w-48 rounded-full bg-[#CC2837] flex flex-col items-center justify-center text-white mx-auto">
+                    <p className="text-5xl font-semibold">
+                      <CountUp end={item.value} duration={4} suffix={item.suffix} />
+                    </p>
+                    <p className="text-sm mt-2 px-4 text-center">{item.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">
-          <CountUp end={5} duration={2} separator="," suffix="k" />
-          </p>
-          <p className="text-gray-500 mt-2">Happy clients</p>
-        </div>
-        <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">
-          <CountUp end={72} duration={5} separator="," suffix="k" />
-          </p>
-          <p className="text-gray-500 mt-2">
-            Trusted by over 300 global clients
-          </p>
+
+
+        <div className="hidden lg:flex flex-row items-center justify-around gap-6">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="h-48 w-48 rounded-full bg-[#CC2837] flex flex-col items-center justify-center text-white"
+              data-aos="fade-up"
+            >
+              <p className="text-5xl font-semibold">
+                <CountUp end={item.value} duration={4} suffix={item.suffix} />
+              </p>
+              <p className="text-sm mt-2 px-4 text-center">{item.label}</p>
+            </div>
+          ))}
         </div>
       </div>
 

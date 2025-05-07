@@ -1,15 +1,16 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Customers = () => {
+     
   return (
     <>
       <div>
         <div className="text-center text-black lg:mt-24 mt-16">
-          <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
+          <p data-aos="fade-up" className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
             What Our Customers are saying
           </p>
-          <p className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
+          <p data-aos="fade-up" className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
             Has been used by more than 100,00 customers. Listen to what they are
             saying!
           </p>
@@ -17,7 +18,7 @@ const Customers = () => {
         <div className="max-w-6xl mx-auto lg:my-12 my-5 px-4 sm:px-6">
           <div className=" rounded-lg lg:p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
+              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
                 <div className="flex items-center mb-4">
                   <img
                     alt="Samantha Payne"
@@ -37,7 +38,7 @@ const Customers = () => {
                   quality exceeded our specs
                 </p>
 
-                <div className="flex items-center mb-1">
+                <div data-aos="zoom-in" className="flex items-center mb-1">
                   <svg
                     className="w-5 h-5 text-yellow-400"
                     fill="currentColor"
@@ -83,7 +84,7 @@ const Customers = () => {
                 <p className="text-gray-500 text-sm">16 Aug 2022</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <div className="flex items-center mb-4">
                   <img
                     alt="Samantha Payne"
@@ -103,7 +104,7 @@ const Customers = () => {
                   spot on.
                 </p>
 
-                <div className="flex items-center mb-1">
+                <div data-aos="zoom-in" className="flex items-center mb-1">
                   <svg
                     className="w-5 h-5 text-yellow-400"
                     fill="currentColor"
@@ -149,7 +150,7 @@ const Customers = () => {
                 <p className="text-gray-500 text-sm">16 Aug 2022</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <div className="flex items-center mb-4">
                   <img
                     alt="Samantha Payne"
@@ -169,7 +170,7 @@ const Customers = () => {
                   Excellent partnership!
                 </p>
 
-                <div className="flex items-center mb-1">
+                <div data-aos="zoom-in"  className="flex items-center mb-1">
                   <svg
                     className="w-5 h-5 text-yellow-400"
                     fill="currentColor"
@@ -219,13 +220,13 @@ const Customers = () => {
         </div>
       </div>
       <div className="text-black mt-20">
-        <p className="lg:text-5xl text-center  text-3xl text-[#CC2837] font-bold">
+        <p data-aos="fade-up" className="lg:text-5xl text-center  text-3xl text-[#CC2837] font-bold">
           News & Update
         </p>
 
         <div className="max-w-7xl mx-auto px-2 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
+            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -261,7 +262,7 @@ const Customers = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
+            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -297,7 +298,7 @@ const Customers = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
+            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -333,7 +334,7 @@ const Customers = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
+            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
