@@ -131,7 +131,7 @@ const Cards = () => {
                 key={index}
                 className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4"
               >
-                <div className="bg-[#F9F9F9] cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl py-7 px-10 rounded-md">
+                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
                   <div className="w-72 mx-auto">
                     <h3 className="text-lg text-black font-semibold mb-1">
                       {slide.title}
