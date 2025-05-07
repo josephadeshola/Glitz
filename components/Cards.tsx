@@ -124,61 +124,69 @@ const Cards = () => {
           consistency, and compliance.
         </p>
       </div>
-      <div className="relative w-full overflow-hidden">
-        
-        <div ref={emblaRef1} className="embla overflow-hidden px-4">
-          <div className="embla__container flex gap-6">
-            {productData.map((slide, index) => (
-              <div
-                key={index}
-                className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
-              >
-                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
-                  <h3 className="text-lg text-black font-semibold mb-1">
-                    {slide.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-                  <Image
-                    alt={slide.title}
-                    src={slide.image}
-                    width={300}
-                    height={200}
-                    className="object-cover rounded-md"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <div className="bg-[#F9F9F9] ">
+        <div className="relative w-full overflow-hidden">
+          <div ref={emblaRef1} className="embla overflow-hidden lg:px-4">
+            <div className="embla__container flex gap-6">
+              {productData.map((slide, index) => (
+                <div
+                  key={index}
+                  className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
+                >
+                  <div className="bg-[#FFFFFF] cursor-pointer  py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                    <h3 className="text-lg text-black font-semibold mb-1">
+                      {slide.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                    <div className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                      <Image
+                        alt={slide.title}
+                        src={slide.image}
+                        width={300}
+                        height={200}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-      <div className="relative w-full overflow-hidden">
-        <div ref={emblaRef2} className="embla overflow-hidden px-4 mt-12">
-          <div className="embla__container flex gap-6">
-            {stepTwoProduct.map((slide, index) => (
-              <div
-                key={index}
-                className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
-              >
-                <div className="bg-[#F9F9F9] py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
-                  <h3 className="text-lg text-black font-semibold mb-1">
-                    {slide.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-                  <Image
-                    alt={slide.title}
-                    src={slide.image}
-                    width={300}
-                    height={200}
-                    className="object-cover rounded-md"
-                  />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
+        <div className="relative w-full overflow-hidden">
+          <div ref={emblaRef2} className="embla overflow-hidden lg:px-4 lg:mt-2">
+            <div className="embla__container flex w-full gap-6">
+              {stepTwoProduct.map((slide, index) => (
+                <div
+                  key={index}
+                  className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
+                >
+                  <div className="bg-[#FFFFFF] py-7 px-6  rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                    <h3 className="text-lg text-black font-semibold mb-1">
+                      {slide.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                    <div className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                      <Image
+                        alt={slide.title}
+                        src={slide.image}
+                        width={300}
+                        height={200}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
+
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-14">
           <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
