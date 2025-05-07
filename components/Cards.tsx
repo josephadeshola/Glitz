@@ -4,12 +4,10 @@ import Aos from "aos";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { FaExchangeAlt, FaGlobe } from "react-icons/fa"; 
+import { FaExchangeAlt, FaGlobe } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa6";
-import { EmblaOptionsType } from 'embla-carousel'
 import Customers from "./Customers";
 import Footer from "./Footer";
-import EmblaCarousel from "./EmblaCarouse";
 
 const productData = [
   {
@@ -77,9 +75,6 @@ const stepTwoProduct = [
   },
 ];
 
-const OPTIONS: EmblaOptionsType = { align: 'start' }
-const SLIDE_COUNT = 6
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 const Cards = () => {
   
@@ -194,7 +189,6 @@ const Cards = () => {
           </div>
         </div>
       </div>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-14">
           <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
