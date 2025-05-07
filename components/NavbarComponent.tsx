@@ -43,7 +43,7 @@ export default function NavbarComponent() {
 
   return (
     <Navbar
-      className="fixed top-0 left-0 w-full z-50 bg-transparent text-white py-1"
+      className="top-0 left-0 w-full z-50 bg-transparent text-white py-1"
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>

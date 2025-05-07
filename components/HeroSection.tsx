@@ -111,7 +111,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="relative top-0  w-full h-screen overflow-hidden">
+      <div className="relative top-0 -mt-10  w-full h-screen overflow-hidden">
         <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide.animationClass}`}>
           <Image
             src={currentSlide.image}
