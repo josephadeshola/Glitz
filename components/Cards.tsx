@@ -179,6 +179,7 @@ const Cards = () => {
                       alt={slide.title}
                       className="object-cover  w-full h-full"
                       height={200}
+                      unoptimized
                       src={slide.image}
                       width={300}
                     />
