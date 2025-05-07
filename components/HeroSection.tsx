@@ -4,6 +4,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Aos from "aos";
+import CountUp from "react-countup";
 
 import "aos/dist/aos.css";
 import Cards from "./Cards";
@@ -98,7 +99,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative top-0  w-full h-screen overflow-hidden">
         <button
           className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/70 transition"
           onClick={() => emblaApi?.scrollPrev()}
@@ -157,15 +158,21 @@ const HeroSection = () => {
 
       <div className="bg-[#F9F9F9] text-black flex flex-col lg:flex-row items-center justify-center text-center px-4 lg:px-24 py-8 gap-6">
         <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">100%</p>
+          <p className="text-5xl text-gray-800 font-semibold">
+          <CountUp end={100} duration={5} suffix="%" />
+          </p>
           <p className="text-gray-500 mt-2">Client satisfaction</p>
         </div>
         <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">5K</p>
+          <p className="text-5xl text-gray-800 font-semibold">
+          <CountUp end={5} duration={2} separator="," suffix="k" />
+          </p>
           <p className="text-gray-500 mt-2">Happy clients</p>
         </div>
         <div className="w-full lg:w-1/3">
-          <p className="text-5xl text-gray-800 font-semibold">72K</p>
+          <p className="text-5xl text-gray-800 font-semibold">
+          <CountUp end={72} duration={5} separator="," suffix="k" />
+          </p>
           <p className="text-gray-500 mt-2">
             Trusted by over 300 global clients
           </p>

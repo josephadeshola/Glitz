@@ -16,13 +16,12 @@ const Footer = () => {
                             Subscribe to our Newsletter
                         </h2>
                         <p className="text-white lg:text-md text-sm mb-6 mx-auto">
-                            Never miss the latest information from us! Regularly receive info on
-                            exciting innovations, get to know us more & receive benefits.
+                        Do not miss the latest information from us about trading in the market.By clicking the button, you are agreeing with our Terms & Conditions.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                             <input
-                                className="flex-grow px-4 py-2 text-gray-800 rounded-md focus:outline-none"
+                                className="flex-grow px-4 py-2 bg-white text-gray-800 rounded-md focus:outline-none"
                                 placeholder="Enter email"
                                 type="email"
                             />

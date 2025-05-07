@@ -7,7 +7,6 @@ export default function Home() {
     <div className="relative bg-light h-screen">
       <NavbarComponent />
       <HeroSection />
-  
-    </div>
+    </div>  
   );
 }

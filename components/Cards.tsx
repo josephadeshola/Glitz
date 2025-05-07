@@ -118,7 +118,7 @@ const Cards = () => {
         <p className="text-center lg:text-5xl text-[#CC2837] text-3xl font-bold ">
           Featured Products
         </p>
-        <p className="text-center lg:text-lg text-sm mx-auto lg:w-1/2 mt-3">
+        <p className="text-center lg:text-lg font-semibold text-sm mx-auto lg:w-1/2 mt-3">
           Carefully sourced, expertly processed—our top-selling agricultural
           commodities are trusted by buyers worldwide for their quality,
           consistency, and compliance.
@@ -190,7 +190,7 @@ const Cards = () => {
       </div>
 
       <div>
-        <div className="text-center text-black px-4 lg:mt-20 mt-14">
+        <div className="text-center text-black px-4 lg:mt-20 mt-5">
           <p className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
             What We Offer
           </p>
@@ -235,12 +235,12 @@ const Cards = () => {
         </div>
       </div>
       <div className="text-black">
-        <div className="max-w-6xl mx-auto my-8 mt-24 rounded-xl overflow-hidden shadow-lg">
+        <div className="max-w-6xl mx-auto my-8 mt-24 lg:rounded-xl overflow-hidden shadow-lg">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-1/2">
               <img
                 alt="Warehouse worker checking commodity bags"
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-tl-none object-cover"
                 src="/images/let-build.png"
               />
             </div>

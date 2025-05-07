@@ -223,13 +223,13 @@ const Customers = () => {
           News & Update
         </p>
 
-        <div className="max-w-7xl mx-auto px-2 mt-14">
+        <div className="max-w-7xl mx-auto px-2 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
-                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  className="object-cover w-full rounded-md h-full transition-transform duration-300 hover:scale-105"
                   height={200}
                   src="/images/news.png"
                   width={400}
@@ -265,7 +265,7 @@ const Customers = () => {
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
-                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  className="object-cover w-full rounded-md h-full transition-transform duration-300 hover:scale-105"
                   height={200}
                   src="/images/rectangle.png"
                   width={400}
@@ -301,7 +301,7 @@ const Customers = () => {
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
-                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  className="object-cover w-full h-full rounded-md transition-transform duration-300 hover:scale-105"
                   height={200}
                   src="/images/rectangle.png"
                   width={400}
@@ -337,7 +337,7 @@ const Customers = () => {
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
-                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  className="object-cover w-full h-full rounded-md transition-transform duration-300 hover:scale-105"
                   height={200}
                   src="/images/rectangle.png"
                   width={400}
