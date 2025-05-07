@@ -125,117 +125,59 @@ const Cards = () => {
         </p>
       </div>
       <div className="relative w-full overflow-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-2 -mt-2 md:grid-cols-3 gap-6 lg:px-14 mx-auto">
-          {productData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-[#F9F9F9] shadow-sm cursor-pointer mx-auto rounded-lg py-8 px-7 hover:shadow-md transition"
-            >
-              <h3 className="text-lg text-black font-semibold mb-1">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-500 mb-3">{item.description}</p>
-              <Image
-                src={item.image}
-                alt={item.title}
-                height={200}
-                width={300}
-                className=" object-cover rounded-md"
-              />
-            </div>
-          ))}
-        </div>
-        {/* Carousel for productData */}
-<div ref={emblaRef1} className="embla overflow-hidden px-4">
-  <div className="embla__container flex gap-6">
-    {productData.map((slide, index) => (
-      <div
-        key={index}
-        className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
-      >
-        <div className="bg-[#F9F9F9] cursor-pointer py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
-          <h3 className="text-lg text-black font-semibold mb-1">
-            {slide.title}
-          </h3>
-          <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-          <Image
-            alt={slide.title}
-            src={slide.image}
-            width={300}
-            height={200}
-            className="object-cover rounded-md"
-          />
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-        {/* <div ref={emblaRef1} className="embla lg:px-8 mx-auto">
-          <div className="embla__container flex mx-auto justify-around">
+        
+        <div ref={emblaRef1} className="embla overflow-hidden px-4">
+          <div className="embla__container flex gap-6">
             {productData.map((slide, index) => (
               <div
                 key={index}
-                className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4"
+                className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
               >
-                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-10 rounded-md">
-                  <div className="w-72 mx-auto">
-                    <h3 className="text-lg text-black font-semibold mb-1">
-                      {slide.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-3">
-                      {slide.description}
-                    </p>
-                  </div>
-                  <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
-                    <Image
-                      alt={slide.title}
-                      className="object-cover mx-auto rounded-md"
-                      height={200}
-                      src={slide.image}
-                      width={300}
-                    />
-                  </div>
+                <div className="bg-[#F9F9F9] cursor-pointer py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
+                  <h3 className="text-lg text-black font-semibold mb-1">
+                    {slide.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                  <Image
+                    alt={slide.title}
+                    src={slide.image}
+                    width={300}
+                    height={200}
+                    className="object-cover rounded-md"
+                  />
                 </div>
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="relative w-full overflow-hidden">
-        {/* <div ref={emblaRef2} className="embla lg:px-8 mx-auto">
-          <div className="embla__container flex mx-auto justify-around">
+        <div ref={emblaRef2} className="embla overflow-hidden px-4 mt-12">
+          <div className="embla__container flex gap-6">
             {stepTwoProduct.map((slide, index) => (
               <div
                 key={index}
-                className="embla__slide flex-shrink-0 lg:w-1/3 mx-auto p-4"
+                className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
               >
-                <div className="bg-[#F9F9F9] py-7 px-10 rounded-md">
-                  <div className="w-72 mx-auto">
-                    <h3 className="text-lg text-black font-semibold mb-1">
-                      {slide.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-3">
-                      {slide.description}
-                    </p>
-                  </div>
-                  <div className="w-[300px] h-[200px] mx-auto rounded-md overflow-hidden">
-                    <Image
-                      alt={slide.title}
-                      className="object-cover  w-full h-full"
-                      height={200}
-                      unoptimized
-                      src={slide.image}
-                      width={300}
-                    />
-                  </div>
+                <div className="bg-[#F9F9F9] py-7 px-6 rounded-md shadow-sm hover:shadow-md transition">
+                  <h3 className="text-lg text-black font-semibold mb-1">
+                    {slide.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
+                  <Image
+                    alt={slide.title}
+                    src={slide.image}
+                    width={300}
+                    height={200}
+                    className="object-cover rounded-md"
+                  />
                 </div>
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
+
       </div>
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-14">
