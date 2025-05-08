@@ -22,7 +22,7 @@ const AboutPage = () => {
           priority
         />
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="relative z-20 px-6 text-center max-w-3xl">
+        <div className="relative z-20 lg:px-6 px-2 text-center max-w-3xl">
           <h1 data-aos="zoom-in" className="lg:text-5xl text-2xl md:text-5xl font-bold mb-4">
             Rooted in Africa. Trusted Worldwide.
           </h1>

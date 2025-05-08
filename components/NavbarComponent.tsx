@@ -10,16 +10,16 @@ import {
   Button,
 } from "@heroui/react";
 import Image from "next/image";
-import heroImage from "../public/images/black-logo.jpg";
+import heroImage from "@/public/images/black-logo.jpg";
 import Link from "next/link";
 
 export const AcmeLogo = () => {
   return (
     <Image
-    alt="Company Logo"
-    className="object-contain rounded-md"
-    height={50}
-    src={heroImage}
+      alt="Company Logo"
+      className="object-contain rounded-md"
+      height={50}
+      src={heroImage}
     />
   );
 };
@@ -32,19 +32,6 @@ export default function NavbarComponent() {
     { name: 'About Us', path: 'about' },
     { name: 'What we do', path: 'offer' },
   ]
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
 
   return (
     <Navbar
@@ -72,7 +59,7 @@ export default function NavbarComponent() {
 
 
       <NavbarContent justify="end">
-        <NavbarItem  className="hidden lg:block">
+        <NavbarItem className="hidden lg:block">
           <Button
             as={Link}
             className="rounded-full font-semibold text-[#FFFFFF] bg-[#CC2837] transition-transform duration-300 hover:scale-105"
@@ -89,21 +76,18 @@ export default function NavbarComponent() {
         className="sm:hidden px-2 "
       />
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {items.map((item, index) => (
+          <NavbarMenuItem className="mt-4" key={`${item}-${index}`}>
             <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              href="#"
+              className={`w-full ${index === 0
+                  ? "text-red-500"
+                  : "text-white"
+                }`}
+              href={`/${item.path}`}
             >
-              {item}
+              {item.name}
             </Link>
+            <hr className="py-2 mt-3"/> 
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
