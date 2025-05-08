@@ -30,6 +30,7 @@ export default function NavbarComponent() {
     { name: 'Home', path: '' },
     { name: 'Product', path: 'product' },
     { name: 'About Us', path: 'about' },
+    { name: 'Contact Us', path: 'contact' },
     { name: 'What we do', path: 'offer' },
   ]
 

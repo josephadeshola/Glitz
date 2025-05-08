@@ -1,16 +1,30 @@
 "use client";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import {
   FaCheckCircle,
   FaLeaf,
-  FaSearch,
   FaStar
 } from "react-icons/fa";
+import { GiDigitalTrace, GiGraduateCap } from "react-icons/gi";
 import { LuScanEye } from "react-icons/lu";
 import { TbTargetArrow } from "react-icons/tb";
-import { GiDigitalTrace, GiGraduateCap } from "react-icons/gi";
-import Footer from "@/components/Footer";
 const AboutPage = () => {
+  
+const teamMembers = [
+  {
+    name: "OLUWATOSIN ADEBAYO",
+    role: "Managing Director (MD)",
+    image: "/images/customer.jpg", 
+     ambition: "Driving operational excellence with visionary leadership."
+  },
+  {
+    name: "OLUWATOSIN ADEBAYO",
+    role: "Chief Executive Officer (CEC)",
+    image: "/images/customer.jpg", 
+    ambition: "Empowering innovation and shaping the future of the company.",
+  },
+];
   return (
     <>
       <section className="relative w-full -mt-10 h-screen flex items-center justify-center text-white">
@@ -49,7 +63,7 @@ const AboutPage = () => {
           <div className="lg:flex hidden flex-col items-center space-y-4">
             <div className="rounded-lg overflow-hidden">
               <Image
-              data-aos="fade-up"
+                data-aos="fade-up"
                 src="/images/mission.png"
                 width={400}
                 height={300}
@@ -58,7 +72,7 @@ const AboutPage = () => {
               />
               <div className="rounded-lg lg:-mt-52 lg:ml-44 overflow-hidden">
                 <Image
-                data-aos="zoom-in"
+                  data-aos="zoom-in"
                   src="/images/mission1.png"
                   width={300}
                   height={250}
@@ -89,13 +103,13 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="space-y-12 px-4 py-14 bg-[#d65f69]  lg:hidden block">
+          <div className="space-y-12 px-4 py-14 bg-[#F9E7E933]  lg:hidden block">
             <div className="text-center px-2 py-5 bg-[#FFFFFF]">
               <div className="flex justify-center items-center mx-auto">
                 <TbTargetArrow data-aos="zoom-in" className="text-[60px] bg-[#CC2837] rounded-full text-white p-4 w-[80px] h-[80px]" />
               </div>
               <h3 data-aos="fade-up" className="text-3xl font-bold mb-2">Our Mission</h3>
-              <p data-aos="fade-up" className="text-gray-700 text-lg leading-relaxed">
+              <p data-aos="fade-up" className="text-gray-700 lg:text-lg text-sm leading-relaxed">
                 To unlock Africa’s agricultural potential by enabling
                 transparent, high-quality, and compliant commodity trade with
                 the world.
@@ -107,7 +121,7 @@ const AboutPage = () => {
                 <LuScanEye data-aos="zoom-in" className="text-[60px] bg-[#CC2837] rounded-full text-white p-4 w-[80px] h-[80px]" />
               </div>
               <h3 data-aos="fade-up" className="text-3xl font-bold mb-2">Our Vision</h3>
-              <p data-aos="fade-up" className="text-gray-700 text-lg leading-relaxed">
+              <p data-aos="fade-up" className="text-gray-700 lg:text-lg text-sm leading-relaxed">
                 To be Africa’s most trusted bridge between farmers and global
                 commodity buyers—delivering excellence, sustainability, and
                 shared prosperity.
@@ -116,7 +130,31 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
+      <section className="bg-white py-16 px-4 md:px-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+          Our Team
+        </h2>
+        <div className="lg:flex gap-10 justify-center">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 mt-10 cursor-pointer shadow-lg rounded-xl overflow-hidden flex flex-col items-center p-6 hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="w-32 h-32 relative rounded-full overflow-hidden mb-4">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#CC2837]">{member.name}</h3>
+              <p className="text-sm text-gray-500 py-3 lg:py-2 mt-1">{member.role}</p>
+              <p className="lg:text-lg text-center text-md  text-gray-700 mt-1">{member.ambition}</p>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className="bg-white">
         <div className="px-4 lg:px-20 lg:flex">
           <div className="lg:w-1/2">
@@ -124,7 +162,7 @@ const AboutPage = () => {
               <h2 data-aos="fade-down" className="lg:text-4xl text-3xl mx-auto text-black font-bold mb-4">
                 Our Core Values
               </h2>
-              <p data-aos="zoom-down" className="text-gray-700 mx-auto text-lg">
+              <p data-aos="zoom-down" className="text-gray-700 mx-auto lg:text-lg text-sm">
                 These principles guide every trade, partnership, and promise we
                 make ensuring integrity from farm to shipment.
               </p>
@@ -138,7 +176,7 @@ const AboutPage = () => {
                     <FaStar className="text-xl text-[#CC2837]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black w-1/2 text-lg">
+                    <h4 className="font-semibold text-black w-1/2 lg:text-lg text-sm">
                       Transparency
                     </h4>
                   </div>
@@ -154,7 +192,7 @@ const AboutPage = () => {
                     <GiGraduateCap className="text-xl text-[#CC2837]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold w-1/2 text-black text-lg">Reliability</h4>
+                    <h4 className="font-semibold w-1/2 text-black lg:text-lg text-sm">Reliability</h4>
                   </div>
                 </div>
                 <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
@@ -166,10 +204,10 @@ const AboutPage = () => {
               <div className="p-4 border-r border-t lg:border-r-0 border-[#fdcdd1]">
                 <div className="flex gap-4">
                   <div data-aos="zoom-in" className="text-[#CC2837] bg-[#FEE2E2] p-3 rounded-full">
-                    <FaLeaf  className="text-xl" />
+                    <FaLeaf className="text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black text-lg">Sustainability</h4>
+                    <h4 className="font-semibold text-black lg:text-lg text-sm">Sustainability</h4>
                   </div>
                 </div>
                 <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
@@ -183,7 +221,7 @@ const AboutPage = () => {
                     <FaCheckCircle className="text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black text-lg">Quality First</h4>
+                    <h4 className="font-semibold text-black lg:text-lg text-sm">Quality First</h4>
                   </div>
                 </div>
                 <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
@@ -195,10 +233,10 @@ const AboutPage = () => {
             <div className="border-t border-[#fdcdd1]  p-4 mt-2">
               <div className="flex gap-4">
                 <div data-aos="zoom-in" className="text-[#CC2837] bg-[#FEE2E2] p-3 rounded-full">
-                  <GiDigitalTrace  className="text-xl" />
+                  <GiDigitalTrace className="text-xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black text-lg">Traceability</h4>
+                  <h4 className="font-semibold text-black lg:text-lg text-sm">Traceability</h4>
                 </div>
               </div>
               <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
@@ -207,10 +245,11 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      <Footer
-       heading="Partner with Us for Seamless Agro-community Trade"
-       description="Whether your are a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
-      />
+
+        <Footer
+          heading="Partner with Us for Seamless Agro-community Trade"
+          description="Whether your are a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
+        />
       </section>
     </>
   );
