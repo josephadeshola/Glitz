@@ -31,7 +31,7 @@ export default function NavbarComponent() {
     { name: 'Product', path: 'product' },
     { name: 'About Us', path: 'about' },
     { name: 'Contact Us', path: 'contact' },
-    { name: 'What we do', path: 'offer' },
+    { name: 'Services', path: 'offer' },
   ]
 
   return (

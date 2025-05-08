@@ -10,7 +10,7 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
         <>
 
             <div className="bg-black lg:mt-80 mt-32 text-white py-1 px-2 lg:p-8">
-                <div data-aos="fade-up" className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border-white border-4 lg:px-32 px-5 text-center lg:-mt-48 mx-auto rounded-lg ">
+                <div className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border-white border-4 lg:px-32 px-5 text-center lg:-mt-80 mx-auto rounded-3xl ">
                     <div className="lg:mt-10  mx-auto">
                         <h2 className="lg:text-4xl text-3xl font-bold text-white mb-3">
                            {heading}

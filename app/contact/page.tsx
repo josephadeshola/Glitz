@@ -1,10 +1,8 @@
 "use client";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import { FaCheckCircle, FaLeaf, FaStar } from "react-icons/fa";
-import { GiDigitalTrace, GiGraduateCap } from "react-icons/gi";
-import { IoLocationOutline } from "react-icons/io5";
 import { IoIosMailOpen } from "react-icons/io";
+import { IoLocationOutline } from "react-icons/io5";
 import { MdWifiCalling3 } from "react-icons/md";
 
 const ContactPage = () => {
@@ -51,7 +49,7 @@ const ContactPage = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className=" p-6 lg:p-12 w-full lg:w-1/2">
             <p className="text-2xl lg:text-4xl font-bold">
-              Get in touch <br /> with us.
+              Get in touch <br className="hidden lg:block" /> with us.
             </p>
             <p className="text-sm text-[#8C959F] mt-3">
               We provide a complete service for the sale, purchase.
@@ -78,6 +76,23 @@ const ContactPage = () => {
                   <div className="flex items-center gap-2">
                     <MdWifiCalling3 className="text-[#8C959F] text-xl" />
                     <p className="text-md text-[#8C959F]">+2348136851352</p>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
+                  <div className="flex space-x-4">
+                    <a href="https://facebook.com" target="_blank">
+                      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="w-8 h-8 hover:scale-110 transition" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" className="w-8 h-8 hover:scale-110 transition" />
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" />
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank">
+                      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" className="w-8 h-8 hover:scale-110 transition" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -179,22 +194,22 @@ const ContactPage = () => {
 
       <section className="bg-[white]">
         <div className="w-full px-4 md:px-16 g:px-5 py-10 bg-[#F9F9F9]">
-        <div className="w-full h-[300px] md:h-[500px] rounded overflow-hidden">
-          <iframe
-            title="Ilorin Kwara State Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.972969154403!2d4.548055214253346!3d8.496643499808434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047a7c733fae739%3A0x63cc3b4c60d7e2c3!2sIlorin%2C%20Kwara!5e0!3m2!1sen!2sng!4v1693671704970!5m2!1sen!2sng"
-            width="100%"
-            height="100%"
-            allowFullScreen={true}
-            loading="lazy"
-            className="border-0 w-full h-full"
-          ></iframe>
+          <div className="w-full h-[300px] md:h-[500px] rounded overflow-hidden">
+            <iframe
+              title="Ilorin Kwara State Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.972969154403!2d4.548055214253346!3d8.496643499808434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047a7c733fae739%3A0x63cc3b4c60d7e2c3!2sIlorin%2C%20Kwara!5e0!3m2!1sen!2sng!4v1693671704970!5m2!1sen!2sng"
+              width="100%"
+              height="100%"
+              allowFullScreen={true}
+              loading="lazy"
+              className="border-0 w-full h-full"
+            ></iframe>
+          </div>
         </div>
-        </div>
-      <Footer
-        heading="Partner with Us for Seamless Agro-community Trade"
-        description="Whether you're a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
-      />
+        <Footer
+          heading="Partner with Us for Seamless Agro-community Trade"
+          description="Whether you're a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
+        />
       </section>
 
     </>
