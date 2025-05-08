@@ -7,26 +7,31 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Link,
   Button,
 } from "@heroui/react";
 import Image from "next/image";
-
 import heroImage from "../public/images/black-logo.jpg";
+import Link from "next/link";
 
 export const AcmeLogo = () => {
   return (
     <Image
-      alt="Company Logo"
-      className="object-contain rounded-md"
-      height={50}
-      src={heroImage}
+    alt="Company Logo"
+    className="object-contain rounded-md"
+    height={50}
+    src={heroImage}
     />
   );
 };
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const items = [
+    { name: 'Home', path: '' },
+    { name: 'Product', path: 'product' },
+    { name: 'About Us', path: 'about' },
+    { name: 'What we do', path: 'offer' },
+  ]
 
   const menuItems = [
     "Profile",
@@ -53,30 +58,21 @@ export default function NavbarComponent() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-7" justify="center">
-        <NavbarItem isActive>
-          <Link aria-current="page" className="text-[#CC2837]" href="#">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Product
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            About Us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            What we do
-          </Link>
-        </NavbarItem>
+        {items.map(({ name, path }, index) => (
+          <NavbarItem key={`${name}-${index}`} isActive={path === ""}>
+            <Link
+              href={`/${path}`}
+              className={path === "" ? "text-[#CC2837]" : ""}
+            >
+              {name}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
 
+
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:block">
+        <NavbarItem  className="hidden lg:block">
           <Button
             as={Link}
             className="rounded-full font-semibold text-[#FFFFFF] bg-[#CC2837] transition-transform duration-300 hover:scale-105"
@@ -91,7 +87,7 @@ export default function NavbarComponent() {
       <NavbarMenuToggle
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="sm:hidden px-2 "
-        />
+      />
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -105,7 +101,6 @@ export default function NavbarComponent() {
                     : "foreground"
               }
               href="#"
-              size="lg"
             >
               {item}
             </Link>

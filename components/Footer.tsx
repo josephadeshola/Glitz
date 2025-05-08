@@ -5,18 +5,18 @@ import { MdWifiCalling3 } from "react-icons/md";
 import { IoIosMailOpen, IoIosArrowDropright} from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 
-const Footer = () => {
+const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not miss the latest information from us about trading in the market. By clicking the button, you are agreeing with our Terms & Conditions." }) => {
     return (
         <>
 
-            <div className="bg-black lg:mt-80 mt-32 text-white py-1     px-2 lg:p-8">
-                <div data-aos="fade-up" className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border-4 lg:px-10 px-5 text-center lg:-mt-48   mx-auto rounded-lg ">
-                    <div className="lg:mt-10">
+            <div className="bg-black lg:mt-80 mt-32 text-white py-1 px-2 lg:p-8">
+                <div data-aos="fade-up" className="max-w-4xl bg-[#CC2837] h-[60vh] mt-10 py-14 border-white border-4 lg:px-32 px-5 text-center lg:-mt-48 mx-auto rounded-lg ">
+                    <div className="lg:mt-10  mx-auto">
                         <h2 className="lg:text-4xl text-3xl font-bold text-white mb-3">
-                            Subscribe to our Newsletter
+                           {heading}
                         </h2>
                         <p className="text-white lg:text-md text-sm mb-6 mx-auto">
-                        Do not miss the latest information from us about trading in the market.By clicking the button, you are agreeing with our Terms & Conditions.
+                       {description}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">

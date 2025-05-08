@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import "aos/dist/aos.css";
 import { Providers } from "./providers";
 import AOSWrapper from "@/components/AOSWrapper";
+import NavbarComponent from "@/components/NavbarComponent";
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
         <Providers>
           <div>
           <AOSWrapper />
+          <NavbarComponent/>
             {children}
             </div>
         </Providers>
