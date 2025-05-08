@@ -1,5 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
+import { Button } from "@heroui/button";
 import Image from "next/image";
 import {
   FaCheckCircle,
@@ -44,9 +45,9 @@ const teamMembers = [
             We connect Africa’s finest agricultural commodities with buyers
             across the <br /> globe—responsibly, reliably, and transparently.
           </p>
-          <button data-aos="zoom-in" className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
+          <Button data-aos="zoom-in" className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
             Contact Us
-          </button>
+          </Button>
         </div>
       </section>
 

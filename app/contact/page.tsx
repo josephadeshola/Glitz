@@ -1,5 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
+import { Button } from "@heroui/button";
 import Image from "next/image";
 import { IoIosMailOpen } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
@@ -39,9 +40,9 @@ const ContactPage = () => {
             Have a question, need a quote, or want to partner with us? We’re
             here to help.
           </p>
-          <button className="bg-[#CC2837] hover:scale-105 transition px-6 md:px-8 py-3 rounded-full text-white font-semibold text-sm">
+          <Button className="bg-[#CC2837] hover:scale-105 transition px-6 md:px-8 py-3 rounded-full text-white font-semibold text-sm">
             Contact Us
-          </button>
+          </Button>
         </div>
       </section>
 
