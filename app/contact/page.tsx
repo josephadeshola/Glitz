@@ -177,10 +177,26 @@ const ContactPage = () => {
         </div>
       </section>
 
+      <section className="bg-[white]">
+        <div className="w-full px-4 md:px-16 g:px-5 py-10 bg-[#F9F9F9]">
+        <div className="w-full h-[300px] md:h-[500px] rounded overflow-hidden">
+          <iframe
+            title="Ilorin Kwara State Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.972969154403!2d4.548055214253346!3d8.496643499808434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047a7c733fae739%3A0x63cc3b4c60d7e2c3!2sIlorin%2C%20Kwara!5e0!3m2!1sen!2sng!4v1693671704970!5m2!1sen!2sng"
+            width="100%"
+            height="100%"
+            allowFullScreen={true}
+            loading="lazy"
+            className="border-0 w-full h-full"
+          ></iframe>
+        </div>
+        </div>
       <Footer
         heading="Partner with Us for Seamless Agro-community Trade"
         description="Whether you're a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
       />
+      </section>
+
     </>
   );
 };
