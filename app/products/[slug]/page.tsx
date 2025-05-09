@@ -11,15 +11,9 @@ type PageProps = {
 };
 
 // Generate all possible slugs statically
-export async function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
-}
-
-// Product detail page for each slug
-export default function Page({ params }: PageProps) {
-  const product = products.find((p) => p.slug === params.slug);
+export default async function Page({ params }: PageProps) {
+  const { slug } = params;
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
