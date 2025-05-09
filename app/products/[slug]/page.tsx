@@ -1,8 +1,6 @@
-"use client";
 import products from "@/data/products";
 import Image from "next/image";
-import { useState } from "react";
-import { FaExpand, FaTimes, FaSpinner, FaDotCircle } from "react-icons/fa";
+import { FaDotCircle } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 
@@ -12,13 +10,17 @@ type PageProps = {
   };
 };
 
-export default function Page({ params }: PageProps) {
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
+export default async function Page({ params }: PageProps) {
   const product = products.find((p) => p.slug === params.slug);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   if (!product) {
-    return notFound();
+    notFound();
   }
 
   return (
@@ -27,7 +29,6 @@ export default function Page({ params }: PageProps) {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
-              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
@@ -35,23 +36,13 @@ export default function Page({ params }: PageProps) {
             />
           </div>
           <div className="space-y-5 text-center md:text-left">
-            <h1
-              data-aos="zoom-in"
-              className="text-4xl md:text-5xl font-extrabold text-[#CC2837]"
-            >
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#CC2837]">
               {product.name}
             </h1>
-            <p
-              data-aos="zoom-in"
-              className="text-md font-bold md:text-lg text-gray-100"
-            >
-              We take pride in supplying quality cashew kernels that are
-              sustainably sourced.
+            <p className="text-md font-bold md:text-lg text-gray-100">
+              We take pride in supplying quality cashew kernels that are sustainably sourced.
             </p>
-            <p
-              data-aos="fade-up"
-              className="text-base font-bold md:text-lg text-gray-300"
-            >
+            <p className="text-base font-bold md:text-lg text-gray-300">
               {product.description || "No description available."}
             </p>
           </div>
@@ -61,10 +52,7 @@ export default function Page({ params }: PageProps) {
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h2
-              data-aos="zoom-in"
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {product.specification?.paramiter}
             </h2>
 
@@ -72,7 +60,7 @@ export default function Page({ params }: PageProps) {
               {Object.entries(product.specification || {}).map(([key, value]) => {
                 if (key === "size" && value) {
                   return (
-                    <div data-aos="zoom-in" key={key} className="">
+                    <div key={key}>
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-2xl text-gray-600" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -84,7 +72,7 @@ export default function Page({ params }: PageProps) {
 
                 if (key !== "size" && key !== "paramiter") {
                   return (
-                    <div data-aos="zoom-in" key={key}>
+                    <div key={key}>
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-xl text-gray-600" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -99,60 +87,18 @@ export default function Page({ params }: PageProps) {
             </ul>
           </div>
 
-          <div className="relative w-full h-[400px] cursor-pointer shadow-xl rounded-2xl overflow-hidden border-4 border-white">
+          <div className="relative w-full h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
-              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
             />
-
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="absolute top-3 right-3 bg-white/80 text-black p-2 rounded-full hover:scale-110 transition-transform"
-              aria-label="Zoom Image"
-            >
-              <FaExpand size={18} />
-            </button>
           </div>
         </div>
-
-        {isModalOpen && (
-          <div
-            data-aos="zoom-in"
-            className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center"
-            onClick={() => setIsModalOpen(false)}
-          >
-            <div className="relative w-[70vw] h-[70vh] max-w-4xl zoom-container overflow-hidden">
-              {loading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
-                  <FaSpinner className="animate-spin text-3xl text-gray-600" />
-                </div>
-              )}
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-contain"
-                style={{ transform: "scale(1.5)" }}
-                onLoad={() => setLoading(false)}
-              />
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsModalOpen(false);
-                }}
-                className="absolute top-4 right-4 text-white bg-black/70 p-2 rounded-full"
-              >
-                <FaTimes size={20} />
-              </button>
-            </div>
-          </div>
-        )}
       </div>
 
-      <div data-aos="zoom-in" className="glitz-container mt-14">
+      <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
       </div>
       <section className="bg-white">
