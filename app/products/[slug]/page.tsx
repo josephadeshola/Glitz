@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaDotCircle, FaExpand, FaSpinner, FaTimes } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 
 export default function Page() {
@@ -20,10 +20,14 @@ export default function Page() {
 
   return (
     <div className="text-gray-800">
-      {/* Main Product Display */}
-      <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
+      {/* Hero Section */}
+      <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl text-center block md:hidden font-extrabold text-[#CC2837]">
+            {product.name}
+          </h1>
+
+          <div className="relative w-[220px] sm:w-80 md:w-96 lg:w-full max-w-[500px] h-[220px] sm:h-80 md:h-96 lg:h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
               src={product.image}
               alt={product.name}
@@ -31,38 +35,39 @@ export default function Page() {
               className="object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
+
           <div className="space-y-5 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#CC2837]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl hidden md:block font-extrabold text-[#CC2837]">
               {product.name}
             </h1>
-            <p className="text-md font-bold md:text-lg text-gray-100">
+            <p className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
               We take pride in supplying quality cashew kernels that are sustainably sourced.
             </p>
-            <p className="text-base font-bold md:text-lg text-gray-300">
+            <p className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
               {product.description || "No description available."}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Specification and Zoom Button */}
-      <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      {/* Specifications Section */}
+      <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               {product.specification?.paramiter}
             </h2>
 
-            <ul className="space-y-4 text-lg font-medium">
+            <ul className="space-y-4 text-base sm:text-lg font-medium">
               {Object.entries(product.specification || {}).map(([key, value]) => {
                 if (key === "size" && value) {
                   return (
                     <div key={key}>
                       <div className="flex gap-3 items-center">
-                        <FaDotCircle className="text-2xl text-gray-600" />
+                        <FaDotCircle className="text-xl sm:text-2xl text-gray-400" />
                         <div className="font-semibold capitalize">{key}:</div>
                       </div>
-                      <p className="text-white ms-9">{value}</p>
+                      <p className="ms-9">{value}</p>
                     </div>
                   );
                 }
@@ -71,10 +76,10 @@ export default function Page() {
                   return (
                     <div key={key}>
                       <div className="flex gap-3 items-center">
-                        <FaDotCircle className="text-xl text-gray-600" />
+                        <FaDotCircle className="text-xl text-gray-400" />
                         <div className="font-semibold capitalize">{key}:</div>
                       </div>
-                      <p className="text-white ms-9">{value || "N/A"}</p>
+                      <p className="ms-9">{value || "N/A"}</p>
                     </div>
                   );
                 }
@@ -84,8 +89,8 @@ export default function Page() {
             </ul>
           </div>
 
-          {/* Image with Zoom Trigger */}
-          <div className="relative w-full h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
+          {/* Image Zoom Button */}
+          <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
               src={product.image}
               alt={product.name}
@@ -109,11 +114,11 @@ export default function Page() {
       {/* Modal Zoom View */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-[70vw] h-[70vh] max-w-6xl overflow-hidden"
+            className="relative w-full max-w-6xl h-[70vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {loading && (
@@ -136,11 +141,9 @@ export default function Page() {
           </div>
         </div>
       )}
-
       <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
       </div>
-
       <section className="bg-white">
         <Footer
           heading="Partner with Us for Seamless Agro-community Trade"
