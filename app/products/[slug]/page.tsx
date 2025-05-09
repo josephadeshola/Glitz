@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export default function ProductPage({ params }: Props) {
+export default function ProductPage({ params }:{ params: { slug: string } }) {
   const product = products.find((p) => p.slug === params.slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
