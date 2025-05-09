@@ -83,9 +83,7 @@ const stepTwoProduct = [
   },
 ];
 
-
 const Cards = () => {
-
   const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
   const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true });
 
@@ -147,11 +145,16 @@ const Cards = () => {
               <div className="p-4">
                 <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
                   <div className="mx-auto lg:w-72">
-                  <h3 className="text-lg text-black font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-500 mb-3">{item.description}</p>
+                    <h3 data-aos="fade-down" className="text-lg text-black font-semibold mb-1">
+                      {item.title}
+                    </h3>
+                    <p data-aos="fade-up" className="text-sm text-gray-500 mb-3">
+                      {item.description}
+                    </p>
                   </div>
-                  <div className="lg:w-[300px] h-[30vh] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                  <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
                     <Image
+                      data-aos="zoom-in"
                       alt={item.title}
                       src={item.image}
                       width={300}
@@ -166,7 +169,6 @@ const Cards = () => {
         </Swiper>
       </div>
 
-  
       <div data-aos="fade-up" className="bg-[#F9F9F9] mt-4">
         <Swiper
           spaceBetween={20}
@@ -176,7 +178,11 @@ const Cards = () => {
             1024: { slidesPerView: 3 },
           }}
           loop={true}
-          autoplay={{ delay: 4000, disableOnInteraction: false, reverseDirection: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
           modules={[Autoplay]}
           className="lg:px-4"
         >
@@ -185,11 +191,16 @@ const Cards = () => {
               <div className="p-4">
                 <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
                   <div className="mx-auto lg:w-72">
-                    <h3 className="text-lg text-black font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-500 mb-3">{item.description}</p>
+                    <h3 data-aos="fade-down" className="text-lg text-black font-semibold mb-1">
+                      {item.title}
+                    </h3>
+                    <p data-aos="fade-up" className="text-sm text-gray-500 mb-3">
+                      {item.description}
+                    </p>
                   </div>
-                  <div className="lg:w-[300px] h-[30vh]  lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                  <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
                     <Image
+                      data-aos="zoom-in"
                       alt={item.title}
                       src={item.image}
                       width={300}
@@ -206,10 +217,16 @@ const Cards = () => {
 
       <div>
         <div className="text-center text-black px-4 lg:mt-20 mt-5">
-          <p data-aos="fade-up" className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
+          <p
+            data-aos="fade-up"
+            className="lg:text-5xl text-3xl text-[#CC2837] font-bold"
+          >
             What We Offer
           </p>
-          <p data-aos="fade-up" className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
+          <p
+            data-aos="fade-up"
+            className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3"
+          >
             GLITZ COMMODITIES NIG. LTD connects African producers to global
             buyers, exporting traceable, high-quality agricultural goods to 15+
             countries.
@@ -217,8 +234,14 @@ const Cards = () => {
         </div>
         <div className="text-black flex flex-col lg:flex-row gap-6 px-6 lg:px-20 py-10 justify-center items-stretch">
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div data-aos="fade-up" className="grid grid-cols-1 items-center gap-4 mb-4">
-              <FaGlobe data-aos="zoom-in-up" className="text-blue-600 text-3xl" />
+            <div
+              data-aos="fade-up"
+              className="grid grid-cols-1 items-center gap-4 mb-4"
+            >
+              <FaGlobe
+                data-aos="zoom-in-up"
+                className="text-blue-600 text-3xl"
+              />
               <h3 className="text-xl font-semibold">Export Services</h3>
             </div>
             <p data-aos="fade-up" className="text-sm text-gray-600">
@@ -228,8 +251,14 @@ const Cards = () => {
           </div>
 
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div data-aos="fade-up" className="grid grid-cols-1 items-center  gap-4 mb-4">
-              <FaHandshake  data-aos="zoom-in-up" className="text-green-600 text-3xl" />
+            <div
+              data-aos="fade-up"
+              className="grid grid-cols-1 items-center  gap-4 mb-4"
+            >
+              <FaHandshake
+                data-aos="zoom-in-up"
+                className="text-green-600 text-3xl"
+              />
               <h3 className="text-xl font-semibold">Procurement</h3>
             </div>
             <p data-aos="fade-up" className="text-sm text-gray-600">
@@ -239,8 +268,14 @@ const Cards = () => {
           </div>
 
           <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div data-aos="fade-up" className="grid grid-cols-1 items-center gap-4 mb-4">
-              <FaExchangeAlt  data-aos="zoom-in-up" className="text-yellow-600 text-3xl" />
+            <div
+              data-aos="fade-up"
+              className="grid grid-cols-1 items-center gap-4 mb-4"
+            >
+              <FaExchangeAlt
+                data-aos="zoom-in-up"
+                className="text-yellow-600 text-3xl"
+              />
               <h3 className="text-xl font-semibold">Trading</h3>
             </div>
             <p data-aos="fade-up" className="text-sm text-gray-600">
@@ -261,7 +296,10 @@ const Cards = () => {
             </div>
 
             <div className="w-full md:w-1/2 bg-[#CC2837] text-white p-8 flex flex-col justify-center">
-              <h1 data-aos="fade-up" className="lg:text-4xl text-3xl font-bold mb-7">
+              <h1
+                data-aos="fade-up"
+                className="lg:text-4xl text-3xl font-bold mb-7"
+              >
                 Lets Build Your Next Commodity Deal Together
               </h1>
 
