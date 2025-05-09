@@ -23,12 +23,13 @@ export default function Page() {
       {/* Hero Section */}
       <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
-          <h1 className="text-4xl sm:text-4xl md:text-5xl text-center block md:hidden font-extrabold text-[#CC2837]">
+          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl text-center block md:hidden font-extrabold text-[#CC2837]">
             {product.name}
           </h1>
 
           <div className="relative w-[220px] sm:w-80 md:w-96 lg:w-full max-w-[500px] h-[220px] sm:h-80 md:h-96 lg:h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
+            data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
@@ -37,24 +38,24 @@ export default function Page() {
           </div>
 
           <div className="space-y-5 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl hidden md:block font-extrabold text-[#CC2837]">
+            <h1 data-aos="zoom-in" className="text-3xl sm:text-4xl md:text-5xl hidden md:block font-extrabold text-[#CC2837]">
               {product.name}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
+            <p data-aos="fade-up" className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
               We take pride in supplying quality cashew kernels that are sustainably sourced.
             </p>
-            <p className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
+            <p data-aos="zoom-in" className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
               {product.description || "No description available."}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Specifications Section */}
+      
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <h2  data-aos="zoom-in" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               {product.specification?.paramiter}
             </h2>
 
@@ -62,7 +63,7 @@ export default function Page() {
               {Object.entries(product.specification || {}).map(([key, value]) => {
                 if (key === "size" && value) {
                   return (
-                    <div key={key}>
+                    <div data-aos="zoom-in" key={key}>
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-xl sm:text-2xl text-gray-400" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -74,7 +75,7 @@ export default function Page() {
 
                 if (key !== "size" && key !== "paramiter") {
                   return (
-                    <div key={key}>
+                    <div data-aos="zoom-in" key={key}>
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-xl text-gray-400" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -92,6 +93,7 @@ export default function Page() {
           {/* Image Zoom Button */}
           <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
+            data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
@@ -127,6 +129,7 @@ export default function Page() {
               </div>
             )}
             <img
+            data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               className="object-contain w-full h-full transition-transform duration-300 hover:scale-125 cursor-zoom-in"
@@ -141,7 +144,7 @@ export default function Page() {
           </div>
         </div>
       )}
-      <div className="glitz-container mt-14">
+      <div data-aos="zoom-in" className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
       </div>
       <section className="bg-white">
