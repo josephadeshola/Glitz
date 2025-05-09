@@ -10,13 +10,15 @@ type PageProps = {
   };
 };
 
+// Generate all possible slugs statically
 export async function generateStaticParams() {
   return products.map((product) => ({
     slug: product.slug,
   }));
 }
 
-export default async function Page({ params }: PageProps) {
+// Product detail page for each slug
+export default function Page({ params }: PageProps) {
   const product = products.find((p) => p.slug === params.slug);
 
   if (!product) {
@@ -101,6 +103,7 @@ export default async function Page({ params }: PageProps) {
       <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
       </div>
+
       <section className="bg-white">
         <Footer
           heading="Partner with Us for Seamless Agro-community Trade"
