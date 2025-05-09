@@ -171,76 +171,76 @@ const teamMembers = [
           </div>
           <div className="lg:w-1/2 shadow-md py-5 lg:mt-10 lg:px-7 rounded-md">
             <div className="lg:grid grid-cols-2">
-              <div className="border-r p-4 border-[#fdcdd1] mb-2">
+              <div className="border-r p-4 py-9 lg:py-2 border-[#fdcdd1] mb-2">
                 <div className="flex gap-4">
                   <div data-aos="zoom-in" className="bg-[#FEE2E2] w-10 h-10 flex items-center justify-center rounded-full">
                     <FaStar className="text-xl text-[#CC2837]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black w-1/2 lg:text-lg text-sm">
+                    <h4 className="font-semibold text-black w-1/2 lg:text-lg text-md">
                       Transparency
                     </h4>
                   </div>
                 </div>
-                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
+                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-md">
                   We operate with honesty and clarity ensuring buyers and
                   suppliers are always informed and aligned.
                 </p>
               </div>
-              <div className="p-4 border-t border-[#fdcdd1] lg:border-0 ">
+              <div className="p-4 border-t py-9 lg:py-2 border-[#fdcdd1] lg:border-0 ">
                 <div className="flex gap-4">
                   <div data-aos="zoom-in" className="bg-[#FEE2E2]  w-10 h-10 flex items-center justify-center rounded-full">
                     <GiGraduateCap className="text-xl text-[#CC2837]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold w-1/2 text-black lg:text-lg text-sm">Reliability</h4>
+                    <h4 className="font-semibold w-1/2 text-black lg:text-lg text-md">Reliability</h4>
                   </div>
                 </div>
-                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
+                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-md">
                   We work with farming communities that adopt eco-friendly
                   practices and uphold ethical labor standards.
                 </p>
               </div>
 
-              <div className="p-4 border-r border-t lg:border-r-0 border-[#fdcdd1]">
+              <div className="p-4 border-r border-t py-9 lg:py-2 lg:border-r-0 border-[#fdcdd1]">
                 <div className="flex gap-4">
                   <div data-aos="zoom-in" className="text-[#CC2837] bg-[#FEE2E2] p-3 rounded-full">
                     <FaLeaf className="text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black lg:text-lg text-sm">Sustainability</h4>
+                    <h4 className="font-semibold text-black lg:text-lg text-md">Sustainability</h4>
                   </div>
                 </div>
-                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
+                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-md">
                   We work with farming communities that adopt eco-friendly
                   practices and uphold ethical labor standards.
                 </p>
               </div>
-              <div className="p-4 border-t border-[#fdcdd1]">
+              <div className="p-4 border-t py-9 lg:py-2 border-[#fdcdd1]">
                 <div className="flex gap-4">
                   <div data-aos="zoom-in" className="text-[#CC2837] bg-[#FEE2E2] p-3 rounded-full">
                     <FaCheckCircle className="text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-black lg:text-lg text-sm">Quality First</h4>
+                    <h4 className="font-semibold text-black lg:text-lg text-md">Quality First</h4>
                   </div>
                 </div>
-                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
+                <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-md">
                   Every product we trade is carefully tested, sorted, and
                   packaged according to international quality standards.
                 </p>
               </div>
             </div>
-            <div className="border-t border-[#fdcdd1]  p-4 mt-2">
+            <div className="border-t border-[#fdcdd1] py-9 lg:py-2 p-4 mt-2">
               <div className="flex gap-4">
                 <div data-aos="zoom-in" className="text-[#CC2837] bg-[#FEE2E2] p-3 rounded-full">
                   <GiDigitalTrace className="text-xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black lg:text-lg text-sm">Traceability</h4>
+                  <h4 className="font-semibold text-black lg:text-lg text-md">Traceability</h4>
                 </div>
               </div>
-              <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-sm">
+              <p data-aos="fade-up" className="text-gray-600 lg:mt-3 mt-5 text-md">
                 We work with farming communities that adopt eco-friendly practices and uphold ethical labor standards.
               </p>
             </div>
