@@ -4,24 +4,24 @@ import { FaDotCircle } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
+// type PageProps = {
+//   params: {
+//     slug: string;
+//   };
+// };
 
 // Generate all possible slugs statically
-export default async function Page({ params }: PageProps) {
-  const { slug } = params;
-  const product = products.find((p) => p.slug === slug);
+export default async function Page() {
+  // const { slug } = params;
+  // const product = products.find((p) => p.slug === slug);
 
-  if (!product) {
-    notFound();
-  }
+  // if (!product) {
+  //   notFound();
+  // }
 
   return (
     <div className="text-gray-800">
-      <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
+      {/* <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
@@ -92,7 +92,7 @@ export default async function Page({ params }: PageProps) {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
