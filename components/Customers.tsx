@@ -2,15 +2,20 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 
 const Customers = () => {
-     
   return (
     <>
       <div>
         <div className="text-center text-black lg:mt-24 mt-16">
-          <p data-aos="fade-up" className="lg:text-5xl text-3xl text-[#CC2837] font-bold">
+          <p
+            data-aos="fade-up"
+            className="lg:text-5xl text-3xl text-[#CC2837] font-bold"
+          >
             What Our Customers are saying
           </p>
-          <p data-aos="fade-up" className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3">
+          <p
+            data-aos="fade-up"
+            className="lg:text-lg text-sm lg:w-1/2 mx-auto mt-3"
+          >
             Has been used by more than 100,00 customers. Listen to what they are
             saying!
           </p>
@@ -18,22 +23,14 @@ const Customers = () => {
         <div className="max-w-6xl mx-auto lg:my-12 my-5 px-4 sm:px-6">
           <div className=" rounded-lg lg:p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-                <div className="flex items-center mb-4">
-                  <img
-                    alt="Samantha Payne"
-                    className="w-10 h-10 object-cover  rounded-full mr-3"
-                    src="/images/customer.jpg"
-                  />
-                  <div>
-                    <h3 className="font-medium text-gray-900">
-                      Samantha Payne
-                    </h3>
-                    <p className="text-gray-500 text-sm">@samanthapayne90</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-700 mb-4">
+              <div
+                data-aos="fade-up"
+                className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer"
+              >
+                <p
+                  className="text-gray-700 mt-5 font-semibold
+                 mb-4"
+                >
                   Reliable supplier with prompt documentation. Their sesame seed
                   quality exceeded our specs
                 </p>
@@ -81,25 +78,14 @@ const Customers = () => {
                   </svg>
                 </div>
 
-                <p className="text-gray-500 text-sm">16 Aug 2022</p>
+                <p className="text-gray-500 text-sm">Aug 2023</p>
               </div>
 
-              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <img
-                    alt="Samantha Payne"
-                    className="w-10 h-10 object-cover  rounded-full mr-3"
-                    src="/images/customer.jpg"
-                  />
-                  <div>
-                    <h3 className="font-medium text-gray-900">
-                      Samantha Payne
-                    </h3>
-                    <p className="text-gray-500 text-sm">@samanthapayne90</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-700 mb-4">
+              <div
+                data-aos="fade-up"
+                className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              >
+                <p className="text-gray-700 mb-4 font-semibold mt-5">
                   From Nigeria to Vietnam, their logistics and paperwork were
                   spot on.
                 </p>
@@ -147,30 +133,19 @@ const Customers = () => {
                   </svg>
                 </div>
 
-                <p className="text-gray-500 text-sm">16 Aug 2022</p>
+                <p className="text-gray-500 text-sm">Aug 2023</p>
               </div>
 
-              <div data-aos="fade-up" className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <img
-                    alt="Samantha Payne"
-                    className="w-10 h-10 object-cover rounded-full mr-3"
-                    src="/images/customer.jpg"
-                  />
-                  <div>
-                    <h3 className="font-medium text-gray-900">
-                      Samantha Payne
-                    </h3>
-                    <p className="text-gray-500 text-sm">@samanthapayne90</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-700 mb-4">
+              <div
+                data-aos="fade-up"
+                className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              >
+                <p className="text-gray-700 font-semibold mb-4 mt-5">
                   RealAgris cocoa beans made it into our finest blends.
                   Excellent partnership!
                 </p>
 
-                <div data-aos="zoom-in"  className="flex items-center mb-1">
+                <div data-aos="zoom-in" className="flex items-center mb-1">
                   <svg
                     className="w-5 h-5 text-yellow-400"
                     fill="currentColor"
@@ -213,20 +188,26 @@ const Customers = () => {
                   </svg>
                 </div>
 
-                <p className="text-gray-500 text-sm">16 Aug 2022</p>
+                <p className="text-gray-500 text-sm">Aug 2023</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="text-black mt-20">
-        <p data-aos="fade-up" className="lg:text-5xl text-center  text-3xl text-[#CC2837] font-bold">
+      <div className="text-black mt-14">
+        <p
+          data-aos="fade-up"
+          className="lg:text-5xl text-center  text-3xl text-[#CC2837] font-bold"
+        >
           News & Update
         </p>
 
         <div className="max-w-7xl mx-auto px-2 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
+            <div
+              data-aos="fade-up"
+              className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200"
+            >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -238,31 +219,23 @@ const Customers = () => {
               </div>
 
               <div className="p-4">
-                <div className="flex items-center mb-2">
-                  <div className="flex items-center bg-gray-100 rounded-sm px-2 py-1">
-                    <span className="font-bold text-gray-900">12</span>
-                    <span className="text-xs text-gray-600 ml-1">Jan</span>
-                  </div>
-                  <span className="text-xs text-gray-600 ml-3">
-                    Elements of Content in Epoxy Paint
+                <div className="items-center mb-2">
+                  <span className="text-md font-semibold text-gray-600">
+                    New Export Regulations Announced
                   </span>
                 </div>
 
                 <p className="text-gray-600 text-sm mb-3">
-                  Epoxy paint and epoxy floor contractor. Have you heard the two
-                  terms? And what does that have to
+                  Stay informed about the latest regulations affecting the
+                  export of agricultural products, including cashews.
                 </p>
-
-                <a
-                  className="text-blue-600 text-sm font-medium hover:underline"
-                  href="#"
-                >
-                  Read more
-                </a>
               </div>
             </div>
 
-            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200">
+            <div
+              data-aos="fade-up"
+              className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200"
+            >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -274,31 +247,23 @@ const Customers = () => {
               </div>
 
               <div className="p-4 ">
-                <div className="flex items-center mb-2">
-                  <div className="flex items-center bg-gray-100 rounded-sm px-2 py-1">
-                    <span className="font-bold text-gray-900">12</span>
-                    <span className="text-xs text-gray-600 ml-1">Jan</span>
-                  </div>
-                  <span className="text-xs text-gray-600 ml-3">
-                    Elements of Content in Epoxy Paint
+                <div className="items-center mb-2">
+                  <span className="text-md font-semibold text-gray-600">
+                    Procurement Trends in the Cashew Industry
                   </span>
                 </div>
 
                 <p className="text-gray-600 text-sm mb-3">
-                  Epoxy paint and epoxy floor contractor. Have you heard the two
-                  terms? And what does that have to
+                  Learn about the latest trends in procuring high-quality
+                  cashews from top producing countries.
                 </p>
-
-                <a
-                  className="text-blue-600 text-sm font-medium hover:underline"
-                  href="#"
-                >
-                  Read more
-                </a>
               </div>
             </div>
 
-            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
+            <div
+              data-aos="fade-up"
+              className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200"
+            >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -310,31 +275,23 @@ const Customers = () => {
               </div>
 
               <div className="p-4">
-                <div className="flex items-center mb-2">
-                  <div className="flex items-center bg-gray-100 rounded-sm px-2 py-1">
-                    <span className="font-bold text-gray-900">12</span>
-                    <span className="text-xs text-gray-600 ml-1">Jan</span>
-                  </div>
-                  <span className="text-xs text-gray-600 ml-3">
-                    Elements of Content in Epoxy Paint
+                <div className="items-center mb-2">
+                  <span className="text-md font-semibold text-gray-600">
+                    Global Market Demand for Cashew Nuts{" "}
                   </span>
                 </div>
 
                 <p className="text-gray-600 text-sm mb-3">
-                  Epoxy paint and epoxy floor contractor. Have you heard the two
-                  terms? And what does that have to
+                  Discover the increasing global demand for cashew nuts and how
+                  it’s reshaping the export market.
                 </p>
-
-                <a
-                  className="text-blue-600 text-sm font-medium hover:underline"
-                  href="#"
-                >
-                  Read more
-                </a>
               </div>
             </div>
 
-            <div data-aos="fade-up" className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200">
+            <div
+              data-aos="fade-up"
+              className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200"
+            >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
@@ -346,27 +303,16 @@ const Customers = () => {
               </div>
 
               <div className="p-4">
-                <div className="flex items-center mb-2">
-                  <div className="flex items-center bg-gray-100 rounded-sm px-2 py-1">
-                    <span className="font-bold text-gray-900">12</span>
-                    <span className="text-xs text-gray-600 ml-1">Jan</span>
-                  </div>
-                  <span className="text-xs text-gray-600 ml-3">
-                    Elements of Content in Epoxy Paint
+                <div className="items-center mb-2">
+                  <span className="text-md font-semibold text-gray-600">
+                    Cashew Supply Chain Efficiency
                   </span>
                 </div>
 
                 <p className="text-gray-600 text-sm mb-3">
-                  Epoxy paint and epoxy floor contractor. Have you heard the two
-                  terms? And what does that have to
+                  Explore new strategies to streamline the cashew supply chain,
+                  ensuring timely delivery and reduced costs.
                 </p>
-
-                <a
-                  className="text-blue-600 text-sm font-medium hover:underline"
-                  href="#"
-                >
-                  Read more
-                </a>
               </div>
             </div>
           </div>

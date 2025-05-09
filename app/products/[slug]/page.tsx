@@ -30,6 +30,7 @@ export default function ProductPage({ params }: Props) {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
+              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               layout="fill"
@@ -37,14 +38,23 @@ export default function ProductPage({ params }: Props) {
             />
           </div>
           <div className="space-y-5 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#CC2837]">
+            <h1
+              data-aos="zoom-in"
+              className="text-4xl md:text-5xl font-extrabold text-[#CC2837]"
+            >
               {product.name}
             </h1>
-            <p className="text-md font-bold md:text-lg text-gray-100">
+            <p
+              data-aos="zoom-in"
+              className="text-md font-bold md:text-lg text-gray-100"
+            >
               We take pride in supplying quality cashew kernels that are
               sustainably sourced.
             </p>
-            <p className="text-base font-bold md:text-lg text-gray-300">
+            <p
+              data-aos="fade-up"
+              className="text-base font-bold md:text-lg text-gray-300"
+            >
               {product.description || "No description available."}
             </p>
           </div>
@@ -54,15 +64,18 @@ export default function ProductPage({ params }: Props) {
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] rounded-b-lg to-black text-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2
+              data-aos="zoom-in"
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+            >
               {product.specification.paramiter}
             </h2>
-          
+
             <ul className="space-y-4 text-lg font-medium">
               {Object.entries(product.specification).map(([key, value]) => {
                 if (key === "size" && value) {
                   return (
-                    <div key={key} className="">
+                    <div data-aos="zoom-in" key={key} className="">
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-2xl text-gray-600" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -74,7 +87,7 @@ export default function ProductPage({ params }: Props) {
 
                 if (key !== "size") {
                   return (
-                    <div key={key}>
+                    <div data-aos="zoom-in" key={key}>
                       <div className="flex gap-3 items-center">
                         <FaDotCircle className="text-xl text-gray-600" />
                         <div className="font-semibold capitalize">{key}:</div>
@@ -91,11 +104,13 @@ export default function ProductPage({ params }: Props) {
 
           <div className="relative w-full h-[400px] cursor-pointer shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
+              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               layout="fill"
               className="object-cover hover:scale-105 transition-transform duration-300"
             />
+
             <button
               onClick={() => setIsModalOpen(true)}
               className="absolute top-3 right-3 bg-white/80 text-black p-2 rounded-full hover:scale-110 transition-transform"
@@ -108,6 +123,7 @@ export default function ProductPage({ params }: Props) {
 
         {isModalOpen && (
           <div
+            data-aos="zoom-in"
             className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center"
             onClick={() => setIsModalOpen(false)}
           >
@@ -135,7 +151,7 @@ export default function ProductPage({ params }: Props) {
         )}
       </div>
 
-      <div className="glitz-container mt-14">
+      <div data-aos="zoom-in" className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
       </div>
       <section className="bg-white">

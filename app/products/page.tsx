@@ -22,10 +22,10 @@ import products from "../../data/products"
 
         <div className="relative z-10 pt-[95vh]">
           <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[80vh] lg:-mt-[80vh] mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h1 data-aos="zoom-in" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Our Premium Products
             </h1>
-            <p className="text-md md:text-lg leading-relaxed mb-6">
+            <p data-aos="fade-up" className="text-md md:text-lg leading-relaxed mb-6">
               Have a question, need a quote, or want to partner with us? We’re
               here to help.
             </p>
@@ -37,11 +37,13 @@ import products from "../../data/products"
                 {products.map((product, index) => (
                   <Link key={index} href={`/products/${product.slug}`}>
                     <div
+                    data-aos="fade-up"
                       key={index}
                       className="bg-white opacity-90 cursor-pointer rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden animate-fadeIn"
                     >
                       <div className="relative w-full h-48">
                         <Image
+                        data-aos="zoom-in"
                           src={product.image}
                           alt={product.name}
                           fill
@@ -49,12 +51,9 @@ import products from "../../data/products"
                         />
                       </div>
                       <div className="p-5">
-                        <Button className="text-md font-semibold rounded-full border-2 hover:bg-[#CC2837] hover:text-white border-[#CC2837] text-[#CC2837] bg-white">
+                        <Button data-aos="zoom-in" className="text-md font-semibold rounded-full border-2 hover:bg-[#CC2837] hover:text-white border-[#CC2837] text-[#CC2837] bg-white">
                           {product.name}
                         </Button>
-                        <p className="text-sm text-gray-500 mt-2">
-                          Carefully selected and processed for export markets.
-                        </p>
                       </div>
                     </div>
                   </Link>

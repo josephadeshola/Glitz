@@ -7,12 +7,21 @@ import { FaExchangeAlt, FaGlobe } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa6";
 import Customers from "./Customers";
 import Footer from "./Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 const productData = [
   {
-    title: "Raw Cashew Nuts/Kernels",
+    title: "Raw Cashew Nuts",
     description: "High-yield RCN for food and industrial use.",
-    image: "/images/cashew-raw.png",
+    image: "/images/chatcashew1.webp",
+  },
+  {
+    title: "Cashew Kernels",
+    description: "High-yield RCN for food and industrial use.",
+    image: "/images/chatcashew.webp",
   },
   {
     title: "Cocoa",
@@ -119,71 +128,80 @@ const Cards = () => {
           consistency, and compliance.
         </p>
       </div>
-      <div data-aos="fade-up" className="bg-[#F9F9F9] ">
-        <div className="relative w-full overflow-hidden">
-          <div ref={emblaRef1} className="embla overflow-hidden lg:px-4">
-            <div className="embla__container flex gap-6">
-              {productData.map((slide, index) => (
-                <div
-                data-aos="fade-up"
-                  key={index}
-                  className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
-                >
-                  <div className="bg-[#FFFFFF] cursor-pointer  py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
-                    <h3 className="text-lg text-black font-semibold mb-1">
-                      {slide.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-                    <div data-aos="zoom-in-up" className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
-                      <Image
-                        alt={slide.title}
-                        src={slide.image}
-                        width={300}
-                        height={200}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
 
+      <div data-aos="fade-up" className="bg-[#F9F9F9]">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          modules={[Autoplay]}
+          className="lg:px-4"
+        >
+          {productData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="p-4">
+                <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                  <div className="mx-auto lg:w-72">
+                  <h3 className="text-lg text-black font-semibold mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-500 mb-3">{item.description}</p>
+                  </div>
+                  <div className="lg:w-[300px] h-[30vh] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                    <Image
+                      alt={item.title}
+                      src={item.image}
+                      width={300}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div ref={emblaRef2} className="embla overflow-hidden lg:px-4 lg:mt-2">
-            <div className="embla__container flex w-full gap-6">
-              {stepTwoProduct.map((slide, index) => (
-                <div
-                  data-aos="fade-up"
-                  key={index}
-                  className="embla__slide flex-shrink-0 w-[90%] sm:w-[60%] md:w-[33%] p-4"
-                >
-                  <div className="bg-[#FFFFFF] py-7 px-6  rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
-                    <div className="mx-auto lg:w-72">
-                    <h3 className="text-lg text-black font-semibold mb-1">
-                      {slide.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-3">{slide.description}</p>
-                    </div>
-                    <div data-aos="zoom-in-up" className="lg:w-[300px] lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
-                      <Image
-                        alt={slide.title}
-                        src={slide.image}
-                        width={300}
-                        height={200}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
+  
+      <div data-aos="fade-up" className="bg-[#F9F9F9] mt-4">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false, reverseDirection: true }}
+          modules={[Autoplay]}
+          className="lg:px-4"
+        >
+          {stepTwoProduct.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="p-4">
+                <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                  <div className="mx-auto lg:w-72">
+                    <h3 className="text-lg text-black font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-500 mb-3">{item.description}</p>
+                  </div>
+                  <div className="lg:w-[300px] h-[30vh]  lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                    <Image
+                      alt={item.title}
+                      src={item.image}
+                      width={300}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div>
