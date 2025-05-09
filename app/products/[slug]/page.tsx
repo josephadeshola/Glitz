@@ -4,25 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaExpand, FaTimes, FaSpinner, FaDotCircle } from "react-icons/fa";
 import Footer from "@/components/Footer";
+import { notFound } from "next/navigation";
 
-type Props = {
+
+type PageProps = {
   params: {
     slug: string;
   };
 };
 
-export default function Page({ params }: Props) {
+export default function Page({ params }: PageProps) {
   const product = products.find((p) => p.slug === params.slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  if (!product) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-gray-600 text-lg">
-        Product not found.
-      </div>
-    );
-  }
+ if (!product) {
+  return notFound();
+}
 
   return (
     <div className=" text-gray-800">
