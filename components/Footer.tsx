@@ -206,7 +206,7 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
                     </div>
 
                     <div className="border-t border-gray-800 pt-4 text-center text-sm text-gray-400">
-                        <p>© 2025. All rights reserved.</p>
+                        <p>© 2022 Glitz Commodities | All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

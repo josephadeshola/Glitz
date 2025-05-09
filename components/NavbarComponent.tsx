@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Navbar,
@@ -12,6 +13,7 @@ import {
 import Image from "next/image";
 import heroImage from "@/public/images/black-logo.jpg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const AcmeLogo = () => {
   return (
@@ -26,13 +28,16 @@ export const AcmeLogo = () => {
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const pathname = usePathname();
+
   const items = [
-    { name: 'Home', path: '' },
-    { name: 'Product', path: 'product' },
-    { name: 'About Us', path: 'about' },
-    { name: 'Contact Us', path: 'contact' },
-    { name: 'Services', path: 'offer' },
-  ]
+    { name: 'Home', path: '/' },
+    { name: 'Product', path: '/products' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Services', path: '/offer' },
+  ];
+  
 
   return (
     <Navbar
@@ -46,18 +51,22 @@ export default function NavbarComponent() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-7" justify="center">
-        {items.map(({ name, path }, index) => (
-          <NavbarItem key={`${name}-${index}`} isActive={path === ""}>
-            <Link
-              href={`/${path}`}
-              className={path === "" ? "text-[#CC2837]" : ""}
-            >
-              {name}
-            </Link>
-          </NavbarItem>
-        ))}
+        {items.map(({ name, path }, index) => {
+          const isActive = pathname === path;
+          return (
+            <NavbarItem key={`${name}-${index}`}>
+              <Link
+                href={path}
+                className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${
+                  isActive ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold" : "text-white"
+                }`}
+              >
+                {name}
+              </Link>
+            </NavbarItem>
+          );
+        })}
       </NavbarContent>
-
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:block">
@@ -77,20 +86,20 @@ export default function NavbarComponent() {
         className="sm:hidden px-2 "
       />
       <NavbarMenu>
-        {items.map((item, index) => (
-          <NavbarMenuItem className="mt-4" key={`${item}-${index}`}>
-            <Link
-              className={`w-full ${index === 0
-                  ? "text-red-500"
-                  : "text-white"
-                }`}
-              href={`/${item.path}`}
-            >
-              {item.name}
-            </Link>
-            <hr className="py-2 mt-3"/> 
-          </NavbarMenuItem>
-        ))}
+        {items.map(({ name, path }, index) => {
+          const isActive = pathname === path;
+          return (
+            <NavbarMenuItem className="mt-4" key={`${name}-${index}`}>
+              <Link
+                href={path}
+                className={`w-full text-lg ${isActive ? "text-red-500 font-semibold" : "text-white"}`}
+              >
+                {name}
+              </Link>
+              <hr className="py-2 mt-3" />
+            </NavbarMenuItem>
+          );
+        })}
       </NavbarMenu>
     </Navbar>
   );
