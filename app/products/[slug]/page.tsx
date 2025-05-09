@@ -1,19 +1,18 @@
+"use client";
 import products from "@/data/products";
 import Image from "next/image";
-import { FaDotCircle } from "react-icons/fa";
+import { FaDotCircle, FaExpand, FaSpinner, FaTimes } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 
-// type PageProps = {
-//   params: {
-//     slug: string;
-//   };
-// };
-
-// Generate all possible slugs statically
-export default async function Page({ params }:any) {
- const { slug } = params;
+export default function Page() {
+  const params = useParams();
+  const { slug } = params;
   const product = products.find((p) => p.slug === slug);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   if (!product) {
     notFound();
@@ -21,7 +20,8 @@ export default async function Page({ params }:any) {
 
   return (
     <div className="text-gray-800">
-       <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
+      {/* Main Product Display */}
+      <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
@@ -43,8 +43,9 @@ export default async function Page({ params }:any) {
             </p>
           </div>
         </div>
-      </div> 
+      </div>
 
+      {/* Specification and Zoom Button */}
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
@@ -83,16 +84,58 @@ export default async function Page({ params }:any) {
             </ul>
           </div>
 
+          {/* Image with Zoom Trigger */}
           <div className="relative w-full h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
               src={product.image}
               alt={product.name}
               fill
-              className="object-cover hover:scale-105 transition-transform duration-300"
+              className="object-cover"
             />
+            <button
+              onClick={() => {
+                setLoading(true);
+                setIsModalOpen(true);
+              }}
+              className="absolute top-3 right-3 bg-white/80 text-black p-2 rounded-full hover:scale-110 transition-transform"
+              aria-label="Zoom Image"
+            >
+              <FaExpand size={18} />
+            </button>
           </div>
         </div>
-      </div> 
+      </div>
+
+      {/* Modal Zoom View */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative w-[70vw] h-[70vh] max-w-6xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {loading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
+                <FaSpinner className="animate-spin text-3xl text-gray-600" />
+              </div>
+            )}
+            <img
+              src={product.image}
+              alt={product.name}
+              className="object-contain w-full h-full transition-transform duration-300 hover:scale-125 cursor-zoom-in"
+              onLoad={() => setLoading(false)}
+            />
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-white bg-black/70 p-2 rounded-full"
+            >
+              <FaTimes size={20} />
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
