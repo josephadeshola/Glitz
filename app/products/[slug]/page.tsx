@@ -11,17 +11,17 @@ import { notFound } from "next/navigation";
 // };
 
 // Generate all possible slugs statically
-export default async function Page() {
-  // const { slug } = params;
-  // const product = products.find((p) => p.slug === slug);
+export default async function Page({ params }:any) {
+ const { slug } = params;
+  const product = products.find((p) => p.slug === slug);
 
-  // if (!product) {
-  //   notFound();
-  // }
+  if (!product) {
+    notFound();
+  }
 
   return (
     <div className="text-gray-800">
-      {/* <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
+       <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full max-w-[500px] h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
@@ -43,7 +43,7 @@ export default async function Page() {
             </p>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -92,7 +92,7 @@ export default async function Page() {
             />
           </div>
         </div>
-      </div> */}
+      </div> 
 
       <div className="glitz-container mt-14">
         <div className="glitz-text rounded">GLITZ</div>
