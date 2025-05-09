@@ -57,22 +57,35 @@ export default function ProductPage({ params }: Props) {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {product.specification.paramiter}
             </h2>
+          
             <ul className="space-y-4 text-lg font-medium">
-              {[
-                ["Color", product.specification.productType],
-                ["Nut Count", product.specification.nutCount],
-                ["Moisture", product.specification.moisture],
-                ["Broken", product.specification.broken],
-                ["Size", product.specification.size],
-                ["Defects", product.specification.defects],
-              ].map(([label, value]) => (
-                <li key={label} className="flex gap-3 items-center">
-                  <FaDotCircle className="text-white" />
-                  <span>
-                    {label}: <strong>{value}</strong>
-                  </span>
-                </li>
-              ))}
+              {Object.entries(product.specification).map(([key, value]) => {
+                if (key === "size" && value) {
+                  return (
+                    <div key={key} className="">
+                      <div className="flex gap-3 items-center">
+                        <FaDotCircle className="text-2xl text-gray-600" />
+                        <div className="font-semibold capitalize">{key}:</div>
+                      </div>
+                      <p className="text-white ms-9">{value}</p>
+                    </div>
+                  );
+                }
+
+                if (key !== "size") {
+                  return (
+                    <div key={key}>
+                      <div className="flex gap-3 items-center">
+                        <FaDotCircle className="text-xl text-gray-600" />
+                        <div className="font-semibold capitalize">{key}:</div>
+                      </div>
+                      <p className="text-white ms-9">{value || "N/A"}</p>
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
             </ul>
           </div>
 

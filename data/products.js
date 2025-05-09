@@ -100,7 +100,7 @@ const products = [
         specification: {
             paramiter: "Product Specification",
             productType: "Yellow, light brown, light ivory, light ash-grey or deep ivory. Pieces may show light brown speckles or blemishes on the surface, provided that not more than 20 percent of the",
-            size: "Lower size grade: Size description: Large pieces. Passing through Sieve",
+            size: " Size description: Large pieces. Passing through Sieve",
             noRetained: "Numbers ≥8.0 mm and retained on Sieve Number =5.0 mm.",
             moisture: "max 5%",
             lowerSizeGrade: "max 5%",
@@ -115,7 +115,7 @@ const products = [
         specification: {
             paramiter: "Product Specification",
             productType: "Numbers ≥8.0 mm and retained on Sieve Number =5.0 mm.",
-            size: "Size description: One half of a cashew kernel that has been split lengthwise, provided not more than 1/8 of this cotyledon has been broken off.",
+            size: " One half of a cashew kernel that has been split lengthwise, provided not more than 1/8 of this cotyledon has been broken off.",
             nutCount: "140-180/pound",
             moisture: "max 5%",
             broken: "max 10%",
