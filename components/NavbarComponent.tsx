@@ -30,7 +30,7 @@ export const AcmeLogo = () => {
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [productDropdownOpen, setProductDropdownOpen] = React.useState(false);
+    const [productDropdownOpen, setProductDropdownOpen] = React.useState(false);
   const pathname = usePathname();
 
   const items = [
@@ -129,65 +129,74 @@ export default function NavbarComponent() {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="sm:hidden px-2 "
       />
-      <NavbarMenu>
-        {items.map(({ name, path }, index) => {
-          const isActive = pathname === path;
+    <NavbarMenu>
+  {items.map(({ name, path }, index) => {
+    const isActive = pathname === path;
 
-          if (name === "Product") {
-            return (
-              <div key="Product" className="mt-4">
-                <div
-                  onClick={() => setProductDropdownOpen((prev) => !prev)}
-                  className="flex items-center justify-between cursor-pointer text-lg text-white px-4"
-                >
-                  <span
-                    className={`${
-                      pathname.startsWith("/products")
+    if (name === "Product") {
+      return (
+        <div key="Product" className="mt-4">
+          <div className="flex items-center justify-between px-">
+            <Link
+              href="/products"
+              onClick={() => {
+                setProductDropdownOpen(false);
+                setIsMenuOpen(false);
+              }}
+              className={`text-lg ${
+                pathname.startsWith("/products")
+                  ? "text-[#CC2837] font-semibold"
+                  : "text-white"
+              }`}
+            >
+              Product
+            </Link>
+
+            {/* Dropdown toggle icon */}
+            <TiArrowSortedDown
+              className="text-white cursor-pointer"
+              onClick={() => setProductDropdownOpen((prev) => !prev)}
+            />
+          </div>
+
+          {/* Dropdown menu */}
+          {productDropdownOpen && (
+            <div className="ml-6 mt-3 space-y-2">
+              {products.map((product) => (
+                <NavbarMenuItem key={product.slug} onClick={() => setIsMenuOpen(false)}>
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className={`text-base block ${
+                      pathname === `/products/${product.slug}`
                         ? "text-[#CC2837] font-semibold"
-                        : ""
+                        : "text-white"
                     }`}
                   >
-                    Product
-                  </span>
-                  <TiArrowSortedDown />
-                </div>
+                    {product.name}
+                  </Link>
+                </NavbarMenuItem>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
 
-                {productDropdownOpen && (
-                  <div className="ml-6 mt-2 space-y-2">
-                    {products.map((product) => (
-                      <NavbarMenuItem key={product.slug}>
-                        <Link
-                          href={`/products/${product.slug}`}
-                          className={`text-base block ${
-                            pathname === `/products/${product.slug}`
-                              ? "text-[#CC2837] font-semibold"
-                              : "text-white"
-                          }`}
-                        >
-                          {product.name}
-                        </Link>
-                      </NavbarMenuItem>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          }
+    return (
+      <NavbarMenuItem className="mt-4" key={`${name}-${index}`} onClick={() => setIsMenuOpen(false)}>
+        <Link
+          href={path}
+          className={`w-full text-lg ${
+            isActive ? "text-[#CC2837] font-semibold" : "text-white"
+          }`}
+        >
+          {name}
+        </Link>
+      </NavbarMenuItem>
+    );
+  })}
+</NavbarMenu>
 
-          return (
-            <NavbarMenuItem className="mt-4" key={`${name}-${index}`}>
-              <Link
-                href={path}
-                className={`w-full text-lg ${
-                  isActive ? "text-[#CC2837] font-semibold" : "text-white"
-                }`}
-              >
-                {name}
-              </Link>
-            </NavbarMenuItem>
-          );
-        })}
-      </NavbarMenu>
     </Navbar>
   );
 }
