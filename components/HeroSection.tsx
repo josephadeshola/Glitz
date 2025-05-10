@@ -31,7 +31,7 @@ const heroImages = [
     animationClass: "zoom-in",
   },
   {
-    image: "/images/chatcashew.webp",
+    image: "/images/chatshea.webp",
     heading: "Rich in natural fats, widely used in cosmetics and skincare.",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "fade-left",
