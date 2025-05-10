@@ -48,7 +48,9 @@ export default function NavbarComponent() {
     >
       <NavbarContent>
         <NavbarBrand>
-          <AcmeLogo />
+          <Link href="/">
+          <AcmeLogo  />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -151,15 +153,11 @@ export default function NavbarComponent() {
             >
               Product
             </Link>
-
-            {/* Dropdown toggle icon */}
             <TiArrowSortedDown
               className="text-white cursor-pointer"
               onClick={() => setProductDropdownOpen((prev) => !prev)}
             />
           </div>
-
-          {/* Dropdown menu */}
           {productDropdownOpen && (
             <div className="ml-6 mt-3 space-y-2">
               {products.map((product) => (

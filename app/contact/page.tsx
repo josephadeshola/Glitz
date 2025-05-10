@@ -72,7 +72,7 @@ const ContactPage = () => {
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex items-center gap-2">
                     <IoIosMailOpen className="text-[#8C959F] text-xl" />
-                    <p className="text-md text-[#8C959F]">contact@salespage</p>
+                    <p className="text-md text-[#8C959F]">glitz@salespage</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <MdWifiCalling3 className="text-[#8C959F] text-xl" />
@@ -91,7 +91,7 @@ const ContactPage = () => {
                     <a href="https://instagram.com" target="_blank">
                       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" />
                     </a>
-                    <a href="https://wa.me/1234567890" target="_blank">
+                    <a href="https://wa.me/+2348136851352" target="_blank">
                       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" className="w-8 h-8 hover:scale-110 transition" />
                     </a>
                   </div>
