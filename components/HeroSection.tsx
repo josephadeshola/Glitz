@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CountUp from "react-countup";
 import Cards from "./Cards";
+import Link from "next/link";
 
 
 const heroImages = [
@@ -126,7 +127,9 @@ const HeroSection = () => {
             <p className="max-w-2xl lg:mt-5 mt-2 lg:text-lg text-md">{currentSlide.subtext}</p>
             <div className="mt-6 flex gap-4">
               <button className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
+               <Link href="/products">
                 View Product
+               </Link>
               </button>
               <button className="border text-sm border-white hover:bg-white hover:text-black transition px-6 py-3 rounded-full font-semibold">
                 Request a Quote

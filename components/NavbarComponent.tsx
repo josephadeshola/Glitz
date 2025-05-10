@@ -15,6 +15,7 @@ import heroImage from "@/public/images/black-logo.jpg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { TiArrowSortedDown } from "react-icons/ti";
+import products from "@/data/products";
 
 export const AcmeLogo = () => {
   return (
@@ -56,65 +57,37 @@ export default function NavbarComponent() {
             const isActive = pathname === path;
 
             if (name === "Product") {
+              const isProductActive = pathname.startsWith("/products");
               return (
                 <NavbarItem key="Product" className="relative group">
-                  <Link
-                    href="/products"
-                    className={`inline-block  text-white hover:underline underline-offset-4 decoration-[3px] ${
-                      pathname === "/products"
-                        ? "text-[#CC2837] font-semibold underline"
-                        : ""
-                        
-                    }`}
-                  >
-                    <div className="flex">
-                    <p>Product</p>
-                    <TiArrowSortedDown className="mt-1 ms-2" />
+                  <div className="relative inline-block group">
+                    <div className="flex items-center cursor-pointer text-white hover:text-[#CC2837]">
+                      <Link
+                        href="/products"
+                        className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${
+                          pathname.startsWith("/products")
+                            ? "text-[#CC2837] font-semibold underline"
+                            : "text-white"
+                        }`}
+                      >
+                        <div className="flex items-center">
+                          <p>Product</p>
+                          <TiArrowSortedDown className="mt-1 ms-2" />
+                        </div>
+                      </Link>
                     </div>
-                  </Link>
-                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-md z-10 min-w-[160px]">
-                    <Link
-                      href="/products/phones"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      W-180 cashew
-                    </Link>
-                    <Link
-                      href="/products/laptops"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      W-210 cashew
-                    </Link>
-                    <Link
-                      href="/products/accessories"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      W-240 cashew
-                    </Link>
-                    <Link
-                      href="/products/accessories"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      W-320 cashew
-                    </Link>
-                    <Link
-                      href="/products/accessories"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      W-450 cashew
-                    </Link>
-                    <Link
-                      href="/products/accessories"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      LP cashew
-                    </Link>
-                    <Link
-                      href="/products/accessories"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      WS cashew
-                    </Link>
+
+                    <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
+                      {products.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={`/products/${product.slug}`}
+                          className="block px-4 py-3 hover:bg-gray-100"
+                        >
+                          {product.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </NavbarItem>
               );
