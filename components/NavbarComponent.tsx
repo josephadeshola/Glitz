@@ -21,8 +21,8 @@ export const AcmeLogo = () => {
   return (
     <Image
       alt="Company Logo"
-      className="object-contain rounded-md"
-      height={50}
+      className="object-contain rounded-lg"
+      height={40}
       src={heroImage}
     />
   );
@@ -30,7 +30,7 @@ export const AcmeLogo = () => {
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const [productDropdownOpen, setProductDropdownOpen] = React.useState(false);
+  const [productDropdownOpen, setProductDropdownOpen] = React.useState(false);
   const pathname = usePathname();
 
   const items = [
@@ -43,16 +43,34 @@ export default function NavbarComponent() {
 
   return (
     <Navbar
-      className="top-0 left-0 w-full z-50 bg-transparent text-white py-1"
+      className="top-0 left-0 w-full border-red-500 z-50 bg-transparent text-white py-1"
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
         <NavbarBrand>
-          <Link href="/">
-          <AcmeLogo  />
+          <Link href="/" className="flex items-center space-x-3">
+            <AcmeLogo />
+            <div className="text-white leading-tight text-sm md:text-base font-semibold">
+              <p className="whitespace-nowrap">GLITZ</p>
+              <p className="whitespace-nowrap">COMMODITIES NIG. LTD</p>
+            </div>
           </Link>
         </NavbarBrand>
       </NavbarContent>
+
+      {/* <NavbarContent>
+  <NavbarBrand className="text-white">
+    <Link href="/" className="flex items-center">
+      <img
+        src="/images/download.png"
+        alt="Glitz Commodities Logo"
+        className="h-20 w-auto object-contain"
+      />
+    </Link>
+  </NavbarBrand>
+</NavbarContent> */}
+
+
 
       <NavbarContent className="hidden sm:flex gap-7" justify="center">
         <>
@@ -67,11 +85,10 @@ export default function NavbarComponent() {
                     <div className="flex items-center cursor-pointer text-white hover:text-[#CC2837]">
                       <Link
                         href="/products"
-                        className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${
-                          pathname.startsWith("/products")
+                        className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${pathname.startsWith("/products")
                             ? "text-[#CC2837] font-semibold underline"
                             : "text-white"
-                        }`}
+                          }`}
                       >
                         <div className="flex items-center">
                           <p>Product</p>
@@ -100,11 +117,10 @@ export default function NavbarComponent() {
               <NavbarItem key={`${name}-${index}`}>
                 <Link
                   href={path}
-                  className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${
-                    isActive
+                  className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${isActive
                       ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
                       : "text-white"
-                  }`}
+                    }`}
                 >
                   {name}
                 </Link>
@@ -131,69 +147,66 @@ export default function NavbarComponent() {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="sm:hidden px-2 "
       />
-    <NavbarMenu>
-  {items.map(({ name, path }, index) => {
-    const isActive = pathname === path;
+      <NavbarMenu>
+        {items.map(({ name, path }, index) => {
+          const isActive = pathname === path;
 
-    if (name === "Product") {
-      return (
-        <div key="Product" className="mt-4">
-          <div className="flex items-center justify-between px-">
-            <Link
-              href="/products"
-              onClick={() => {
-                setProductDropdownOpen(false);
-                setIsMenuOpen(false);
-              }}
-              className={`text-lg ${
-                pathname.startsWith("/products")
-                  ? "text-[#CC2837] font-semibold"
-                  : "text-white"
-              }`}
-            >
-              Product
-            </Link>
-            <TiArrowSortedDown
-              className="text-white cursor-pointer"
-              onClick={() => setProductDropdownOpen((prev) => !prev)}
-            />
-          </div>
-          {productDropdownOpen && (
-            <div className="ml-6 mt-3 space-y-2">
-              {products.map((product) => (
-                <NavbarMenuItem key={product.slug} onClick={() => setIsMenuOpen(false)}>
+          if (name === "Product") {
+            return (
+              <div key="Product" className="mt-4">
+                <div className="flex items-center justify-between px-">
                   <Link
-                    href={`/products/${product.slug}`}
-                    className={`text-base block ${
-                      pathname === `/products/${product.slug}`
+                    href="/products"
+                    onClick={() => {
+                      setProductDropdownOpen(false);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`text-lg ${pathname.startsWith("/products")
                         ? "text-[#CC2837] font-semibold"
                         : "text-white"
-                    }`}
+                      }`}
                   >
-                    {product.name}
+                    Product
                   </Link>
-                </NavbarMenuItem>
-              ))}
-            </div>
-          )}
-        </div>
-      );
-    }
+                  <TiArrowSortedDown
+                    className="text-white cursor-pointer"
+                    onClick={() => setProductDropdownOpen((prev) => !prev)}
+                  />
+                </div>
+                {productDropdownOpen && (
+                  <div className="ml-6 mt-3 space-y-2">
+                    {products.map((product) => (
+                      <NavbarMenuItem key={product.slug} onClick={() => setIsMenuOpen(false)}>
+                        <Link
+                          href={`/products/${product.slug}`}
+                          className={`text-base block ${pathname === `/products/${product.slug}`
+                              ? "text-[#CC2837] font-semibold"
+                              : "text-white"
+                            }`}
+                        >
+                          {product.name}
+                        </Link>
+                      </NavbarMenuItem>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          }
 
-    return (
-      <NavbarMenuItem className="mt-4" key={`${name}-${index}`} onClick={() => setIsMenuOpen(false)}>
-        <Link
-          href={path}
-          className={`w-full text-lg ${
-            isActive ? "text-[#CC2837] font-semibold" : "text-white"
-          }`}
-        >
-          {name}
-        </Link>
-      </NavbarMenuItem>
-    );
-  })}
-</NavbarMenu>
+          return (
+            <NavbarMenuItem className="mt-4" key={`${name}-${index}`} onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href={path}
+                className={`w-full text-lg ${isActive ? "text-[#CC2837] font-semibold" : "text-white"
+                  }`}
+              >
+                {name}
+              </Link>
+            </NavbarMenuItem>
+          );
+        })}
+      </NavbarMenu>
 
     </Navbar>
   );
