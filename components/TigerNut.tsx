@@ -231,7 +231,7 @@ const TigerNut = () => {
                         The cashew industry is a vital part of Nigeria's non-oil export sector. It empowers rural farmers, creates jobs across the value chain, and boosts foreign exchange earnings. With the rising global demand, investments in cashew processing and export infrastructure are expected to grow, further positioning Nigeria as a top exporter in the years ahead.
                     </p>
                 </div>
-                 <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+                 <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                      <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 

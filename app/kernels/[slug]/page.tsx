@@ -143,7 +143,7 @@ export default function Page() {
         </div>
       )}
       <div data-aos="zoom-in" className="glitz-container mt-14">
-        <div className="glitz-text rounded px-3">Gliyz Commodities</div>
+        <div className="glitz-text rounded px-3">Glitz Commodities</div>
       </div>
       <section className="bg-white">
         <Footer

@@ -83,7 +83,7 @@ export default function NavbarComponent() {
                       </Link>
                     </div>
 
-                    {/* <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
+                    <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
                       {products.map((product) => (
                         <Link
                           key={product.slug}
@@ -93,7 +93,7 @@ export default function NavbarComponent() {
                           {product.title}
                         </Link>
                       ))}
-                    </div> */}
+                    </div>
                   </div>
                 </NavbarItem>
               );

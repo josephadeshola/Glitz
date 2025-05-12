@@ -232,7 +232,7 @@ const Garlic = () => {
                     </p>
                 </div>
             </section>
-             <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+             <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                      <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
+import SimilarProducts from "./SimilarProducts";
 
 const Yam = () => {
     return (
@@ -116,7 +117,7 @@ const Yam = () => {
                     </ul>
                 </div>
 
-                <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+                <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                          <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 
@@ -149,6 +150,7 @@ const Yam = () => {
                                 Make Enquiry
                             </a>
                         </div>
+                           <SimilarProducts/>
                     </div>
                 </div>
             </section>
