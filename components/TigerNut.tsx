@@ -10,7 +10,7 @@ const TigerNut = () => {
             {/* Hero Section */}
             <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
                 <Image
-                    src="/images/realcashew.jpg"
+                    src="/images/chufatigernut.avif"
                     fill
                     alt="Raw Cashew Background"
                     className="object-cover z-0"
