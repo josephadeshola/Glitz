@@ -231,40 +231,38 @@ const Garlic = () => {
                     </p>
                 </div>
             </section>
-            <div className="py-12 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">Why Choose Us</h2>
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {/* Card 1 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-green-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Premium Quality</h3>
-                            <p className="text-gray-600">We source only the finest raw cashew nuts, ensuring top-grade quality in every batch.</p>
-                        </div>
-                        {/* Card 2 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-yellow-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Eco-Friendly Processing</h3>
-                            <p className="text-gray-600">Our processing techniques are designed to minimize environmental impact while maximizing efficiency.</p>
-                        </div>
-                        {/* Card 3 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-blue-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Experienced Team</h3>
-                            <p className="text-gray-600">Our skilled professionals bring years of industry experience to ensure consistent excellence.</p>
-                        </div>
-                        {/* Card 4 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-red-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Timely Delivery</h3>
-                            <p className="text-gray-600">We prioritize reliability, ensuring your orders arrive on time, every time.</p>
-                        </div>
-                        {/* Card 5 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-purple-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Customer Satisfaction</h3>
-                            <p className="text-gray-600">Your satisfaction is our mission—expect responsive support and tailored services.</p>
-                        </div>
-                        {/* Card 6 */}
-                        <div className="bg-white shadow-md hover:shadow-lg transition rounded-xl p-6 border-t-4 border-indigo-500">
-                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Global Standards</h3>
-                            <p className="text-gray-600">We comply with international food safety and quality regulations for export-ready products.</p>
-                        </div>
+             <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12">Why Choose Us</h2>
+
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {[
+                            { title: "Premium Quality", text: "We source only the finest cocoa beans, ensuring top-grade quality in every batch." },
+                            { title: "Eco-Friendly Processing", text: "Our techniques minimize environmental impact while maximizing efficiency." },
+                            { title: "Experienced Team", text: "Our skilled professionals ensure consistent excellence." },
+                            { title: "Timely Delivery", text: "We prioritize reliability, ensuring your orders arrive on time." },
+                            { title: "Customer Satisfaction", text: "Expect responsive support and tailored services." },
+                            { title: "Global Standards", text: "We comply with international export and quality benchmarks." }
+                        ].map(({ title, text }, i) => (
+                            <div
+                                key={i}
+                                className="bg-white rounded-2xl cursor-pointer p-6 shadow-md hover:shadow-xl transition border border-gray-200 hover:border-transparent hover:bg-gradient-to-r from-[#cc2837]/10 to-[#cc2837]/5"
+                            >
+                                <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+                                <p className="text-gray-600 text-sm">{text}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mt-12">
+                        <a
+                            href="https://wa.me/2348123456789"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"
+                        >
+                            Make Enquiry
+                        </a>
                     </div>
                 </div>
             </div>

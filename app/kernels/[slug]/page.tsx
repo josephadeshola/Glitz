@@ -20,7 +20,6 @@ export default function Page() {
 
   return (
     <div className="text-gray-800">
-      {/* Hero Section */}
       <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
           <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl text-center block md:hidden font-extrabold text-[#CC2837]">
@@ -47,6 +46,7 @@ export default function Page() {
             <p data-aos="zoom-in" className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
               {product.description || "No description available."}
             </p>
+            
           </div>
         </div>
       </div>
@@ -112,7 +112,6 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Modal Zoom View */}
       {isModalOpen && (
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
@@ -144,7 +143,7 @@ export default function Page() {
         </div>
       )}
       <div data-aos="zoom-in" className="glitz-container mt-14">
-        <div className="glitz-text rounded">GLITZ</div>
+        <div className="glitz-text rounded px-3">Gliyz Commodities</div>
       </div>
       <section className="bg-white">
         <Footer

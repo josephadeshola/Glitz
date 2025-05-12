@@ -174,6 +174,42 @@ const GroundNut = () => {
                         </li>
                     </ul>
                 </div>
+
+                 <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12">Why Choose Us</h2>
+
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {[
+                            { title: "Premium Quality", text: "We source only the finest cocoa beans, ensuring top-grade quality in every batch." },
+                            { title: "Eco-Friendly Processing", text: "Our techniques minimize environmental impact while maximizing efficiency." },
+                            { title: "Experienced Team", text: "Our skilled professionals ensure consistent excellence." },
+                            { title: "Timely Delivery", text: "We prioritize reliability, ensuring your orders arrive on time." },
+                            { title: "Customer Satisfaction", text: "Expect responsive support and tailored services." },
+                            { title: "Global Standards", text: "We comply with international export and quality benchmarks." }
+                        ].map(({ title, text }, i) => (
+                            <div
+                                key={i}
+                                className="bg-white rounded-2xl cursor-pointer p-6 shadow-md hover:shadow-xl transition border border-gray-200 hover:border-transparent hover:bg-gradient-to-r from-[#cc2837]/10 to-[#cc2837]/5"
+                            >
+                                <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+                                <p className="text-gray-600 text-sm">{text}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mt-12">
+                        <a
+                            href="https://wa.me/2348123456789"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"
+                        >
+                            Make Enquiry
+                        </a>
+                    </div>
+                </div>
+            </div>
             </section>
 
             <Footer />
