@@ -4,6 +4,7 @@ import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import SimilarProducts from "./SimilarProducts";
+import Link from "next/link";
 
 const Cocoa = () => {
     return (
@@ -19,13 +20,17 @@ const Cocoa = () => {
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <div className="relative z-20 px-4 lg:px-8 text-center max-w-3xl">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4">Cocoa Beans</h1>
-                    <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Message Us
-                        </Button>
-                        <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Contact Us
-                        </Button>
+                   <div className="flex justify-center mt-8 gap-4 flex-wrap">
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Message Us
+                            </Button>
+                        </Link>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -88,7 +93,6 @@ const Cocoa = () => {
                 </div>
             </section>
 
-            {/* Why Choose Us Section */}
             <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>

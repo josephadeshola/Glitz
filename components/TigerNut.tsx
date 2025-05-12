@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
+import SimilarProducts from "./SimilarProducts";
+import Link from "next/link";
 
 const TigerNut = () => {
     return (
@@ -23,12 +25,16 @@ const TigerNut = () => {
                     </h1>
 
                     <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Message Us
-                        </Button>
-                        <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Contact Us
-                        </Button>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Message Us
+                            </Button>
+                        </Link>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -264,6 +270,7 @@ const TigerNut = () => {
                             Make Enquiry
                         </a>
                     </div>
+                      <SimilarProducts/>
                 </div>
             </div>
             </section>

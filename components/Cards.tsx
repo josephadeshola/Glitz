@@ -194,6 +194,7 @@ const Cards = () => {
         >
           {products.map((item, index) => (
             <SwiperSlide key={index}>
+              <Link href={`/products/${item.slug}`}>
               <div className="p-4">
                 <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
                   <div className="mx-auto lg:w-72">
@@ -216,6 +217,7 @@ const Cards = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

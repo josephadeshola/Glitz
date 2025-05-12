@@ -26,14 +26,18 @@ const kernelsProductPage = () => {
                         <h1 data-aos="zoom-in" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                             Premium Cashew Kernels
                         </h1>
-                            <div className="flex justify-center gap-4 flex-wrap">
-                                <Button data-aos="fade-up" className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                                    Message Us
-                                </Button>
-                                <Button data-aos="zoom-in" className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                                    Contact Us
-                                </Button>
-                            </div>
+                            <div className="flex justify-center mt-8 gap-4 flex-wrap">
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Message Us
+                            </Button>
+                        </Link>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Contact Us
+                            </Button>
+                        </Link>
+                    </div>
                     </div>
 
                     <section className="bg-gradient-to-b from-red-800 lg:mt-36  to-white">

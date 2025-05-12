@@ -4,6 +4,7 @@ import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import SimilarProducts from "./SimilarProducts";
+import Link from "next/link";
 
 const Ginger = () => {
     return (
@@ -22,13 +23,17 @@ const Ginger = () => {
                     <h1 className="text-3xl md:text-5xl font-bold mb-4">
                         Ginger
                     </h1>
-                    <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Message Us
-                        </Button>
-                        <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Contact Us
-                        </Button>
+                   <div className="flex justify-center mt-8 gap-4 flex-wrap">
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Message Us
+                            </Button>
+                        </Link>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>

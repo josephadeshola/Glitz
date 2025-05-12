@@ -3,6 +3,7 @@ import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import SimilarProducts from "./SimilarProducts";
+import Link from "next/link";
 
 const KolaNut = () => {
     return (
@@ -22,12 +23,16 @@ const KolaNut = () => {
                         Kola Nuts
                     </h1>
                     <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Message Us
-                        </Button>
-                        <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                            Contact Us
-                        </Button>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Message Us
+                            </Button>
+                        </Link>
+                        <Link href="https://wa.me/2348123456789">
+                            <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -84,7 +89,6 @@ const KolaNut = () => {
                     </table>
                 </div>
 
-                {/* Nutrition Section */}
                 <div>
                     <h2 className="text-xl md:text-2xl font-bold mb-3">Nutritional & Medicinal Value</h2>
                     <ul className="space-y-2 text-gray-600">
@@ -105,7 +109,6 @@ const KolaNut = () => {
                     </ul>
                 </div>
 
-                {/* Properties */}
                 <div>
                     <h2 className="text-xl md:text-2xl font-bold mb-3">Kola Nut Characteristics</h2>
                     <ul className="space-y-2 text-gray-600">
@@ -126,7 +129,6 @@ const KolaNut = () => {
                     </ul>
                 </div>
 
-                {/* Uses */}
                 <div>
                     <h2 className="text-xl md:text-2xl font-bold mb-3">Uses of Kola Nuts</h2>
                     <ul className="space-y-2 text-gray-600">
@@ -147,42 +149,42 @@ const KolaNut = () => {
                     </ul>
                 </div>
 
-                 <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                     <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
+                <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                        {[
-                            { title: "Premium Quality", text: "We source only the finest cocoa beans, ensuring top-grade quality in every batch." },
-                            { title: "Eco-Friendly Processing", text: "Our techniques minimize environmental impact while maximizing efficiency." },
-                            { title: "Experienced Team", text: "Our skilled professionals ensure consistent excellence." },
-                            { title: "Timely Delivery", text: "We prioritize reliability, ensuring your orders arrive on time." },
-                            { title: "Customer Satisfaction", text: "Expect responsive support and tailored services." },
-                            { title: "Global Standards", text: "We comply with international export and quality benchmarks." }
-                        ].map(({ title, text }, i) => (
-                            <div
-                                key={i}
-                                className="bg-white rounded-2xl cursor-pointer p-6 shadow-md hover:shadow-xl transition border border-gray-200 hover:border-transparent hover:bg-gradient-to-r from-[#cc2837]/10 to-[#cc2837]/5"
+                        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                            {[
+                                { title: "Premium Quality", text: "We source only the finest cocoa beans, ensuring top-grade quality in every batch." },
+                                { title: "Eco-Friendly Processing", text: "Our techniques minimize environmental impact while maximizing efficiency." },
+                                { title: "Experienced Team", text: "Our skilled professionals ensure consistent excellence." },
+                                { title: "Timely Delivery", text: "We prioritize reliability, ensuring your orders arrive on time." },
+                                { title: "Customer Satisfaction", text: "Expect responsive support and tailored services." },
+                                { title: "Global Standards", text: "We comply with international export and quality benchmarks." }
+                            ].map(({ title, text }, i) => (
+                                <div
+                                    key={i}
+                                    className="bg-white rounded-2xl cursor-pointer p-6 shadow-md hover:shadow-xl transition border border-gray-200 hover:border-transparent hover:bg-gradient-to-r from-[#cc2837]/10 to-[#cc2837]/5"
+                                >
+                                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+                                    <p className="text-gray-600 text-sm">{text}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-12">
+                            <a
+                                href="https://wa.me/2348123456789"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"
                             >
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-                                <p className="text-gray-600 text-sm">{text}</p>
-                            </div>
-                        ))}
+                                Make Enquiry
+                            </a>
+                        </div>
+                        <SimilarProducts />
                     </div>
-
-                    <div className="mt-12">
-                        <a
-                            href="https://wa.me/2348123456789"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"
-                        >
-                            Make Enquiry
-                        </a>
-                    </div>
-                    <SimilarProducts/>
                 </div>
-            </div>
             </section>
         </div>
     );
