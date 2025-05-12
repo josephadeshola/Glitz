@@ -65,6 +65,7 @@ const kernelsProductPage = () => {
                                 ))}
                             </div>
                         </div>
+                        
                         <section className="bg-white">
                             <Footer
                                 heading="Partner with Us for Seamless Agro-community Trade"

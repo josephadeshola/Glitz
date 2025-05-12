@@ -25,8 +25,8 @@ export default function Page() {
           {product.detailComp}
         </div>
       )}
+      {/* <Footer /> */}
        </div>
-      <Footer />
     </>
   );
 }

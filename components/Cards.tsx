@@ -11,77 +11,81 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import Link from "next/link";
+import products from "@/data/products";
 
-const productData = [
-  {
-    title: "Raw Cashew Nuts",
-    description: "High-yield RCN for food and industrial use.",
-    image: "/images/selfcashew.png",
-  },
-  {
-    title: "Cashew Kernels",
-    description: "High-yield RCN for food and industrial use.",
-    image: "/images/chatcashew.webp",
-  },
-  {
-    title: "Cocoa",
-    description: "Fermented beans for premium chocolate.",
-    image: "/images/cocoa.png",
-  },
-  {
-    title: "Cassava Chips",
-    description: "Sun-dried, high-starch chips for ethanol.",
-    image: "/images/cassava-chips.png",
-  },
-  {
-    title: "Shea Nuts",
-    description: "Organic, butter-grade, traceable origin.",
-    image: "/images/shea-nuts.png",
-  },
-  {
-    title: "Yam",
-    description: "Cleaned & hulled. High oil content.",
-    image: "/images/yam.png",
-  },
-];
+// const productData = [
+//   {
+//     title: "Raw Cashew Nuts",
+//     description: "High-yield RCN for food and industrial use.",
+//     image: "/images/selfcashew.png",
+//     slug:"raw-cashew-nuts"
 
-const stepTwoProduct = [
-  {
-    title: "Maize",
-    description: "Organic, butter-grade, traceable origin.",
-    image: "/images/maize.png",
-  },
-  {
-    title: "Tiger nut",
-    description: "Cleaned & hulled. High oil content.",
-    image: "/images/tiger-nut.png",
-  },
-  {
-    title: "bitter kola",
-    description: "GMO-free, protein-rich.",
-    image: "/images/bitter-kola.png",
-  },
-  {
-    title: "kola nut",
-    description: "Organic, butter-grade, traceable origin.",
-    image: "/images/kola-nut.png",
-  },
-  {
-    title: "Groundnut",
-    description: "Cleaned & hulled. High oil content.",
-    image: "/images/groundnut.png",
-  },
-  {
-    title: "Garlic",
-    description: "GMO-free, protein-rich.",
-    image: "/images/garlic.png",
-  },
-  {
-    title: "Ginger",
-    description: "Organic, butter-grade, traceable origin.",
-    image: "/images/ginger1.png",
-  },
-];
+//   },
+//   {
+//     title: "Cashew Kernels",
+//     description: "High-yield RCN for food and industrial use.",
+//     image: "/images/chatcashew.webp",
+//   },
+//   {
+//     title: "Cocoa",
+//     description: "Fermented beans for premium chocolate.",
+//     image: "/images/cocoa.png",
+//   },
+//   {
+//     title: "Cassava Chips",
+//     description: "Sun-dried, high-starch chips for ethanol.",
+//     image: "/images/cassava-chips.png",
+//   },
+//   {
+//     title: "Shea Nuts",
+//     description: "Organic, butter-grade, traceable origin.",
+//     image: "/images/shea-nuts.png",
+//   },
+//   {
+//     title: "Yam",
+//     description: "Cleaned & hulled. High oil content.",
+//     image: "/images/yam.png",
+//   },
+// ];
+
+// const stepTwoProduct = [
+//   {
+//     title: "Maize",
+//     description: "Organic, butter-grade, traceable origin.",
+//     image: "/images/maize.png",
+//   },
+//   {
+//     title: "Tiger nut",
+//     description: "Cleaned & hulled. High oil content.",
+//     image: "/images/tiger-nut.png",
+//   },
+//   {
+//     title: "bitter kola",
+//     description: "GMO-free, protein-rich.",
+//     image: "/images/bitter-kola.png",
+//   },
+//   {
+//     title: "kola nut",
+//     description: "Organic, butter-grade, traceable origin.",
+//     image: "/images/kola-nut.png",
+//   },
+//   {
+//     title: "Groundnut",
+//     description: "Cleaned & hulled. High oil content.",
+//     image: "/images/groundnut.png",
+//   },
+//   {
+//     title: "Garlic",
+//     description: "GMO-free, protein-rich.",
+//     image: "/images/garlic.png",
+//   },
+//   {
+//     title: "Ginger",
+//     description: "Organic, butter-grade, traceable origin.",
+//     image: "/images/ginger1.png",
+//   },
+// ];
 
 const Cards = () => {
   const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
@@ -140,8 +144,9 @@ const Cards = () => {
           modules={[Autoplay]}
           className="lg:px-4"
         >
-          {productData.map((item, index) => (
+          {products.map((item, index) => (
             <SwiperSlide key={index}>
+              <Link href={`/products/${item.slug}`}>
               <div className="p-4">
                 <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
                   <div className="mx-auto lg:w-72">
@@ -164,6 +169,7 @@ const Cards = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -186,7 +192,7 @@ const Cards = () => {
           modules={[Autoplay]}
           className="lg:px-4"
         >
-          {stepTwoProduct.map((item, index) => (
+          {products.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="p-4">
                 <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">

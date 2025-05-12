@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
+import SimilarProducts from "./SimilarProducts";
 
 const Cocoa = () => {
     return (
         <div className="bg-white text-gray-800">
-            {/* Hero Section */}
             <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
                 <Image
                     src="/images/chatcocoa.webp"
@@ -30,7 +30,6 @@ const Cocoa = () => {
                 </div>
             </section>
 
-            {/* Main Content Section */}
             <section className="px-4 md:px-8 lg:px-16 py-10 space-y-12">
                 <div>
                     <p className="font-bold text-3xl">Exporter of Cocoa Beans In Nigeria</p>
@@ -92,7 +91,7 @@ const Cocoa = () => {
             {/* Why Choose Us Section */}
             <div className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12">Why Choose Us</h2>
+                    <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {[
@@ -123,10 +122,9 @@ const Cocoa = () => {
                             Make Enquiry
                         </a>
                     </div>
+            <SimilarProducts/>
                 </div>
             </div>
-
-            <Footer />
         </div>
     );
 };

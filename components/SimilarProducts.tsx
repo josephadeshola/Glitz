@@ -12,8 +12,8 @@ import 'swiper/css/pagination';
 
 const SimilarProducts = () => {
   return (
-    <section className="from-red-800 lg:mt-36 rounded-t-large to-white">
-        <p className="text-[#CC2837] font-bold lg:text-5xl text-3xl text-center">Similar Products</p>
+    <section className="from-red-800 lg:mt-20 rounded-t-large to-white">
+        <p className="text-[#CC2837] font-medium lg:text-5xl mt-5 text-3xl text-center">Similar Products</p>
       <div className="py-10 px-4 md:px-12 lg:px-20">
         <Swiper
           modules={[Autoplay, Pagination]}
