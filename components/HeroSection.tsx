@@ -18,33 +18,32 @@ const heroImages = [
     animationClass: "fade-in",
   },
   {
-    image: "/images/chatcashew1.webp",
+    image: "/images/cashew-tree2.avif",
     heading: "Quality Raw Cashew Nuts Ready For Export",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "slide-in",
   },
   {
     image: "/images/chatcashew.webp",
-    heading:
-      "Premium Sun-Dried Cashew Kernels for Industrial Use and Export.",
+    heading: "Premium Cashew Kernels for Industrial Use and Export.",
     subtext: "Sun-dried and unprocessed, ideal for export and processing.",
     animationClass: "zoom-in",
   },
   {
     image: "/images/chatshea.webp",
-    heading: "Rich in natural fats, widely used in cosmetics and skincare.",
+    heading: "Shea Nuts – Rich in Natural Fats for Skincare & Cosmetics",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "fade-left",
   },
   {
     image: "/images/chatSesame.webp",
-    heading: "Oil-rich seeds, great for food production and seasoning.",
+    heading: "Sesame Seeds – Oil-Rich and Perfect for Food & Extraction",
     subtext: "Oil-rich and clean, great for food and oil extraction.",
     animationClass: "flip-in",
   },
   {
     image: "/images/chatsoya.webp",
-    heading: "Protein-packed and versatile—ideal for feed, tofu, and more.",
+    heading: "Soybeans – High Protein for Feed, Tofu & Food Production",
     subtext: "Nutritious, versatile, and ideal for feed or food.",
     animationClass: "slide-up ",
   },
@@ -127,9 +126,9 @@ const HeroSection = () => {
             <p className="max-w-2xl lg:mt-5 mt-2 lg:text-lg text-md">{currentSlide.subtext}</p>
             <div className="mt-6 flex gap-4">
               <button className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
-               <Link href="/products">
-                View Product
-               </Link>
+                <Link href="/products">
+                  View Product
+                </Link>
               </button>
               <button className="border text-sm border-white hover:bg-white hover:text-black transition px-6 py-3 rounded-full font-semibold">
                 Request a Quote

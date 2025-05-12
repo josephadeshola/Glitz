@@ -10,15 +10,9 @@ const AboutPage = () => {
   const teamMembers = [
     {
       name: "OLUWATOSIN ADEBAYO",
-      role: "Managing Director (MD)",
-      image: "/images/customer.jpg",
+      role: "CEO/MD",
+      image: "/images/CEO.jpg",
       ambition: "Driving operational excellence with visionary leadership.",
-    },
-    {
-      name: "OLUWATOSIN ADEBAYO",
-      role: "Chief Executive Officer (CEC)",
-      image: "/images/customer.jpg",
-      ambition: "Empowering innovation and shaping the future of the company.",
     },
   ];
   return (
@@ -183,8 +177,8 @@ const AboutPage = () => {
               <p className="text-sm text-gray-500 py-3 lg:py-2 mt-1">
                 {member.role}
               </p>
-              <p className="lg:text-lg text-center text-md  text-gray-700 mt-1">
-                {member.ambition}
+              <p className="lg:text-lg text-center text-md italic text-gray-700 mt-1">
+                "{member.ambition}"
               </p>
             </div>
           ))}

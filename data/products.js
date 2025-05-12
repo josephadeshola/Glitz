@@ -1,126 +1,219 @@
+import BitterKola from "@/components/BitterKola";
+import Cassava from "@/components/Cassava";
+import Cocoa from "@/components/Cocoa";
+import Garlic from "@/components/Garlic";
+import Ginger from "@/components/Ginger";
+import GroundNut from "@/components/GroundNut";
+import KolaNut from "@/components/KolaNut";
+import Maize from "@/components/Maize";
+import RawCashew from "@/components/RawCashew";
+import SheaNut from "@/components/SheaNut";
+import TigerNut from "@/components/TigerNut";
+import Yam from "@/components/Yam";
 
 const products = [
-    {
-        name: "Raw Cashew Nuts",
-        slug: "raw-cashew-nuts",
-        image: "/images/productview.png",
-        description: "Raw Cashew Nuts - Unprocessed and ready for industrial use.",
-        specification: {
-            paramiter: "Raw Cashew Nuts Quality Parameters",
-            productType: "Origin: Nigeria, Benin, Ghana, IVC.",
-            ratio: "Kernel Output Ratio: 48 lbs minimum",
-            nutCount: "190",
-            moisture: " 10%",
-            broken: "max 10%",
-            lowerSizeGrade: "Defective: < 10%",
-            defects: "Place Order Now",
-        },
+  {
+    name: "Raw Cashew Nuts",
+    title: "Raw Cashew Nuts",
+    description: "High-yield RCN for food and industrial use.",
+    slug: "raw-cashew-nuts",
+    image: "/images/neatcashew.webp",
+    detailComp:<RawCashew/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "W-180 Cashew",
-        slug: "w-180-cashew",
-        image: "/images/W-180-1.png",
-        description: "High-quality W-180 Cashew for export.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "White, light yellow, pale ivory, or light ash-grey.",
-            nutCount: "140-180/pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-            lowerSizeGrade: "max 10%",
-            defects: "8% max in total.",
-        },
+  },
+  {
+    name: "Cashew Kernel",
+    title: "Cashew Kernels",
+    description: "High-yield RCN for food and industrial use.",
+    slug: "kernels",
+    image: "/images/chatcashew.webp",
+  },
+  {
+    name: "Cocoa",
+    title: "Cocoa",
+    description: "Fermented beans for premium chocolate.",
+    slug: "cocoa",
+    image: "/images/chatcocoa.webp",
+    detailComp:<Cocoa/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "W-210 Cashew",
-        slug: "w-210-cashew",
-        image: "/images/W-210-1.png",
-        description: "Premium W-210 grade cashew with uniform size and taste.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "White, light yellow, pale ivory, or light ash-grey.",
-            nutCount: "180-210/ pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-            lowerSizeGrade: "max 10%",
-            defects: "8% max in total.",
-        },
+  },
+  {
+    name: "Cassave-Chips",
+    title: "Cassava Chips",
+    description: "Sun-dried, high-starch chips for ethanol.",
+    slug: "cassava-chips",
+    image: "/images/cassava-chips.png",
+    detailComp:<Cassava/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "W-240 Cashew",
-        slug: "w-240-cashew",
-        image: "/images/W-240-1.png",
-        description: "Export-quality W-240 cashew kernels.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "White, light yellow, pale ivory, or light ash-grey.",
-            nutCount: "220-240/ pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-            lowerSizeGrade: "max 10%",
-            defects: "8% max in total.",
-        },
+  },
+  {
+    name: "Shea-Nut",
+    title: "Shea Nuts",
+    description: "Organic, butter-grade, traceable origin.",
+    slug: "shea-nuts",
+    image: "/images/shea-nuts.png",
+    detailComp:<SheaNut/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "W-320 Cashew",
-        slug: "w-320-cashew",
-        image: "/images/W-320-1.png",
-        description:
-            "Most popular W-320 cashew grade, rich in taste and nutrition.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "White, light yellow, pale ivory, or light ash-grey.",
-            nutCount: "300-320/pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-            lowerSizeGrade: "max 10%",
-            defects: "8% max in total.",
-        },
+  },
+  {
+    name: "Yam",
+    title: "Yam",
+    description: "Cleaned & hulled. High oil content.",
+    slug: "yam",
+    image: "/images/yam.png",
+    detailComp:<Yam/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "W-450 Cashew",
-        slug: "w-450-cashew",
-        image: "/images/W-450-1.png",
-        description: "Budget-friendly W-450 cashew grade.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "White, light yellow, pale ivory, or light ash-grey.",
-            nutCount: "400-450/ pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-            lowerSizeGrade: "max 10%",
-            defects: "8% max in total.",
-        },
+  },
+
+  {
+    name: "Maize",
+    title: "Maize",
+    description: "Organic, butter-grade, traceable origin.",
+    slug: "maize",
+    image: "/images/maize.png",
+    detailComp:<Maize/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "LP Cashew",
-        slug: "lp-cashew",
-        image: "/images/LP-1.png",
-        description: "Broken cashew pieces ideal for confectionery and bakery.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "Yellow, light brown, light ivory, light ash-grey or deep ivory. Pieces may show light brown speckles or blemishes on the surface, provided that not more than 20 percent of the",
-            size: " Size description: Large pieces. Passing through Sieve",
-            noRetained: "Numbers ≥8.0 mm and retained on Sieve Number =5.0 mm.",
-            moisture: "max 5%",
-            lowerSizeGrade: "max 5%",
-            defects: "11% max in total.",
-        },
+  },
+  {
+    name: "Tiger-Nut",
+    title: "Tiger nut",
+    description: "Cleaned & hulled. High oil content.",
+    slug: "tiger-nut",
+    image: "/images/tiger-nut.png",
+    detailComp:<TigerNut/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
-    {
-        name: "WS Cashew",
-        slug: "ws-cashew",
-        image: "/images/ws-1.png",
-        description: "White splits cashew for use in granola, snacks, and more.",
-        specification: {
-            paramiter: "Product Specification",
-            productType: "Numbers ≥8.0 mm and retained on Sieve Number =5.0 mm.",
-            size: " One half of a cashew kernel that has been split lengthwise, provided not more than 1/8 of this cotyledon has been broken off.",
-            nutCount: "140-180/pound",
-            moisture: "max 5%",
-            broken: "max 10%",
-        },
+  },
+  {
+    name: "Bitter-Kola",
+    title: "bitter kola",
+    description: "GMO-free, protein-rich.",
+    slug: "bitter-kola",
+    image: "/images/bitter-kola.png",
+    detailComp:<BitterKola/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
     },
+  },
+  {
+    name: "Kola-Nut",
+    title: "kola nut",
+    description: "Organic, butter-grade, traceable origin.",
+    slug: "kola-nut",
+    image: "/images/kola-nut.png",
+    detailComp:<KolaNut/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
+    },
+  },
+  {
+    name: "Ground-Nut",
+    title: "Groundnut",
+    description: "Cleaned & hulled. High oil content.",
+    slug: "ground-nut",
+    image: "/images/groundnut.png",
+    detailComp:<GroundNut/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
+    },
+  },
+  {
+    name: "Garlic",
+    title: "Garlic",
+    description: "GMO-free, protein-rich.",
+    slug: "garlic",
+    image: "/images/garlic.png",
+    detailComp:<Garlic/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
+    },
+  },
+  {
+    name: "Ginger",
+    title: "Ginger",
+    description: "Organic, butter-grade, traceable origin.",
+    slug: "ginger",
+    image: "/images/ginger1.png",
+    detailComp:<Ginger/>,
+    details: {
+      overview:
+        "Still Morris Consults Limited is a leading Raw Cashew Nuts Exporter and Supplier in Nigeria. We offer cashew nuts that surpass expectations in taste, freshness, and quality. Partner with us for a seamless and rewarding cashew nuts export experience. We take fostering relationships with all our clients very seriously, making sure that we deliver Raw Cashew nuts of the highest standard to their businesses. The satisfaction of our clients is foremost in our mind.",
+      whatIs:
+        "Raw cashew nuts are not technically nuts. In fact, they are the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit, which is why it is often referred to as a nut rather than a seed. The nut is protected by a strong shell and undergoes a series of treatments to remove the shell and toxins before consumption. It is frequently roasted or salted and then processed into various snacks.",
+      specs:
+        "Export Specifications for Raw Cashew Nuts include:\n- Moisture content below 10%\n- Nut count: 170–190 per kg\n- Out-turn: minimum 48 lbs\n- Foreign matter: less than 1%\n- Packaging: 80kg jute bags",
+    },
+  },
 ];
 
 export default products;

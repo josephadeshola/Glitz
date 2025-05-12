@@ -3,16 +3,16 @@ import Image from "next/image";
 import { Button } from "@heroui/button";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import products from "../../data/products"
-import { CiStar } from "react-icons/ci";
+import products from "../../data/kernelProducts"
 
-const ProductPage = () => {
+    const kernelsProductPage = () => {
+
   return (
     <>
       <div className="relative w-full overflow-auto">
         <div className="fixed top-0 left-0 w-full h-[70vh] z-0">
           <Image
-            src="/images/productview.png"
+            src="/images/chatcashew.webp"
             fill
             alt="Product Background"
             className="object-cover"
@@ -24,40 +24,35 @@ const ProductPage = () => {
         <div className="relative z-10 pt-[95vh]">
           <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[80vh] lg:-mt-[80vh] mb-12">
             <h1 data-aos="zoom-in" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Products
+              Premium Cashew Kernels
             </h1>
+            <p data-aos="fade-up" className="text-md md:text-lg leading-relaxed mb-6">
+              Sustainably sourced, expertly processed, and packed for freshness.
+            </p>
           </div>
 
           <section className="bg-gradient-to-b from-red-800 lg:mt-36 rounded-t-large to-white">
             <div className="py-16 px-4 md:px-12 lg:px-32">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                 {products.map((product, index) => (
-                  <Link key={index} href={`/products/${product.slug}`}>
+                  <Link key={index} href={`/kernels/${product.slug}`}>
                     <div
-                      data-aos="fade-up"
+                    data-aos="fade-up"
                       key={index}
-                      className="bg-white border  opacity-90 cursor-pointer rounded shadow-lg hover:shadow-2xl overflow-hidden animate-fadeIn"
+                      className="bg-white opacity-90 cursor-pointer rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden animate-fadeIn"
                     >
                       <div className="relative w-full h-48">
                         <Image
-                          data-aos="zoom-in"
+                        data-aos="zoom-in"
                           src={product.image}
                           alt={product.name}
                           fill
-                          className="object-cover hover:opacity-100 transform hover:scale-105 transition duration-500 ease-in-out rounded"
+                          className="object-cover hover:opacity-100 transform hover:scale-105 transition duration-500 ease-in-out rounded-t-2xl"
                         />
                       </div>
-                      <div className="p-5 text-center">
-                        <div className="text-black font-semibold text-xl">{product.title}</div>
-                        <div className="flex justify-center text-xl mt-3 text-[#CC2837]">
-                          <CiStar />
-                          <CiStar />
-                          <CiStar />
-                          <CiStar />
-                          <CiStar />
-                        </div>
-                        <Button data-aos="zoom-in" className="text-md mt-5 font-semibold rounded-none border-2 hover:bg-[#FFFFFF] hover:text-[#CC2837] text-white  bg-[#CC2837]">
-                          Make Enquiry
+                      <div className="p-5">
+                        <Button data-aos="zoom-in" className="text-md font-semibold rounded-full border-2 hover:bg-[#CC2837] hover:text-white border-[#CC2837] text-[#CC2837] bg-white">
+                          {product.name}
                         </Button>
                       </div>
                     </div>
@@ -78,4 +73,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default kernelsProductPage;

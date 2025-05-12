@@ -58,20 +58,6 @@ export default function NavbarComponent() {
         </NavbarBrand>
       </NavbarContent>
 
-      {/* <NavbarContent>
-  <NavbarBrand className="text-white">
-    <Link href="/" className="flex items-center">
-      <img
-        src="/images/download.png"
-        alt="Glitz Commodities Logo"
-        className="h-20 w-auto object-contain"
-      />
-    </Link>
-  </NavbarBrand>
-</NavbarContent> */}
-
-
-
       <NavbarContent className="hidden sm:flex gap-7" justify="center">
         <>
           {items.map(({ name, path }, index) => {
@@ -86,8 +72,8 @@ export default function NavbarComponent() {
                       <Link
                         href="/products"
                         className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${pathname.startsWith("/products")
-                            ? "text-[#CC2837] font-semibold underline"
-                            : "text-white"
+                          ? "text-[#CC2837] font-semibold underline"
+                          : "text-white"
                           }`}
                       >
                         <div className="flex items-center">
@@ -97,17 +83,17 @@ export default function NavbarComponent() {
                       </Link>
                     </div>
 
-                    <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
+                    {/* <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
                       {products.map((product) => (
                         <Link
                           key={product.slug}
                           href={`/products/${product.slug}`}
                           className="block px-4 py-3 hover:bg-gray-100"
                         >
-                          {product.name}
+                          {product.title}
                         </Link>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </NavbarItem>
               );
@@ -118,8 +104,8 @@ export default function NavbarComponent() {
                 <Link
                   href={path}
                   className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${isActive
-                      ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
-                      : "text-white"
+                    ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
+                    : "text-white"
                     }`}
                 >
                   {name}
@@ -136,10 +122,11 @@ export default function NavbarComponent() {
             as={Link}
             className="rounded-full font-semibold text-[#FFFFFF] bg-[#CC2837] transition-transform duration-300 hover:scale-105"
             data-aos="bounce"
-            href="#"
+            href="https://wa.me/2348136851352"
+            target="_blank"
             variant="flat"
           >
-            Book a session
+            REQUEST SERVICE
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -162,8 +149,8 @@ export default function NavbarComponent() {
                       setIsMenuOpen(false);
                     }}
                     className={`text-lg ${pathname.startsWith("/products")
-                        ? "text-[#CC2837] font-semibold"
-                        : "text-white"
+                      ? "text-[#CC2837] font-semibold"
+                      : "text-white"
                       }`}
                   >
                     Product
@@ -173,7 +160,7 @@ export default function NavbarComponent() {
                     onClick={() => setProductDropdownOpen((prev) => !prev)}
                   />
                 </div>
-                {productDropdownOpen && (
+                {/* {productDropdownOpen && (
                   <div className="ml-6 mt-3 space-y-2">
                     {products.map((product) => (
                       <NavbarMenuItem key={product.slug} onClick={() => setIsMenuOpen(false)}>
@@ -189,7 +176,7 @@ export default function NavbarComponent() {
                       </NavbarMenuItem>
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
             );
           }

@@ -16,7 +16,7 @@ const productData = [
   {
     title: "Raw Cashew Nuts",
     description: "High-yield RCN for food and industrial use.",
-    image: "/images/chatcashew1.webp",
+    image: "/images/selfcashew.png",
   },
   {
     title: "Cashew Kernels",
@@ -118,7 +118,7 @@ const Cards = () => {
     <>
       <div data-aos="fade-up" className="text-black lg:py-20 py-14">
         <p className="text-center lg:text-5xl text-[#CC2837] text-3xl font-bold ">
-          Featured Products
+          Featured and Export Products
         </p>
         <p className="text-center lg:text-lg text-sm mx-auto lg:w-1/2 mt-3">
           Carefully sourced, expertly processed—our top-selling agricultural
