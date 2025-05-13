@@ -29,7 +29,7 @@ const Ginger = () => {
                                 Message Us
                             </Button>
                         </Link>
-                        <Link href="https://wa.me/2348123456789">
+                        <Link href="tel:2348123456789">
                             <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Contact Us
                             </Button>
@@ -37,8 +37,6 @@ const Ginger = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Details Section */}
             <section className="px-4 md:px-8 lg:px-16 py-10 space-y-12">
                 <div>
                     <p className="font-bold text-3xl">Leading Ginger Exporter from Nigeria</p>

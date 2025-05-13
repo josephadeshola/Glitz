@@ -28,7 +28,7 @@ const KolaNut = () => {
                                 Message Us
                             </Button>
                         </Link>
-                        <Link href="https://wa.me/2348123456789">
+                        <Link href="tel:2348123456789">
                             <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Contact Us
                             </Button>

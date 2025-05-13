@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
@@ -9,7 +8,6 @@ import Link from "next/link";
 const Yam = () => {
     return (
         <div className="bg-white text-gray-800">
-            {/* Hero Section */}
             <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
                 <Image
                     src="/images/yam.png"
@@ -30,7 +28,7 @@ const Yam = () => {
                                 Message Us
                             </Button>
                         </Link>
-                        <Link href="https://wa.me/2348123456789">
+                        <Link href="tel:2348123456789">
                             <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Contact Us
                             </Button>

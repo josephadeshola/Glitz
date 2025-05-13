@@ -71,10 +71,11 @@ export default function NavbarComponent() {
                     <div className="flex items-center cursor-pointer text-white hover:text-[#CC2837]">
                       <Link
                         href="/products"
-                        className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${pathname.startsWith("/products")
-                          ? "text-[#CC2837] font-semibold underline"
-                          : "text-white"
-                          }`}
+                        className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${
+                          pathname.startsWith("/products")
+                            ? "text-[#CC2837] font-semibold underline"
+                            : "text-white"
+                        }`}
                       >
                         <div className="flex items-center">
                           <p>Product</p>
@@ -83,12 +84,12 @@ export default function NavbarComponent() {
                       </Link>
                     </div>
 
-                    <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4  group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px]">
+                    <div className="absolute top-full left-0 mt-0 hidden font-semibold text-left ms-4 group-hover:block bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 min-w-[160px] p-4 gap-2">
                       {products.map((product) => (
                         <Link
                           key={product.slug}
                           href={`/products/${product.slug}`}
-                          className="block px-4 py-3 hover:bg-gray-100"
+                          className="block px-4 py-2 hover:bg-gray-100 rounded transition"
                         >
                           {product.title}
                         </Link>
@@ -103,10 +104,11 @@ export default function NavbarComponent() {
               <NavbarItem key={`${name}-${index}`}>
                 <Link
                   href={path}
-                  className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${isActive
-                    ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
-                    : "text-white"
-                    }`}
+                  className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${
+                    isActive
+                      ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
+                      : "text-white"
+                  }`}
                 >
                   {name}
                 </Link>
@@ -148,10 +150,11 @@ export default function NavbarComponent() {
                       setProductDropdownOpen(false);
                       setIsMenuOpen(false);
                     }}
-                    className={`text-lg ${pathname.startsWith("/products")
-                      ? "text-[#CC2837] font-semibold"
-                      : "text-white"
-                      }`}
+                    className={`text-lg ${
+                      pathname.startsWith("/products")
+                        ? "text-[#CC2837] font-semibold"
+                        : "text-white"
+                    }`}
                   >
                     Product
                   </Link>
@@ -160,7 +163,7 @@ export default function NavbarComponent() {
                     onClick={() => setProductDropdownOpen((prev) => !prev)}
                   />
                 </div>
-                {/* {productDropdownOpen && (
+                {productDropdownOpen && (
                   <div className="ml-6 mt-3 space-y-2">
                     {products.map((product) => (
                       <NavbarMenuItem key={product.slug} onClick={() => setIsMenuOpen(false)}>
@@ -176,17 +179,22 @@ export default function NavbarComponent() {
                       </NavbarMenuItem>
                     ))}
                   </div>
-                )} */}
+                )}
               </div>
             );
           }
 
           return (
-            <NavbarMenuItem className="mt-4" key={`${name}-${index}`} onClick={() => setIsMenuOpen(false)}>
+            <NavbarMenuItem
+              className="mt-4"
+              key={`${name}-${index}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <Link
                 href={path}
-                className={`w-full text-lg ${isActive ? "text-[#CC2837] font-semibold" : "text-white"
-                  }`}
+                className={`w-full text-lg ${
+                  isActive ? "text-[#CC2837] font-semibold" : "text-white"
+                }`}
               >
                 {name}
               </Link>
@@ -194,7 +202,6 @@ export default function NavbarComponent() {
           );
         })}
       </NavbarMenu>
-
     </Navbar>
   );
 }
