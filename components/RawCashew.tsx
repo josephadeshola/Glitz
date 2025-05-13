@@ -42,20 +42,37 @@ const RawCashew = () => {
                 </div>
             </section>
 
-           
+
             <section className="px-4 md:px-8 lg:px-16 py-10 space-y-12">
                 <div>
                     <p className="font-bold text-3xl">Exporter of Raw Cashew from Nigeria</p>
                     <p className="text-gray-700 mt-4 leading-relaxed">Nigeria is one of the largest exporters of raw cashew nuts globally. The cashew industry has become a vital part of the country’s non-oil export economy, offering employment and economic benefits to thousands. Growing international demand, driven by the nut’s nutritional and commercial value, has solidified Nigeria’s position as a key supplier.</p>
                     <p className="mt-4">With a strong production base, reliable exporters, and supportive regulations, Nigeria’s cashew export sector continues to grow. It offers rich opportunities for investors and trade partners looking to tap into the global demand for high-quality raw cashew nuts.</p>
                 </div>
-                <div>
-                    <h2 className="text-xl md:text-2xl font-bold mb-3">What is Raw Cashew Nuts</h2>
-                    <p className="text-gray-700 leading-relaxed">
-                        Raw cashew nuts are not technically nuts. In fact, it is the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit. Perhaps this is why it is referred to as a nut rather than a seed because it does not fit the mold of typical seeds.
+                <div className="lg:flex justify-between">
+                    <div className="lg:w-1/2">
+                        <h2 className="text-xl md:text-2xl font-bold mb-3">What is Raw Cashew Nuts</h2>
+                        <p className="text-gray-700 leading-relaxed">
+                            Raw cashew nuts are not technically nuts. In fact, it is the seed of the cashew fruit from the cashew tree. The cashew nut is linked to the base of the cashew fruit. Perhaps this is why it is referred to as a nut rather than a seed because it does not fit the mold of typical seeds.
 
-                        The cashew nut is protected by a strong shell. And before it is consumed, it normally goes through a series of treatments to remove the shell and any poisons. It is frequently roasted or salted and then processed into various snacks.
-                    </p>
+                            The cashew nut is protected by a strong shell. And before it is consumed, it normally goes through a series of treatments to remove the shell and any poisons. It is frequently roasted or salted and then processed into various snacks.
+                        </p>
+                    </div>
+                    <section className="px-4 w-1/2 md:px-8">
+                        <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Raw Cashew Nuts</h2>
+                        <Zoom>
+                            <Image
+                                src="/images/neatcashew.webp"
+                                width={900}
+                                height={400}
+                                alt="Raw Cashew Nuts"
+                                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+                            />
+                        </Zoom>
+                        <p className="text-sm text-gray-500 mt-2">
+                            Click the image to zoom.
+                        </p>
+                    </section>
                 </div>
 
                 <div className="overflow-x-auto mt-6">
@@ -243,7 +260,7 @@ const RawCashew = () => {
             </section>
             <div className="lg:py-20 py-7 bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                     <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
+                    <h2 className="text-3xl md:text-5xl text-[#CC2837] font-medium mb-12">Why Choose Us</h2>
 
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {[
@@ -274,7 +291,7 @@ const RawCashew = () => {
                             Make Enquiry
                         </a>
                     </div>
-                    <SimilarProducts/>
+                    <SimilarProducts />
                 </div>
             </div>
         </div>

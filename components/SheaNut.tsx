@@ -11,7 +11,6 @@ import "react-medium-image-zoom/dist/styles.css";
 const SheaNut = () => {
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
       <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
         <Image
           src="/images/sheanut.avif"
@@ -49,11 +48,28 @@ const SheaNut = () => {
           </p>
         </div>
 
-        <div>
-          <h2 className="text-xl md:text-2xl font-bold mb-3">What Are Shea Nuts?</h2>
-          <p className="text-gray-700 leading-relaxed">
-            Shea nuts are the seeds of the shea tree (Vitellaria paradoxa), native to Africa. Enclosed in a hard shell, these nuts are rich in oil and are processed to extract shea butter, renowned for its moisturizing properties.
-          </p>
+        <div className="lg:flex justify-between">
+          <div className="lg:w-1/2">
+            <h2 className="text-xl md:text-2xl font-bold mb-3">What Are Shea Nuts?</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Shea nuts are the seeds of the shea tree (Vitellaria paradoxa), native to Africa. Enclosed in a hard shell, these nuts are rich in oil and are processed to extract shea butter, renowned for its moisturizing properties.
+            </p>
+          </div>
+          <section className="px-4 w-1/2 md:px-8">
+            <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Shea Nuts</h2>
+            <Zoom>
+              <Image
+                src="/images/sheanut.avif"
+                width={900}
+                height={400}
+                alt="Shea Nuts"
+                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+              />
+            </Zoom>
+            <p className="text-sm text-gray-500 mt-2">
+              Click the image to zoom.
+            </p>
+          </section>
         </div>
 
         <div>

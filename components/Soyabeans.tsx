@@ -72,7 +72,7 @@ const Soyabeans = () => {
             industrial sectors.
           </p>
         </div>
-        <section className="px-4 lg:w-1/2 md:px-8">
+        <section className="px-4 w-1/2 md:px-8">
             <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Soya Beans</h2>
             <Zoom>
               <Image
