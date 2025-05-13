@@ -58,7 +58,7 @@ const RawCashew = () => {
                             The cashew nut is protected by a strong shell. And before it is consumed, it normally goes through a series of treatments to remove the shell and any poisons. It is frequently roasted or salted and then processed into various snacks.
                         </p>
                     </div>
-                    <section className="px-4 w-1/2 md:px-8">
+                    <section className="px-4 lg:w-1/2 md:px-8">
                         <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Raw Cashew Nuts</h2>
                         <Zoom>
                             <Image

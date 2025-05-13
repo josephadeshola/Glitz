@@ -55,7 +55,7 @@ const SheaNut = () => {
               Shea nuts are the seeds of the shea tree (Vitellaria paradoxa), native to Africa. Enclosed in a hard shell, these nuts are rich in oil and are processed to extract shea butter, renowned for its moisturizing properties.
             </p>
           </div>
-          <section className="px-4 w-1/2 md:px-8">
+          <section className="px-4 lg:w-1/2 md:px-8">
             <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Shea Nuts</h2>
             <Zoom>
               <Image
@@ -63,7 +63,7 @@ const SheaNut = () => {
                 width={900}
                 height={400}
                 alt="Shea Nuts"
-                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+                className="rounded-lg lg:h-[60vh] object-cover shadow-md cursor-zoom-in"
               />
             </Zoom>
             <p className="text-sm text-gray-500 mt-2">

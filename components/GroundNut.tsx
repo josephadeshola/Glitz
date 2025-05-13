@@ -57,11 +57,28 @@ const GroundNut = () => {
                     </p>
                 </div>
 
-                <div>
+                <div className="lg:flex justify-between">
+                <div className="lg:w-1/2">
                     <h2 className="text-xl md:text-2xl font-bold mb-3">What Are Groundnuts?</h2>
                     <p className="text-gray-700 leading-relaxed">
                         Groundnuts, also known as peanuts, are edible seeds of the legume family that grow underground. Unlike tree nuts, peanuts develop beneath the soil after pollination. They are rich in nutrients and widely used in both raw and processed forms for human and animal consumption.
                     </p>
+                </div>
+                 <section className="px-4 lg:w-1/2 md:px-8">
+                        <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Ground Nuts</h2>
+                        <Zoom>
+                            <Image
+                                src="/images/groundnutlg.jpg"
+                                width={900}
+                                height={400}
+                                alt="Ground Nuts"
+                                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+                            />
+                        </Zoom>
+                        <p className="text-sm text-gray-500 mt-2">
+                            Click the image to zoom.
+                        </p>
+                    </section>
                 </div>
 
                 <div className="overflow-x-auto mt-6">

@@ -58,36 +58,36 @@ const Soyabeans = () => {
         </div>
 
         <div className="lg:flex justify-between">
-        <div className="lg:w-1/2">
-          <h2 className="text-xl md:text-2xl font-bold mb-3">
-            What are Soya Beans?
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Soya beans are a type of legume native to East Asia, widely grown
-            for their edible beans, which have numerous uses. They are a key
-            source of protein, oil, and bioactive compounds. In Nigeria, soya
-            beans are cultivated predominantly in the Middle Belt and northern
-            regions. They are processed into soy milk, tofu, soy flour, animal
-            feed, and oil, making them highly valuable in both food and
-            industrial sectors.
-          </p>
-        </div>
-        <section className="px-4 w-1/2 md:px-8">
+          <div className="lg:w-1/2">
+            <h2 className="text-xl md:text-2xl font-bold mb-3">
+              What are Soya Beans?
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              Soya beans are a type of legume native to East Asia, widely grown
+              for their edible beans, which have numerous uses. They are a key
+              source of protein, oil, and bioactive compounds. In Nigeria, soya
+              beans are cultivated predominantly in the Middle Belt and northern
+              regions. They are processed into soy milk, tofu, soy flour, animal
+              feed, and oil, making them highly valuable in both food and
+              industrial sectors.
+            </p>
+          </div>
+          <section className="px-4 lg:w-1/2 md:px-8">
             <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Soya Beans</h2>
             <Zoom>
               <Image
                 src="/images/neatsoya.jpg"
                 width={900}
-                height={900}
+                height={400}
                 alt="Soya Beans"
-                className="w-full h-auto rounded-lg shadow-md cursor-zoom-in"
+                className="rounded-lg lg:h-[60vh] object-cover shadow-md cursor-zoom-in"
               />
             </Zoom>
             <p className="text-sm text-gray-500 mt-2">
               Click the image to zoom.
             </p>
           </section>
-          </div>
+        </div>
 
         <div className="overflow-x-auto mt-6">
           <h2 className="text-xl md:text-2xl font-bold mb-3">

@@ -57,7 +57,7 @@ const KolaNut = () => {
                         They are typically bitter when fresh but become milder as they dry. Kola nuts are used in energy drinks, traditional medicine, and cultural rituals, and are known for their ability to fight fatigue and increase alertness.
                     </p>
                 </div>
-                 <section className="px-4 w-1/2 md:px-8">
+                 <section className="px-4 lg:w-1/2 md:px-8">
                         <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Kola Nuts</h2>
                         <Zoom>
                             <Image
