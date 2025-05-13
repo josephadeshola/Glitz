@@ -10,7 +10,7 @@ const kernelsProductPage = () => {
     return (
         <>
             <div className="relative w-full overflow-auto">
-                <div className="fixed top-0 left-0 w-full h-[70vh] z-0">
+                <div className="fixed top-0 left-0 w-full h-[80vh] z-0">
                     <Image
                         src="/images/chatcashew.webp"
                         fill
@@ -22,8 +22,8 @@ const kernelsProductPage = () => {
                 </div>
 
                 <div className="relative z-10 pt-[95vh]">
-                    <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[80vh] lg:-mt-[80vh] mb-12">
-                        <h1 data-aos="zoom-in" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                    <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[85vh] lg:-mt-[80vh] mb-12">
+                        <h1 data-aos="zoom-in" className="text-3xl md:text-4xl lg:text-5xl font-bold lg:mb-4 mb-3">
                             Premium Cashew Kernels
                         </h1>
                             <div className="flex justify-center mt-8 gap-4 flex-wrap">
@@ -40,7 +40,7 @@ const kernelsProductPage = () => {
                     </div>
                     </div>
 
-                    <section className="bg-gradient-to-b from-red-800 lg:mt-36  to-white">
+                    <section className="bg-gradient-to-b rounded-t-lg from-red-800 lg:mt-36  to-white">
                         <div className="py-16 px-4 md:px-12 lg:px-32">
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                                 {products.map((product, index) => (

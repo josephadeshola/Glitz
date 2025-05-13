@@ -18,7 +18,7 @@ const heroImages = [
     animationClass: "fade-in",
   },
   {
-    image: "/images/cashew-tree2.avif",
+    image: "/images/cashewman.webp",
     heading: "Quality Raw Cashew Nuts Ready For Export",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "slide-in",

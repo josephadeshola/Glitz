@@ -34,7 +34,7 @@ const ProductPage = () => {
           <section className="bg-gradient-to-b from-red-800 lg:mt-64 mt-44 rounded-t-large to-white">
             <p
               data-aos="fade-up"
-              className="lg:text-5xl text-2xl font-medium pt-10 mb-5 text-white text-center"
+              className="lg:text-5xl text-3xl font-medium pt-10 mb-5 text-white text-center"
             >
               Products We Export
             </p>
@@ -43,12 +43,10 @@ const ProductPage = () => {
                 {products.map((product, index) => (
                   <Link key={index} href={`/products/${product.slug}`}>
                     <div
-                      // data-aos="fade-up"
                       className="bg-white border opacity-90 cursor-pointer rounded shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300"
                     >
                       <div className="relative w-full lg:h-48 h-40">
                         <Image
-                          // data-aos="zoom-in"
                           src={product.image}
                           alt={product.name}
                           fill
@@ -67,7 +65,6 @@ const ProductPage = () => {
                           <CiStar />
                         </div>
                         <Button
-                          // data-aos="zoom-in"
                           className="text-sm sm:text-md mt-4 font-semibold rounded-none border-2 hover:bg-white hover:text-[#CC2837] text-white bg-[#CC2837]"
                         >
                           Make Enquiry

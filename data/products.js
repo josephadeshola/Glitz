@@ -11,6 +11,7 @@ import CashewKernels from "@/components/CashewKernels";
 import SheaNut from "@/components/SheaNut";
 import TigerNut from "@/components/TigerNut";
 import Yam from "@/components/Yam";
+import Soyabeans from "@/components/Soyabeans";
 
 const products = [
   {
@@ -119,6 +120,14 @@ const products = [
     slug: "ginger",
     image: "/images/ginger1.png",
     detailComp:<Ginger/>,
+  },
+  {
+    name: "Soya Beans",
+    title: "Soya Beans",
+    description: "Organic, butter-grade, traceable origin.",
+    slug: "soya-beans",
+    image: "/images/neatsoya.jpg",
+    detailComp:<Soyabeans/>,
   },
 ];
 
