@@ -156,7 +156,7 @@ export default function NavbarComponent() {
             if (name === "Product") {
               return (
                 <div key="Product" className="mt-4">
-                  <div className="flex items-center justify-between px-">
+                  <div className="flex items-center justify-between">
                     <Link
                       href="/products"
                       onClick={() => {
@@ -176,15 +176,14 @@ export default function NavbarComponent() {
                       onClick={() => setProductDropdownOpen((prev) => !prev)}
                     />
                   </div>
+
                   {productDropdownOpen && (
                     <div className="ml-6 mt-3 space-y-2">
                       {products.map((product) => (
-                        <NavbarMenuItem
-                          key={product.slug}
-                          onClick={() => setIsMenuOpen(false)}
-                        >
+                        <NavbarMenuItem key={product.slug}>
                           <Link
                             href={`/products/${product.slug}`}
+                            onClick={() => setIsMenuOpen(false)}
                             className={`text-base block ${
                               pathname === `/products/${product.slug}`
                                 ? "text-[#CC2837] font-semibold"
@@ -202,13 +201,10 @@ export default function NavbarComponent() {
             }
 
             return (
-              <NavbarMenuItem
-                className="mt-4"
-                key={`${name}-${index}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <NavbarMenuItem className="mt-4" key={`${name}-${index}`}>
                 <Link
                   href={path}
+                  onClick={() => setIsMenuOpen(false)}
                   className={`w-full text-lg ${
                     isActive ? "text-[#CC2837] font-semibold" : "text-white"
                   }`}

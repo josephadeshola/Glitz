@@ -143,7 +143,9 @@ export default function Page() {
         </div>
       )}
       <div data-aos="zoom-in" className="glitz-container mt-14">
-        <div className="glitz-text rounded px-3">Glitz Commodities</div>
+        <div className="glitz-text rounded px-3 bg-white">
+            <Image src="/images/download.png" width={200} height={200} alt="glitz image"/>
+          </div>
       </div>
       <section className="bg-white">
         <Footer

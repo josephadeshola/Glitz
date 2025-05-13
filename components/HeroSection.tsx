@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useCallback, useState, useRef } from "react";
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import Cards from "./Cards";
-import Link from "next/link";
 
 
 const heroImages = [
@@ -16,28 +15,24 @@ const heroImages = [
     subtext:
       "From sourcing to export, we deliver quality, compliance, and transparency in every shipment.",
     animationClass: "fade-in",
-    aosSty:"zoom-in"
   },
   {
     image: "/images/cashewman.webp",
     heading: "Quality Raw Cashew Nuts Ready For Export",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "slide-in",
-     aosSty:"fade-up"
   },
   {
     image: "/images/chatcashew.webp",
     heading: "Premium Cashew Kernels for Industrial Use and Export.",
     subtext: "Sun-dried and unprocessed, ideal for export and processing.",
     animationClass: "zoom-in",
-     aosSty:"zoom-in"
   },
   {
     image: "/images/chatshea.webp",
     heading: "Shea Nuts – Rich in Natural Fats for Skincare & Cosmetics",
     subtext: "Streamlining the process from farm to shipment.",
     animationClass: "fade-left",
-     aosSty:"zoom-in"
   },
   {
     image: "/images/chatSesame.webp",
@@ -46,7 +41,7 @@ const heroImages = [
     animationClass: "flip-in",
   },
   {
-    image: "/images/chatsoya.webp",
+    image: "/images/neatsoya.jpg",
     heading: "Soybeans – High Protein for Feed, Tofu & Food Production",
     subtext: "Nutritious, versatile, and ideal for feed or food.",
     animationClass: "slide-up ",
@@ -126,7 +121,7 @@ const HeroSection = () => {
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
-            <h1 data-aos={currentSlide.aosSty} className="lg:text-5xl text-2xl md:text-5xl max-w-4xl leading-tight font-bold mb-4">{currentSlide.heading}</h1>
+            <h1 data-aos="zoom-in" className="lg:text-5xl text-2xl md:text-5xl max-w-4xl leading-tight font-bold mb-4">{currentSlide.heading}</h1>
             <p data-aos="fade-up" className="max-w-2xl lg:mt-5 mt-2 lg:text-lg text-md">{currentSlide.subtext}</p>
             <div className="mt-6 flex gap-4">
               <button className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
