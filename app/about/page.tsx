@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { FaCheckCircle, FaLeaf, FaStar } from "react-icons/fa";
 import { GiDigitalTrace, GiGraduateCap } from "react-icons/gi";
 import { LuScanEye } from "react-icons/lu";
@@ -40,12 +41,11 @@ const AboutPage = () => {
             We connect Africa’s finest agricultural commodities with buyers
             across the <br /> globe—responsibly, reliably, and transparently.
           </p>
-          <Button
-            data-aos="zoom-in"
-            className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold"
-          >
-            Contact Us
-          </Button>
+          <Link href="tel:2348123456789">
+            <Button className="border border-white bg-[#CC2837] hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </section>
 

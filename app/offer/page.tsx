@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { IoIosMailOpen } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdWifiCalling3 } from "react-icons/md";
@@ -47,12 +48,11 @@ const ServicePage = () => {
             procurement, and bulk commodity trading—empowering businesses to
             grow through Africa’s finest agricultural produce
           </p>
-          <Button
-            data-aos="zoom-in"
-            className="bg-[#CC2837] hover:scale-105 transition px-6 md:px-8 py-3 rounded-full text-white font-semibold text-sm"
-          >
-            Contact Us
-          </Button>
+          <Link href="https://wa.me/2348123456789">
+            <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+              Message Us
+            </Button>
+          </Link>
         </div>
       </section>
 
