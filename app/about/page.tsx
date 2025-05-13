@@ -153,17 +153,17 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-white py-16 px-4 md:px-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+      <section className="bg-white py-5 px-4 md:px-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-7 text-gray-800">
           Our Team
         </h2>
-        <div className="lg:flex gap-10 justify-center">
+        <div className="lg:flex  justify-center">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-50 mt-10 cursor-pointer shadow-lg rounded-xl overflow-hidden flex flex-col items-center p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-50 cursor-pointer shadow-lg rounded-xl overflow-hidden flex flex-col items-center p-6 hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-32 h-32 relative rounded-full overflow-hidden mb-4">
+              <div className="w-48 h-48 relative rounded-full overflow-hidden mb-4">
                 <Image
                   src={member.image}
                   alt={member.name}
