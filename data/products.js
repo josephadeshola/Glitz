@@ -33,7 +33,7 @@ const products = [
   },
   {
     name: "Cocoa",
-    title: "Cocoa",
+    title: "Cocoa Beans",
     description: "Fermented beans for premium chocolate.",
     slug: "cocoa",
     image: "/images/chatcocoa.webp",

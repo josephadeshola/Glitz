@@ -1,5 +1,67 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+import {
+  AiFillStar
+} from "react-icons/ai";
+import { FcCustomerSupport } from "react-icons/fc";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+
+const testimonials = [
+  {
+    message:
+      "Reliable supplier with prompt documentation. Their sesame seed quality exceeded our specs. Communication was seamless throughout the transaction. Highly recommended for long-term trade partnerships.",
+    date: "Aug 2023",
+  },
+  {
+    message:
+      "From Nigeria to Vietnam, their logistics and paperwork were spot on. Every step was transparent and professional. We felt confident from purchase to delivery.",
+    date: "Sep 2023",
+  },
+  {
+    message:
+      "Exceptional service and high-quality sesame. Will definitely order again. Their post-sale support and updates were excellent. One of the best export partners we’ve worked with.",
+    date: "Oct 2023",
+  },
+  {
+    message:
+      "Great communication and delivery. Everything arrived perfectly. Their export process is smooth and efficient. Truly a dependable supplier from Nigeria.",
+    date: "Nov 2023",
+  },
+  {
+    message:
+      "We’ve worked with several Nigerian exporters, but Glitz Commodities stands out for consistency and professionalism. Our clients noticed the superior product quality. We look forward to more business.",
+    date: "Dec 2023",
+  },
+  {
+    message:
+      "Their ability to source quality hibiscus and deliver on schedule helped us meet our client's deadline. No delays, no surprises. Just solid service and excellent product handling.",
+    date: "Jan 2024",
+  },
+  {
+    message:
+      "Transparent process from procurement to delivery. The team is responsive and trustworthy. Updates were frequent and accurate. That gave us peace of mind throughout the export process.",
+    date: "Feb 2024",
+  },
+  {
+    message:
+      "Glitz Commodities is our go-to partner for dried ginger exports. Reliable and always up to spec. Their attention to quality control is unmatched. Very few competitors come close.",
+    date: "Mar 2024",
+  },
+  {
+    message:
+      "Their packaging and documentation for our US-bound sesame shipment was flawless. Customs clearance was hassle-free. We’ll definitely repeat our orders.",
+    date: "Apr 2024",
+  },
+  {
+    message:
+      "Consistent quality and excellent export service. We’ve scaled operations thanks to Glitz. Their team feels like an extension of our own. Truly a strategic partner.",
+    date: "May 2024",
+  },
+];
+
 
 const Customers = () => {
   return (
@@ -20,179 +82,48 @@ const Customers = () => {
             saying!
           </p>
         </div>
-        <div className="max-w-6xl mx-auto lg:my-12 my-5 px-4 sm:px-6">
-          <div className=" rounded-lg lg:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div
-                data-aos="fade-up"
-                className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer"
-              >
-                <p
-                  className="text-gray-700 mt-5 font-semibold
-                 mb-4"
-                >
-                  Reliable supplier with prompt documentation. Their sesame seed
-                  quality exceeded our specs
+        <div className="max-w-6xl mx-auto my-5 px-4 sm:px-6">
+      <div className="relative">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          spaceBetween={30}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white p-6 text-center h-[50vh] rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                <p className="text-[50px] text-center text-[#CC2837] font-semibold mb-4">
+                <FcCustomerSupport className="text-center item-center"/>
                 </p>
-
-                <div data-aos="zoom-in" className="flex items-center mb-1">
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </div>
-
-                <p className="text-gray-500 text-sm">Aug 2023</p>
-              </div>
-
-              <div
-                data-aos="fade-up"
-                className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              >
-                <p className="text-gray-700 mb-4 font-semibold mt-5">
-                  From Nigeria to Vietnam, their logistics and paperwork were
-                  spot on.
+                <p className="text-gray-700 text-center text-md lg:text-md mt-5 mb-4">
+                  {testimonial.message}
                 </p>
-
-                <div data-aos="zoom-in" className="flex items-center mb-1">
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+                <div className="flex items-center justify-center text-yellow-400">
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <AiFillStar key={i} className="text-xl" />
+                  ))}
                 </div>
-
-                <p className="text-gray-500 text-sm">Aug 2023</p>
+                <p className="text-gray-500 text-sm">{testimonial.date}</p>
               </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
 
-              <div
-                data-aos="fade-up"
-                className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              >
-                <p className="text-gray-700 font-semibold mb-4 mt-5">
-                  RealAgris cocoa beans made it into our finest blends.
-                  Excellent partnership!
-                </p>
-
-                <div data-aos="zoom-in" className="flex items-center mb-1">
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </div>
-
-                <p className="text-gray-500 text-sm">Aug 2023</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div className="text-black mt-14">
         <p
@@ -206,14 +137,14 @@ const Customers = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div
               data-aos="fade-up"
-              className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200"
+              className="bg-white rounded-lg p-2 overflow-hidden cursor-pointer border border-red-200"
             >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
                   className="object-cover w-full rounded-md h-full transition-transform duration-300 hover:scale-105"
                   height={200}
-                  src="/images/news.png"
+                  src="/images/regulation.webp"
                   width={400}
                 />
               </div>
@@ -234,14 +165,14 @@ const Customers = () => {
 
             <div
               data-aos="fade-up"
-              className="bg-white rounded-lg overflow-hidden cursor-pointer border border-gray-200"
+              className="bg-white p-2 rounded-lg overflow-hidden cursor-pointer border border-red-200"
             >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
                   className="object-cover w-full rounded-md h-full transition-transform duration-300 hover:scale-105"
                   height={200}
-                  src="/images/rectangle.png"
+                  src="/images/procure.webp"
                   width={400}
                 />
               </div>
@@ -262,14 +193,14 @@ const Customers = () => {
 
             <div
               data-aos="fade-up"
-              className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200"
+              className="bg-white p-2 rounded-lg overflow-hidden border cursor-pointer border-red-200"
             >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
                   className="object-cover w-full h-full rounded-md transition-transform duration-300 hover:scale-105"
                   height={200}
-                  src="/images/rectangle.png"
+                  src="/images/global.webp"
                   width={400}
                 />
               </div>
@@ -290,14 +221,14 @@ const Customers = () => {
 
             <div
               data-aos="fade-up"
-              className="bg-white rounded-lg overflow-hidden border cursor-pointer border-gray-200"
+              className="bg-white p-2 rounded-lg overflow-hidden border cursor-pointer border-red-200"
             >
               <div className="h-48 overflow-hidden relative">
                 <Image
                   alt="Farm field"
                   className="object-cover w-full h-full rounded-md transition-transform duration-300 hover:scale-105"
                   height={200}
-                  src="/images/rectangle.png"
+                  src="/images/effeciency.webp"
                   width={400}
                 />
               </div>
