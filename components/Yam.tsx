@@ -75,9 +75,9 @@ const Yam = () => {
               <Image
                 src="/images/yam.png"
                 width={900}
-                height={900}
+                height={400}
                 alt="yam"
-                className="w-full h-auto rounded-lg shadow-md cursor-zoom-in"
+                className="rounded-lg lg:h-[60vh] h-[35vh] object-cover shadow-md cursor-zoom-in"
               />
             </Zoom>
             <p className="text-sm text-gray-500 mt-2">

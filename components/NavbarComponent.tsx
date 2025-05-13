@@ -223,7 +223,7 @@ export default function NavbarComponent() {
 
       {isSearchModalOpen && (
         <div className="fixed inset-0 z-[999] bg-black px-2 bg-opacity-60 flex items-center justify-center">
-          <div className="bg-black bg-black/90 rounded-lg shadow-lg p-6 w-full max-w-md relative">
+          <div className="bg-white bg-white/50 rounded-lg shadow-lg p-6 w-full max-w-md relative">
             <button
               onClick={() => setIsSearchModalOpen(false)}
               className="absolute top-2 right-2 text-white font-bold text-xl"
@@ -239,7 +239,7 @@ export default function NavbarComponent() {
               className="w-full p-2 border border-gray-300 rounded-md mb-4"
             />
 
-            <div className="space-y-2 max-h-60 overflow-y-auto">
+            <div className="space-y-2 max-h-60 bg-white overflow-y-auto">
               {filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                   <Link
