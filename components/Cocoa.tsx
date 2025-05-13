@@ -50,12 +50,29 @@ const Cocoa = () => {
                     </p>
                 </div>
 
-                <div>
+                <div className="lg:flex justify-between">
+                <div className="lg:w-1/2">
                     <h2 className="text-xl md:text-2xl font-bold mb-3">About Cocoa Beans</h2>
                     <p className="text-gray-700 leading-relaxed">
                         Cocoa beans are the dried and fully fermented seeds of Theobroma cacao, used primarily to make chocolate. Harvested from cocoa pods, these beans are typically fermented for several days and then sun-dried to develop flavor.
                         Nigerian cocoa is known for its intense aroma and deep color, making it a preferred choice for chocolatiers worldwide.
                     </p>
+                </div>
+                 <section className="px-4 lg:w-1/2 md:px-8">
+            <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Cocoa Beans</h2>
+            <Zoom>
+              <Image
+                src="/images/chatcocoa.webp"
+                width={900}
+                height={400}
+                alt="Cocoa Beans"
+                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+              />
+            </Zoom>
+            <p className="text-sm text-gray-500 mt-2">
+              Click the image to zoom.
+            </p>
+          </section>
                 </div>
 
                 <div className="overflow-x-auto mt-6">
