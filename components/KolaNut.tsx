@@ -48,7 +48,8 @@ const KolaNut = () => {
                     </p>
                 </div>
 
-                <div>
+                <div className="lg:flex justify-between">
+                <div className="lg:w-1/2">
                     <h2 className="text-xl md:text-2xl font-bold mb-3">What are Kola Nuts?</h2>
                     <p className="text-gray-700 leading-relaxed">
                         Kola nuts are caffeine-containing fruits of the kola tree, primarily found in tropical Africa. The nuts are often chewed for their stimulant effects and hold cultural and ceremonial significance in many African communities.
@@ -56,8 +57,23 @@ const KolaNut = () => {
                         They are typically bitter when fresh but become milder as they dry. Kola nuts are used in energy drinks, traditional medicine, and cultural rituals, and are known for their ability to fight fatigue and increase alertness.
                     </p>
                 </div>
+                 <section className="px-4 w-1/2 md:px-8">
+                        <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Kola Nuts</h2>
+                        <Zoom>
+                            <Image
+                                src="/images/download1.jpg"
+                                width={900}
+                                height={400}
+                                alt="Kola Nuts"
+                                className="rounded-lg h-[60vh] object-cover shadow-md cursor-zoom-in"
+                            />
+                        </Zoom>
+                        <p className="text-sm text-gray-500 mt-2">
+                            Click the image to zoom.
+                        </p>
+                    </section>
+                </div>
 
-                {/* Export Table */}
                 <div className="overflow-x-auto mt-6">
                     <h2 className="text-xl md:text-2xl font-bold mb-3">Top Kola Nut Producing Countries</h2>
                     <table className="min-w-full bg-white border border-gray-300 text-sm text-left text-gray-700">
