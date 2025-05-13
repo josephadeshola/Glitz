@@ -5,11 +5,12 @@ import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import SimilarProducts from "./SimilarProducts";
 import Link from "next/link";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const GroundNut = () => {
     return (
         <div className="bg-white text-gray-800">
-            {/* Hero Section */}
             <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
                 <Image
                     src="/images/groundnutlg.jpg"
