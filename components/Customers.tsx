@@ -125,7 +125,7 @@ const Customers = () => {
     </div>
 
       </div>
-      <div className="text-black mt-14">
+      <div className="text-black lg:mt-14 mt-5">
         <p
           data-aos="fade-up"
           className="lg:text-5xl text-center  text-3xl text-[#CC2837] font-bold"
