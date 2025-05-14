@@ -92,7 +92,7 @@ export default function NavbarComponent() {
                         </Link>
                       </div>
 
-                      <div className="absolute top-full left-0 mt-0 hidden group-hover:grid bg-gradient-to-b from-[#bfc9df] via-gray-300 to-white text-black shadow-lg rounded-lg z-50 p-4 gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-[600px]">
+                      <div className="absolute top-full left-0 mt-0 hidden group-hover:grid bg-gradient-to-b from-[#cccdcfd0] via-gray-200 to-white text-black shadow-lg rounded-lg z-50 p-4 gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-[600px]">
                         {products.map((product) => (
                           <Link
                             key={product.slug}
