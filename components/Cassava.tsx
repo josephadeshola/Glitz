@@ -246,6 +246,7 @@ const Cassava = () => {
 
             <div className="mt-12">
               <a
+              data-aos="zoom-in"
                 href="https://wa.me/2348123456789"
                 target="_blank"
                 rel="noopener noreferrer"
