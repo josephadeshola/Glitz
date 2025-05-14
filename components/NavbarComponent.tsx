@@ -127,10 +127,10 @@ export default function NavbarComponent() {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          {/* <IoSearch
-            className="cursor-pointer font-bold text-xl"
+          <IoSearch
+            className="cursor-pointer font-bold text-xl lg:text-2xl"
             onClick={() => setIsSearchModalOpen(true)}
-          /> */}
+          />
 
           <NavbarItem className="hidden lg:block">
             <Button

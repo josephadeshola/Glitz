@@ -26,7 +26,7 @@ export default function Page() {
             {product.name}
           </h1>
 
-          <div className="relative w-[80%] sm:w-80 md:w-96 lg:w-full max-w-[500px] h-[40vh] sm:h-80 md:h-96 lg:h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
+          <div className="relative w-[70%] sm:w-64 md:w-80 lg:w-full max-w-[500px] aspect-square mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
             data-aos="zoom-in"
               src={product.image}
