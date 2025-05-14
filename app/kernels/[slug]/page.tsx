@@ -20,13 +20,13 @@ export default function Page() {
 
   return (
     <div className="text-gray-800">
-      <div className="min-h-[60vh] bg-gradient-to-b from-[#111827] via-gray-900 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
+      <div className="min-h-[60vh] bg-gradient-to-b from-[#cccdcfd0] via-gray-200 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
-          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl text-center block md:hidden font-extrabold text-[#CC2837]">
+          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl mt-5 lg:mt-1 text-center block md:hidden font-extrabold text-[#CC2837]">
             {product.name}
           </h1>
 
-          <div className="relative w-[220px] sm:w-80 md:w-96 lg:w-full max-w-[500px] h-[220px] sm:h-80 md:h-96 lg:h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
+          <div className="relative w-[80%] sm:w-80 md:w-96 lg:w-full max-w-[500px] h-[40vh] sm:h-80 md:h-96 lg:h-[500px] mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
             data-aos="zoom-in"
               src={product.image}
