@@ -51,12 +51,13 @@ export default function NavbarComponent() {
   return (
     <>
       <Navbar
-        className="top-0 left-0 w-full bg-black z-50 bg-black/40  text-white py-1"
+  className="top-0 left-0 w-full bg-black/40 text-white py-1"
         onMenuOpenChange={setIsMenuOpen}
       >
+
         <NavbarContent>
           <NavbarBrand>
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex transition-transform duration-300 hover:scale-105 items-center space-x-3">
               <AcmeLogo />
               <div className="text-white leading-tight text-sm md:text-base font-semibold">
                 <p className="whitespace-nowrap">GLITZ</p>
@@ -128,7 +129,7 @@ export default function NavbarComponent() {
 
         <NavbarContent justify="end">
           <IoSearch
-            className="cursor-pointer font-bold text-xl lg:text-2xl"
+            className="cursor-pointer transition-transform duration-300 hover:scale-105 font-bold text-xl lg:text-2xl"
             onClick={() => setIsSearchModalOpen(true)}
           />
 
@@ -145,6 +146,7 @@ export default function NavbarComponent() {
             </Button>
           </NavbarItem>
         </NavbarContent>
+
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden px-2 "
