@@ -20,16 +20,16 @@ const KolaNut = () => {
                 />
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <div className="relative z-20 px-4 lg:px-8 text-center max-w-3xl">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                    <h1 data-aos="zoom-in" className="text-3xl md:text-5xl font-bold mb-4">
                         Kola Nuts
                     </h1>
                     <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Link href="https://wa.me/2348123456789">
+                        <Link data-aos="zoom-in" href="https://wa.me/2348123456789">
                             <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Message Us
                             </Button>
                         </Link>
-                        <Link href="tel:2348123456789">
+                        <Link data-aos="zoom-in" href="tel:2348123456789">
                             <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Contact Us
                             </Button>
@@ -37,7 +37,7 @@ const KolaNut = () => {
                     </div>
                 </div>
             </section>
-            <section className="px-4 md:px-8 lg:px-16 py-10 space-y-12">
+            <section data-aos="fade-up" className="px-4 md:px-8 lg:px-16 py-10 space-y-12">
                 <div>
                     <p className="font-bold text-3xl">Exporter of Kola Nuts from Nigeria</p>
                     <p className="text-gray-700 mt-4 leading-relaxed">
@@ -61,6 +61,7 @@ const KolaNut = () => {
                         <h2 className="text-3xl text-[#CC2837] font-bold mb-4">Kola Nuts</h2>
                         <Zoom>
                             <Image
+                            data-aos="zoom-in"
                                 src="/images/download1.jpg"
                                 width={900}
                                 height={400}
@@ -178,6 +179,7 @@ const KolaNut = () => {
                                 { title: "Global Standards", text: "We comply with international export and quality benchmarks." }
                             ].map(({ title, text }, i) => (
                                 <div
+                                data-aos="zoom-in"
                                     key={i}
                                     className="bg-white rounded-2xl cursor-pointer p-6 shadow-md hover:shadow-xl transition border border-gray-200 hover:border-transparent hover:bg-gradient-to-r from-[#cc2837]/10 to-[#cc2837]/5"
                                 >
@@ -189,6 +191,7 @@ const KolaNut = () => {
 
                         <div className="mt-12">
                             <a
+                            data-aos="zoom-in"
                                 href="https://wa.me/2348123456789"
                                 target="_blank"
                                 rel="noopener noreferrer"
