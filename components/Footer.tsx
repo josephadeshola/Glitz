@@ -4,6 +4,7 @@ import { FaLinkedin, FaTwitter} from "react-icons/fa6";
 import { MdWifiCalling3 } from "react-icons/md";
 import { IoIosMailOpen, IoIosArrowDropright} from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not miss the latest information from us about trading in the market. By clicking the button, you are agreeing with our Terms & Conditions." }) => {
     return (
@@ -36,10 +37,10 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
                     <div className="grid grid-cols-1 px-5 md:grid-cols-3 mt-10 gap-8 mb-8">
                         <div className="flex flex-col items-cente md:items-start">
                             <div className="mb-4">
-                                <div className=" h-[60px] w-[60px] mt-10  shadow shadow-white item-center text-center mb-2">
+                                <div className=" h-[50px] w-[50px] mt-10  shadow shadow-white item-center text-center mb-2">
                                     <Image src="/images/black-logo.jpg" className="rounded-md" width={60} height={60} alt="full logo" />
                                 </div>
-                                <p className="text-gray-400 text-sm">437 Washington DC</p>
+                                <p className="text-gray-400 text-sm">Lagos State Nigeria</p>
                             </div>
 
                             <div className="flex gap-3 mt-2">
@@ -71,70 +72,59 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
                                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                                 <ul className="space-y-2">
                                     <li>
-                                        <a
+                                        <Link
                                             className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
+                                            href="/"
                                         >
                                             <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
                                             <p>
                                                 Home
                                             </p>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
+                                            href="/about"
                                         >
                                             <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
                                             <p>
                                                 About
                                             </p>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
+                                            href="/contact"
                                         >
                                             <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
                                             <p>
-                                                Exportation
+                                               Contact Us
                                             </p>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
+                                            href="/products"
                                         >
                                             <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
                                             <p>
                                                 Product
                                             </p>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
+                                            href="/offer"
                                         >
                                             <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
                                             <p>
-                                                Procurment
+                                                Services
                                             </p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
-                                            href="#"
-                                        >
-                                            <IoIosArrowDropright className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-2xl" />
-                                            <p>
-                                                Trading
-                                            </p>
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
