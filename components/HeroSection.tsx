@@ -61,9 +61,59 @@ const stats = [
 ];
 const HeroSection = () => {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  // const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  // const autoScroll = useCallback(() => {
+  //   if (!emblaApi) return;
+  //   intervalRef.current = setInterval(() => {
+  //     emblaApi.scrollNext();
+  //   }, 4000);
+  // }, [emblaApi]);
+
+  // useEffect(() => {
+  //   if (emblaApi) {
+  //     autoScroll();
+
+  //     const onSelect = () => {
+  //       setSelectedIndex(emblaApi.selectedScrollSnap());
+  //       setTimeout(() => {
+  //       }, 100);
+  //     };
+
+  //     emblaApi.on("select", onSelect);
+  //     emblaApi.on("pointerDown", () => {
+  //       if (intervalRef.current) clearInterval(intervalRef.current);
+  //     });
+
+  //     onSelect();
+  //   }
+
+  //   return () => {
+  //     if (intervalRef.current) clearInterval(intervalRef.current);
+  //   };
+  // }, [emblaApi, autoScroll]);
+
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex(prev => (prev + 1) % heroImages.length);
+  //   }, 5000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // const currentSlide = heroImages[currentIndex];
+const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const currentSlide = heroImages[currentIndex];
 
   const autoScroll = useCallback(() => {
     if (!emblaApi) return;
@@ -78,8 +128,6 @@ const HeroSection = () => {
 
       const onSelect = () => {
         setSelectedIndex(emblaApi.selectedScrollSnap());
-        setTimeout(() => {
-        }, 100);
       };
 
       emblaApi.on("select", onSelect);
@@ -95,8 +143,6 @@ const HeroSection = () => {
     };
   }, [emblaApi, autoScroll]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % heroImages.length);
@@ -105,12 +151,14 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const currentSlide = heroImages[currentIndex];
-
-
   return (
     <>
-      <div className="relative top-0 -mt-9  w-full h-screen overflow-hidden">
+    {isLoading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+          <div className="lds-facebook text-[#CC2837]"><div></div><div></div><div></div></div>
+        </div>
+      )}
+      <div className="relative top-0 -mt-9 w-full h-screen overflow-hidden">
         <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide.animationClass}`}>
           <Image
             src={currentSlide.image}
@@ -118,6 +166,7 @@ const HeroSection = () => {
             alt="Hero Background"
             className="object-cover"
             priority
+            onLoad={() => setIsLoading(false)}
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
@@ -125,9 +174,7 @@ const HeroSection = () => {
             <p data-aos="fade-up" className="max-w-2xl lg:mt-5 mt-2 lg:text-lg text-md">{currentSlide.subtext}</p>
             <div className="mt-6 flex gap-4">
               <button className="bg-[#CC2837] hover:scale-105 transition text-sm lg:px-8 px-7 py-3 rounded-full text-white font-semibold">
-                <Link href="/products">
-                  View Product
-                </Link>
+                <Link href="/products">View Product</Link>
               </button>
               <button className="border text-sm border-white hover:bg-white hover:text-black transition px-6 py-3 rounded-full font-semibold">
                 Request a Quote
@@ -136,6 +183,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
 
 
 
