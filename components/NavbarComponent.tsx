@@ -252,7 +252,7 @@ export default function NavbarComponent() {
                   </Link>
                 ))
               ) : (
-                <p className="text-gray-500">No matching products found.</p>
+                <p className="text-gray-500 px-2">No matching products found.</p>
               )}
             </div>
           </div>

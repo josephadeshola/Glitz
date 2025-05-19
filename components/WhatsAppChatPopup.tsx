@@ -40,7 +40,7 @@ const WhatsAppChatPopup = () => {
             </button>
           </div>
           <div className="bg-gray-100 p-4">
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-gray-600 text-md mb-4">
               Send us a message today and we will contact you as soon as possible.
             </p>
             <textarea

@@ -4,9 +4,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FaGlobe, FaHandshake, FaExchangeAlt, FaTimes } from "react-icons/fa";
-
+import procurementImg from "@/public/images/procurement.webp";
+import exportImg from "@/public/images/exportoffer.webp";
+import tradingImg from "@/public/images/tradingoffer.webp";
 import Customers from "./Customers";
 import Footer from "./Footer";
+import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -17,6 +20,7 @@ import products from "@/data/products";
 type Service = {
   id: string;
   title: string;
+  image: StaticImageData;
   icon: JSX.Element;
   summary: string;
   details: string;
@@ -26,6 +30,7 @@ const services: Service[] = [
   {
     id: "export",
     title: "Export Services",
+    image: exportImg ,
     icon: <FaGlobe className="text-blue-600 text-3xl" />,
     summary:
       "Global logistics, certified documentation, and port-to-port handling.",
@@ -35,6 +40,7 @@ const services: Service[] = [
   {
     id: "procurement",
     title: "Procurement",
+    image: procurementImg,
     icon: <FaHandshake className="text-green-600 text-3xl" />,
     summary:
       "Sourcing directly from farmers, with aggregation, storage, and QA controls.",
@@ -44,6 +50,7 @@ const services: Service[] = [
   {
     id: "trading",
     title: "Trading",
+    image: tradingImg,
     icon: <FaExchangeAlt className="text-yellow-600 text-3xl" />,
     summary: "Spot and forward contract options for high-volume B2B deals.",
     details:
@@ -257,7 +264,16 @@ const Cards = () => {
                 {selectedService.icon}
                 <h3 className="text-xl font-bold">{selectedService.title}</h3>
               </div>
-              <p className="text-gray-700">{selectedService.details}</p>
+              <div className="relative mx-auto lg:mx-0 lg:w-44 w-full h-80 lg:h-44 rounded-lg overflow-hidden">
+                <Image
+                  src={selectedService.image}
+                  alt="offer image"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <p className="text-gray-700 mt-3 lg:text-start text-center">{selectedService.details}</p>
             </div>
           </div>
         )}
