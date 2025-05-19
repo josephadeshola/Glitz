@@ -45,7 +45,7 @@ const products = [
     title: "Cassava Chips",
     description: "Sun-dried, high-starch chips for ethanol.",
     slug: "cassava-chips",
-    image: "/images/cassava-chips.png",
+    image: "/images/dried-cassava-chips.jpg",
     detailComp:<Cassava/>,
   },
   {

@@ -43,6 +43,7 @@ const ProductPage = () => {
                 {products.map((product, index) => (
                   <Link key={index} href={`/products/${product.slug}`}>
                     <div
+                      data-aos="zoom-in"
                       className="bg-white border opacity-90 cursor-pointer rounded shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300"
                     >
                       <div className="relative w-full lg:h-48 h-40">
@@ -64,9 +65,7 @@ const ProductPage = () => {
                           <CiStar />
                           <CiStar />
                         </div>
-                        <Button
-                          className="text-sm sm:text-md mt-4 font-semibold rounded-none border-2 hover:bg-white hover:text-[#CC2837] text-white bg-[#CC2837]"
-                        >
+                        <Button className="text-sm sm:text-md mt-4 font-semibold rounded-none border-2 hover:bg-white hover:text-[#CC2837] text-white bg-[#CC2837]">
                           Make Enquiry
                         </Button>
                       </div>

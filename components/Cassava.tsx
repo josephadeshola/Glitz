@@ -11,7 +11,7 @@ const Cassava = () => {
     <div className="bg-white text-gray-800">
       <section className="relative w-full h-[70vh] -mt-10 flex items-center justify-center text-white">
         <Image
-          src="/images/cassavachips.webp"
+          src="/images/dried-cassava-chips.jpg"
           fill
           alt="Cassava Chips Background"
           className="object-cover z-0"
@@ -76,7 +76,7 @@ const Cassava = () => {
             <Zoom>
               <Image
               data-aos="zoom-in"
-                src="/images/cassavachips.webp"
+                src="/images/dried-cassava-chips.jpg"
                 width={900}
                 height={400}
                 alt="Cassava Chips"
