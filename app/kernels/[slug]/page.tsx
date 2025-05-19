@@ -142,8 +142,8 @@ export default function Page() {
           </div>
         </div>
       )}
-      <div data-aos="zoom-in" className="glitz-container mt-14 border  border-red-500">
-        <div className="glitz-text rounded px-3 bg-whit">
+      <div data-aos="zoom-in" className="glitz-container lg:mt-14 border  border-red-500">
+        <div className="glitz-text rounded px-3 bg-white">
             <Image src="/images/download.png" width={200} height={200} alt="glitz image"/>
           </div>
       </div>
