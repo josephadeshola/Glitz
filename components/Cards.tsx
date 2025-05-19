@@ -2,9 +2,9 @@
 import { Button } from "@heroui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { FaExchangeAlt, FaGlobe } from "react-icons/fa";
-import { FaHandshake } from "react-icons/fa6";
+import { useEffect, useRef, useState } from "react";
+import { FaGlobe, FaHandshake, FaExchangeAlt, FaTimes } from "react-icons/fa";
+
 import Customers from "./Customers";
 import Footer from "./Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,42 @@ import "swiper/css/autoplay";
 import Link from "next/link";
 import products from "@/data/products";
 
+type Service = {
+  id: string;
+  title: string;
+  icon: JSX.Element;
+  summary: string;
+  details: string;
+};
+
+const services: Service[] = [
+  {
+    id: "export",
+    title: "Export Services",
+    icon: <FaGlobe className="text-blue-600 text-3xl" />,
+    summary:
+      "Global logistics, certified documentation, and port-to-port handling.",
+    details:
+      "We provide seamless export solutions including international logistics, certified export documentation, and full port-to-port coordination, ensuring timely delivery and compliance with global trade regulations.",
+  },
+  {
+    id: "procurement",
+    title: "Procurement",
+    icon: <FaHandshake className="text-green-600 text-3xl" />,
+    summary:
+      "Sourcing directly from farmers, with aggregation, storage, and QA controls.",
+    details:
+      "Our procurement services involve working directly with local farmers to source high-quality agricultural products. We handle aggregation, ensure proper storage, and maintain strict quality assurance controls.",
+  },
+  {
+    id: "trading",
+    title: "Trading",
+    icon: <FaExchangeAlt className="text-yellow-600 text-3xl" />,
+    summary: "Spot and forward contract options for high-volume B2B deals.",
+    details:
+      "We offer flexible trading models including spot deals and forward contracts to meet the diverse needs of our B2B clients. Our team ensures reliable transactions and transparent pricing.",
+  },
+];
 
 const Cards = () => {
   const [emblaRef1, emblaApi1] = useEmblaCarousel({ loop: true });
@@ -46,6 +82,14 @@ const Cards = () => {
     };
   }, [emblaApi2]);
 
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const openModal = (service: any) => {
+    setSelectedService(service);
+  };
+  const closeModal = () => {
+    setSelectedService(null);
+  };
+
   return (
     <>
       <div data-aos="fade-up" className="text-black lg:py-20 py-14">
@@ -75,28 +119,34 @@ const Cards = () => {
           {products.map((item, index) => (
             <SwiperSlide key={index}>
               <Link href={`/products/${item.slug}`}>
-              <div className="p-4">
-                <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
-                  <div className="mx-auto lg:w-72">
-                    <h3 data-aos="fade-down" className="text-lg text-black font-semibold mb-1">
-                      {item.title}
-                    </h3>
-                    <p data-aos="fade-up" className="text-sm text-gray-500 mb-3">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
-                    <Image
-                      data-aos="zoom-in"
-                      alt={item.title}
-                      src={item.image}
-                      width={300}
-                      height={200}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="p-4">
+                  <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                    <div className="mx-auto lg:w-72">
+                      <h3
+                        data-aos="fade-down"
+                        className="text-lg text-black font-semibold mb-1"
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        data-aos="fade-up"
+                        className="text-sm text-gray-500 mb-3"
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                      <Image
+                        data-aos="zoom-in"
+                        alt={item.title}
+                        src={item.image}
+                        width={300}
+                        height={200}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
             </SwiperSlide>
           ))}
@@ -123,28 +173,34 @@ const Cards = () => {
           {products.map((item, index) => (
             <SwiperSlide key={index}>
               <Link href={`/products/${item.slug}`}>
-              <div className="p-4">
-                <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
-                  <div className="mx-auto lg:w-72">
-                    <h3 data-aos="fade-down" className="text-lg text-black font-semibold mb-1">
-                      {item.title}
-                    </h3>
-                    <p data-aos="fade-up" className="text-sm text-gray-500 mb-3">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
-                    <Image
-                      data-aos="zoom-in"
-                      alt={item.title}
-                      src={item.image}
-                      width={300}
-                      height={200}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="p-4">
+                  <div className="bg-white py-7 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105">
+                    <div className="mx-auto lg:w-72">
+                      <h3
+                        data-aos="fade-down"
+                        className="text-lg text-black font-semibold mb-1"
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        data-aos="fade-up"
+                        className="text-sm text-gray-500 mb-3"
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className="lg:w-[300px] h-[30vh] cursor-pointer lg:mx-auto lg:h-[200px] overflow-hidden rounded-md">
+                      <Image
+                        data-aos="zoom-in"
+                        alt={item.title}
+                        src={item.image}
+                        width={300}
+                        height={200}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
             </SwiperSlide>
           ))}
@@ -169,56 +225,42 @@ const Cards = () => {
           </p>
         </div>
         <div className="text-black flex flex-col lg:flex-row gap-6 px-6 lg:px-20 py-10 justify-center items-stretch">
-          <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
+          {services.map((service) => (
             <div
-              data-aos="fade-up"
-              className="grid grid-cols-1 items-center gap-4 mb-4"
+              key={service.id}
+              onClick={() => openModal(service)}
+              className="w-full lg:w-1/3 cursor-pointer border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300"
             >
-              <FaGlobe
-                data-aos="zoom-in-up"
-                className="text-blue-600 text-3xl"
-              />
-              <h3 className="text-xl font-semibold">Export Services</h3>
+              <div
+                className="grid grid-cols-1 items-center gap-4 mb-4"
+                data-aos="fade-up"
+              >
+                {service.icon}
+                <h3 className="text-xl font-semibold">{service.title}</h3>
+              </div>
+              <p data-aos="fade-up" className="text-sm text-gray-600">
+                {service.summary}
+              </p>
             </div>
-            <p data-aos="fade-up" className="text-sm text-gray-600">
-              Global logistics, certified documentation, and port-to-port
-              handling.
-            </p>
-          </div>
-
-          <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div
-              data-aos="fade-up"
-              className="grid grid-cols-1 items-center  gap-4 mb-4"
-            >
-              <FaHandshake
-                data-aos="zoom-in-up"
-                className="text-green-600 text-3xl"
-              />
-              <h3 className="text-xl font-semibold">Procurement</h3>
-            </div>
-            <p data-aos="fade-up" className="text-sm text-gray-600">
-              Sourcing directly from farmers, with aggregation, storage, and QA
-              controls.
-            </p>
-          </div>
-
-          <div className="w-full lg:w-1/3 border rounded-xl shadow-md p-6 bg-white hover:shadow-lg transition-all duration-300">
-            <div
-              data-aos="fade-up"
-              className="grid grid-cols-1 items-center gap-4 mb-4"
-            >
-              <FaExchangeAlt
-                data-aos="zoom-in-up"
-                className="text-yellow-600 text-3xl"
-              />
-              <h3 className="text-xl font-semibold">Trading</h3>
-            </div>
-            <p data-aos="fade-up" className="text-sm text-gray-600">
-              Spot and forward contract options for high-volume B2B deals.
-            </p>
-          </div>
+          ))}
         </div>
+        {selectedService && (
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 text-gray-500 hover:text-red-500"
+              >
+                <FaTimes size={18} />
+              </button>
+              <div className="flex items-center mb-4 gap-3">
+                {selectedService.icon}
+                <h3 className="text-xl font-bold">{selectedService.title}</h3>
+              </div>
+              <p className="text-gray-700">{selectedService.details}</p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="text-black">
         <div className="max-w-6xl mx-auto my-8 mt-24 lg:rounded-xl overflow-hidden shadow-lg">
