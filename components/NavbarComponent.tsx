@@ -157,7 +157,7 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden px-2 "
         />
-        <NavbarMenu className="bg-black bg-black/35">
+        <NavbarMenu className="bg-black bg-black/50">
           {items.map(({ name, path }, index) => {
             const isActive = pathname === path;
 
