@@ -54,10 +54,12 @@ export default function NavbarComponent() {
         className="top-0 left-0 w-full fixed bg-black/40 text-white py-1"
         onMenuOpenChange={setIsMenuOpen}
       >
-
         <NavbarContent>
           <NavbarBrand>
-            <Link href="/" className="flex transition-transform duration-300 hover:scale-105 items-center space-x-3">
+            <Link
+              href="/"
+              className="flex transition-transform duration-300 hover:scale-105 items-center space-x-3"
+            >
               <AcmeLogo />
               <div className="text-white leading-tight text-sm md:text-base font-semibold">
                 <p className="whitespace-nowrap">GLITZ</p>
@@ -80,10 +82,11 @@ export default function NavbarComponent() {
                       <div className="flex items-center cursor-pointer text-white hover:text-[#CC2837]">
                         <Link
                           href="/products"
-                          className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${isProductActive
+                          className={`inline-block hover:underline underline-offset-4 decoration-[3px] ${
+                            isProductActive
                               ? "text-[#CC2837] font-semibold underline"
                               : "text-white"
-                            }`}
+                          }`}
                         >
                           <div className="flex items-center">
                             <p>Product</p>
@@ -97,11 +100,11 @@ export default function NavbarComponent() {
                           <Link
                             key={product.slug}
                             href={`/products/${product.slug}`}
-                            className={`block text-sm font-medium hover:bg-gray-800 p-2 rounded ${pathname.startsWith(`/products/${product.slug}`)
+                            className={`block text-sm font-medium hover:bg-gray-800 p-2 rounded ${
+                              pathname.startsWith(`/products/${product.slug}`)
                                 ? "text-[#CC2837] font-semibold"
                                 : "text-white"
-                              }`}
-
+                            }`}
                           >
                             <p>{product.title}</p>
                           </Link>
@@ -116,10 +119,11 @@ export default function NavbarComponent() {
                 <NavbarItem key={`${name}-${index}`}>
                   <Link
                     href={path}
-                    className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${isActive
+                    className={`transition-colors duration-300 hover:underline underline-offset-4 decoration-[3px] ${
+                      isActive
                         ? "text-[#CC2837] underline underline-offset-4 decoration-[3px] font-semibold"
                         : "text-white"
-                      }`}
+                    }`}
                   >
                     {name}
                   </Link>
@@ -167,10 +171,11 @@ export default function NavbarComponent() {
                         setProductDropdownOpen(false);
                         setIsMenuOpen(false);
                       }}
-                      className={`text-lg ${pathname.startsWith("/products")
+                      className={`text-lg ${
+                        pathname.startsWith("/products")
                           ? "text-[#CC2837] font-semibold"
                           : "text-white"
-                        }`}
+                      }`}
                     >
                       Product
                     </Link>
@@ -187,10 +192,11 @@ export default function NavbarComponent() {
                           <Link
                             href={`/products/${product.slug}`}
                             onClick={() => setIsMenuOpen(false)}
-                            className={`text-base block ${pathname === `/products/${product.slug}`
+                            className={`text-base block ${
+                              pathname === `/products/${product.slug}`
                                 ? "text-[#CC2837] font-semibold"
                                 : "text-white"
-                              }`}
+                            }`}
                           >
                             {product.name}
                           </Link>
@@ -207,8 +213,9 @@ export default function NavbarComponent() {
                 <Link
                   href={path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`w-full text-lg ${isActive ? "text-[#CC2837] font-semibold" : "text-white"
-                    }`}
+                  className={`w-full text-lg ${
+                    isActive ? "text-[#CC2837] font-semibold" : "text-white"
+                  }`}
                 >
                   {name}
                 </Link>
@@ -219,42 +226,47 @@ export default function NavbarComponent() {
       </Navbar>
 
       {isSearchModalOpen && (
-        <div className="fixed inset-0 z-[999] bg-black px-2 bg-opacity-60 flex items-center justify-center">
-          <div className="bg-white bg-white/50 rounded-lg shadow-lg p-6 w-full max-w-md relative">
+        <div className="fixed inset-0 z-[9999] bg-black bg-opacity-70 backdrop-blur-sm p-4 flex flex-col">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-white text-xl font-semibold">
+              Search Products
+            </h2>
             <button
               onClick={() => setIsSearchModalOpen(false)}
-              className="absolute top-2 right-2 text-white font-bold text-xl"
+              className="text-white text-3xl font-bold hover:text-gray-300"
             >
               &times;
             </button>
-            <h2 className="text-lg font-semibold mb-4">Search Products</h2>
+          </div>
+
+          <div className="w-full max-w-3xl mx-auto">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Type to search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
+              className="w-full p-3 text-lg rounded-md bg-white/90 text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#CC2837]"
             />
+          </div>
 
-            <div className="space-y-2 max-h-60 bg-white overflow-y-auto">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
-                  <Link
-                    key={product.slug}
-                    href={`/products/${product.slug}`}
-                    className="block text-sm font-medium text-gray-800 hover:bg-gray-100 p-2 rounded"
-                    onClick={() => {
-                      setIsSearchModalOpen(false);
-                      setSearchQuery("");
-                    }}
-                  >
-                    {product.title}
-                  </Link>
-                ))
-              ) : (
-                <p className="text-gray-500 px-2">No matching products found.</p>
-              )}
-            </div>
+          <div className="mt-6 max-w-3xl mx-auto bg-white/90 rounded-md shadow-md p-4 overflow-y-auto max-h-[60vh]">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <Link
+                  key={product.slug}
+                  href={`/products/${product.slug}`}
+                  onClick={() => {
+                    setIsSearchModalOpen(false);
+                    setSearchQuery("");
+                  }}
+                  className="block p-3 rounded-md hover:bg-gray-100 transition-colors text-gray-800 font-medium"
+                >
+                  {product.title}
+                </Link>
+              ))
+            ) : (
+              <p className="text-gray-600">No matching products found.</p>
+            )}
           </div>
         </div>
       )}
