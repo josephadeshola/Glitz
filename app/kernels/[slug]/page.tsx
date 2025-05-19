@@ -20,9 +20,9 @@ export default function Page() {
 
   return (
     <div className="text-gray-800">
-      <div className="min-h-[60vh] bg-gradient-to-b from-[#cccdcfd0] via-gray-200 to-white -mt-10 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
+      <div className="min-h-[60vh] bg-gradient-to-b from-[#cccdcfd0] via-gray-200 to-white py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
-          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl mt-5 lg:mt-1 text-center block md:hidden font-extrabold text-[#CC2837]">
+          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl mt-10 lg:mt-1 text-center block md:hidden font-extrabold text-[#CC2837]">
             {product.name}
           </h1>
 
