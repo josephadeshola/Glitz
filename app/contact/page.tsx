@@ -3,25 +3,49 @@ import Footer from "@/components/Footer";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { IoIosMailOpen } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdWifiCalling3 } from "react-icons/md";
 
 const ContactPage = () => {
-  const teamMembers = [
-    {
-      name: "OLUWATOSIN ADEBAYO",
-      role: "Managing Director (MD)",
-      image: "/images/customer.jpg",
-      ambition: "Driving operational excellence with visionary leadership.",
-    },
-    {
-      name: "OLUWATOSIN ADEBAYO",
-      role: "Chief Executive Officer (CEC)",
-      image: "/images/customer.jpg",
-      ambition: "Empowering innovation and shaping the future of the company.",
-    },
-  ];
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoading(true);
+    const form = e.target;
+    const data = {
+      name: form.first_name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      product: form.product.value,
+      comment: form.comment.value,
+    };
+    console.log(data, "my data");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert("Failed to send message: " + result.message);
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section className="relative w-full min-h-screen -mt-10 flex items-center justify-center text-white">
@@ -42,16 +66,16 @@ const ContactPage = () => {
             here to help.
           </p>
           <Link href="tel:2348123456789">
-              <Button className="border border-white bg-[#CC2837] hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
-                Contact Us
-              </Button>
-            </Link>
+            <Button className="border border-white bg-[#CC2837] hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </section>
 
       <section className="px-4 md:px-10 lg:px-24 py-10 lg:py-20 bg-white text-black">
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className=" p-6 lg:p-12 w-full lg:w-1/2">
+          <div className="p-6 lg:p-12 w-full lg:w-1/2">
             <p className="text-2xl lg:text-4xl font-bold">
               Get in touch <br className="hidden lg:block" /> with us.
             </p>
@@ -86,16 +110,32 @@ const ContactPage = () => {
                   <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a href="https://facebook.com" target="_blank">
-                      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="w-8 h-8 hover:scale-110 transition" />
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                        alt="Facebook"
+                        className="w-8 h-8 hover:scale-110 transition"
+                      />
                     </a>
                     <a href="https://twitter.com" target="_blank">
-                      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" className="w-8 h-8 hover:scale-110 transition" />
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                        alt="Twitter"
+                        className="w-8 h-8 hover:scale-110 transition"
+                      />
                     </a>
                     <a href="https://instagram.com" target="_blank">
-                      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" />
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                        alt="Instagram"
+                        className="w-8 h-8 hover:scale-110 transition"
+                      />
                     </a>
                     <a href="https://wa.me/+2348136851352" target="_blank">
-                      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" className="w-8 h-8 hover:scale-110 transition" />
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                        alt="WhatsApp"
+                        className="w-8 h-8 hover:scale-110 transition"
+                      />
                     </a>
                   </div>
                 </div>
@@ -106,7 +146,7 @@ const ContactPage = () => {
           <div className="w-full lg:w-1/2">
             <div className="bg-[#F9E7E933] rounded px-4 md:px-8 py-6">
               <p className="mb-5 text-xl font-semibold">Contact Us</p>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                   {[
                     {
@@ -143,6 +183,7 @@ const ContactPage = () => {
                       </label>
                       <input
                         id={id}
+                        name={id}
                         type={type}
                         placeholder={placeholder}
                         className="bg-white border border-gray-300 text-gray-900 text-sm rounded w-full p-2.5 focus:ring-blue-500 focus:border-blue-500"
@@ -158,6 +199,7 @@ const ContactPage = () => {
                   </label>
                   <textarea
                     id="comment"
+                    name="comment"
                     rows={4}
                     placeholder="Write a comment..."
                     className="bg-white border border-gray-300 text-gray-900 text-sm rounded w-full p-2.5 focus:ring-blue-500 focus:border-blue-500"
@@ -186,9 +228,35 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full text-white bg-[#CC2837] hover:bg-red-800 font-medium rounded text-sm px-5 py-2.5 text-center"
+                  disabled={loading}
+                  className="w-full flex justify-center items-center gap-2 text-white bg-[#CC2837] hover:bg-red-800 font-medium rounded text-sm px-5 py-2.5 text-center disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {loading ? (
+                    <>
+                      <svg
+                        className="w-4 h-4 animate-spin"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                        />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    "Submit"
+                  )}
                 </button>
               </form>
             </div>
@@ -197,7 +265,7 @@ const ContactPage = () => {
       </section>
 
       <section className="bg-[white]">
-        <div className="w-full px-4 md:px-16 g:px-5 py-10 bg-[#F9F9F9]">
+        <div className="w-full px-4 md:px-16 py-10 bg-[#F9F9F9]">
           <div className="w-full h-[300px] md:h-[500px] rounded overflow-hidden">
             <iframe
               title="Ilorin Kwara State Location"
@@ -215,7 +283,6 @@ const ContactPage = () => {
           description="Whether you're a global importer or a local producer, GLITZ Trade is your trusted link to a better, more transparent supply chain."
         />
       </section>
-
     </>
   );
 };

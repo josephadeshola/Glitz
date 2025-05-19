@@ -60,53 +60,6 @@ const stats = [
   { value: 72, suffix: "k", label: "Trusted by over 300 global clients" },
 ];
 const HeroSection = () => {
-
-  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  // const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  // const [selectedIndex, setSelectedIndex] = useState(0);
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // const autoScroll = useCallback(() => {
-  //   if (!emblaApi) return;
-  //   intervalRef.current = setInterval(() => {
-  //     emblaApi.scrollNext();
-  //   }, 4000);
-  // }, [emblaApi]);
-
-  // useEffect(() => {
-  //   if (emblaApi) {
-  //     autoScroll();
-
-  //     const onSelect = () => {
-  //       setSelectedIndex(emblaApi.selectedScrollSnap());
-  //       setTimeout(() => {
-  //       }, 100);
-  //     };
-
-  //     emblaApi.on("select", onSelect);
-  //     emblaApi.on("pointerDown", () => {
-  //       if (intervalRef.current) clearInterval(intervalRef.current);
-  //     });
-
-  //     onSelect();
-  //   }
-
-  //   return () => {
-  //     if (intervalRef.current) clearInterval(intervalRef.current);
-  //   };
-  // }, [emblaApi, autoScroll]);
-
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex(prev => (prev + 1) % heroImages.length);
-  //   }, 5000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // const currentSlide = heroImages[currentIndex];
 const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
