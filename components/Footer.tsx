@@ -133,28 +133,28 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
                                 <h3 className="text-lg font-semibold mb-4">Other Links</h3>
                                 <ul className="space-y-2">
                                     <li>
-                                        <a
+                                        <Link
                                             className="text-gray-400 text-md hover:text-white transition"
-                                            href="#"
+                                            href="/contact"
                                         >
                                             Request Service
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="text-gray-400 text-md hover:text-white transition"
-                                            href="#"
+                                            href="/terms"
                                         >
-                                            Terms and Condition
-                                        </a>
+                                            Terms of Service
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             className="text-gray-400 text-md hover:text-white transition"
-                                            href="#"
+                                            href="/privacypolicy"
                                         >
                                             Privacy Policy
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>

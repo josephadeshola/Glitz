@@ -1,5 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
+import SimilarProducts from "@/components/SimilarProducts";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -223,6 +224,7 @@ const ServicePage = () => {
             </div>
           </div>
         </div>
+         <SimilarProducts />
       </section>
 
       <section className="bg-white">

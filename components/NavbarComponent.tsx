@@ -42,6 +42,7 @@ export default function NavbarComponent() {
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
     { name: "Services", path: "/offer" },
+
   ];
 
   const filteredProducts = products.filter((product) =>

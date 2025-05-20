@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 const SimilarProducts = () => {
   return (
-    <section className="from-red-800 lg:mt-20 rounded-t-large to-white">
+    <section className="from-red-800 lg:mt-20 mt-10 rounded-t-large to-white">
         <p className="text-[#CC2837] font-medium lg:text-5xl mt-5 text-3xl text-center">Similar Products</p>
       <div className="py-10 px-4 md:px-12 lg:px-20">
         <Swiper

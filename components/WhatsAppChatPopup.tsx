@@ -25,7 +25,7 @@ const WhatsAppChatPopup = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
       {isPopupOpen && (
-        <div className="w-72 rounded-[30px] overflow-hidden shadow-lg bg-white border border-gray-200">
+        <div className="w-72 rounded-[30px] overflow-hidden shadow-lg bg-white">
           <div className="bg-green-500 text-white p-3 flex justify-between items-center">
             <div className="flex items-center">
               <FaWhatsapp size={20} className="mr-2" />
