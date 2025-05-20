@@ -51,23 +51,4 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 ## License
 
 Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
-{/_ <div className="grid grid-cols-1 sm:grid-cols-2 -mt-2 md:grid-cols-3 gap-6 lg:px-14 mx-auto">
-{productData.map((item, index) => (
-<div
-                        key={index}
-                        className="bg-[#F9F9F9] shadow-sm cursor-pointer mx-auto rounded-lg py-8 px-7 hover:shadow-md transition"
-                    >
-<h3 className="text-lg text-black font-semibold mb-1">
-{item.title}
-</h3>
-<p className="text-sm text-gray-500 mb-3">{item.description}</p>
-<Image
-                            src={item.image}
-                            alt={item.title}
-                            height={200}
-                            width={300}
-                            className=" object-cover rounded-md"
-                        />
-</div>
-))}
-</div> _/}
+
