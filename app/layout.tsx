@@ -12,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Glitz Commodities NIG.LTD</title>
+      </head>
       <body className="bg-light">
         <Providers>
           <div>
