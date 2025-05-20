@@ -169,7 +169,7 @@ const Footer = ({ heading = "Subscribe to our Newsletter", description = "Do not
                                         className="flex items-center space-x-3 text-gray-400 hover:text-white transition duration-300"
                                     >
                                         <IoLocationOutline className="hover:text-green-500 text-[#CC2837] group-hover:text-white text-3xl" />
-                                        <p className="text-md">Trinity Mall, 79/81 Obafemi Awolowo Way, Ikeja Lagos, Nigeria</p>
+                                        <p className="text-md">Glitz way, Ekiti state, Nigeria and Ilorin, Kwara state.</p>
                                     </a>
                                 </li>
                                 <li>
