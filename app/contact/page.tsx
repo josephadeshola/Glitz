@@ -89,8 +89,12 @@ const ContactPage = () => {
                 <div className="flex items-center gap-2">
                   <IoLocationOutline className="text-[#8C959F] text-xl" />
                   <p className="text-md text-[#8C959F]">
-                    1234 Post Avenue Remington
+                    Glitz way, Ekiti state, Nigeria. 
                   </p>
+                   <IoLocationOutline className="text-[#8C959F] text-xl" />
+                    <p className="text-md text-[#8C959F]">
+                      Ilorin, Kwara state.
+                    </p>
                 </div>
               </div>
 

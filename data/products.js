@@ -24,7 +24,7 @@ const products = [
   
   },
   {
-    name: "Cashew Kernel",
+    name: "Cashew Kernels",
     title: "Cashew Kernels",
     description: "High-yield RCN for food and industrial use.",
     slug: "kernels",
@@ -32,7 +32,7 @@ const products = [
     detailComp:<CashewKernels/>
   },
   {
-    name: "Cocoa",
+    name: "Cocoa Beans",
     title: "Cocoa Beans",
     description: "Fermented beans for premium chocolate.",
     slug: "cocoa",
@@ -41,7 +41,7 @@ const products = [
 
   },
   {
-    name: "Cassave-Chips",
+    name: "Cassava-Chips",
     title: "Cassava Chips",
     description: "Sun-dried, high-starch chips for ethanol.",
     slug: "cassava-chips",
@@ -49,7 +49,7 @@ const products = [
     detailComp:<Cassava/>,
   },
   {
-    name: "Shea-Nut",
+    name: "Shea-Nuts",
     title: "Shea Nuts",
     description: "Organic, butter-grade, traceable origin.",
     slug: "shea-nuts",
@@ -74,10 +74,10 @@ const products = [
     detailComp:<Maize/>,
   },
   {
-    name: "Tiger-Nut",
-    title: "Tiger nut",
+    name: "Tiger-Nuts",
+    title: "Tiger nuts",
     description: "Cleaned & hulled. High oil content.",
-    slug: "tiger-nut",
+    slug: "tiger-nuts",
     image: "/images/tiger-nut.png",
     detailComp:<TigerNut/>,
   },
@@ -98,8 +98,8 @@ const products = [
     detailComp:<KolaNut/>,
   },
   {
-    name: "Ground-Nut",
-    title: "Groundnut",
+    name: "Ground-Nuts",
+    title: "Groundnuts",
     description: "Cleaned & hulled. High oil content.",
     slug: "ground-nut",
     image: "/images/groundnut.png",
