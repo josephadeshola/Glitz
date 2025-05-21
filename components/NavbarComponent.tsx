@@ -246,7 +246,7 @@ export default function NavbarComponent() {
               placeholder="Type to search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full p-3 text-lg rounded-md bg-white/90 text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#CC2837]"
+              className="w-full p-3 text-lg rounded-full bg-white/90 text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#CC2837]"
             />
           </div>
 
