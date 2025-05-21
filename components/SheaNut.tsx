@@ -23,12 +23,12 @@ const SheaNut = () => {
         <div className="relative z-20 px-4 lg:px-8 text-center max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Shea Nuts</h1>
           <div className="flex justify-center mt-8 gap-4 flex-wrap">
-            <Link href="https://wa.me/2348123456789">
+            <Link href="https://wa.me/2348136851352">
               <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                 Message Us
               </Button>
             </Link>
-            <Link href="tel:2348123456789">
+            <Link href="tel:2348136851352">
               <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                 Contact Us
               </Button>
@@ -180,7 +180,7 @@ const SheaNut = () => {
 
             <div className="mt-12">
               <a
-                href="https://wa.me/2348123456789"
+                href="https://wa.me/2348136851352"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"

@@ -27,12 +27,12 @@ const kernelsProductPage = () => {
                             Premium Cashew Kernels
                         </h1>
                             <div className="flex justify-center mt-8 gap-4 flex-wrap">
-                        <Link data-aos="zoom-in" href="https://wa.me/2348123456789">
+                        <Link data-aos="zoom-in" href="https://wa.me/2348136851352">
                             <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Message Us
                             </Button>
                         </Link>
-                        <Link data-aos="zoom-in" href="tel:2348123456789">
+                        <Link data-aos="zoom-in" href="tel:2348136851352">
                             <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                                 Contact Us
                             </Button>

@@ -7,7 +7,6 @@ import Link from "next/link";
 const PrivacyPolicyPage = () => {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="relative w-full min-h-screen -mt-10 flex items-center justify-center text-white">
         <Image
           src="/images/african.jpg"
@@ -24,7 +23,7 @@ const PrivacyPolicyPage = () => {
           <p className="text-md md:text-lg leading-relaxed mb-6">
             Learn how we collect, use, and protect your personal information when you engage with our services.
           </p>
-          <Link href="https://wa.me/2348123456789">
+          <Link href="https://wa.me/2348136851352">
             <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
               Contact Support
             </Button>
@@ -32,10 +31,8 @@ const PrivacyPolicyPage = () => {
         </div>
       </section>
 
-      {/* Privacy Content Section */}
       <section className="px-3 md:px-4 lg:px-24 py-10 lg:py-20 bg-white text-black">
         <div className="space-y-10">
-          {/* Intro */}
           <div data-aos="fade-up">
             <h2 className="text-2xl lg:text-4xl font-bold mb-4">Introduction</h2>
             <p>
@@ -44,7 +41,6 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
 
-          {/* Data Collection */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">What Information We Collect</h2>
             <ul className="list-disc list-inside space-y-1">
@@ -55,7 +51,6 @@ const PrivacyPolicyPage = () => {
             </ul>
           </div>
 
-          {/* How We Use Data */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">How We Use Your Data</h2>
             <ul className="list-disc list-inside space-y-1">
@@ -67,7 +62,6 @@ const PrivacyPolicyPage = () => {
             </ul>
           </div>
 
-          {/* Sharing and Disclosure */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">Data Sharing & Disclosure</h2>
             <p>
@@ -76,7 +70,6 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
 
-          {/* Your Rights */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">Your Rights</h2>
             <ul className="list-disc list-inside space-y-1">
@@ -87,7 +80,6 @@ const PrivacyPolicyPage = () => {
             </ul>
           </div>
 
-          {/* Security */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">Data Security</h2>
             <p>
@@ -96,7 +88,6 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
 
-          {/* Changes to Policy */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">Changes to This Policy</h2>
             <p>
@@ -105,7 +96,6 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
 
-          {/* Contact Info */}
           <div data-aos="fade-up">
             <h2 className="text-xl lg:text-3xl font-bold mb-4">Contact Us</h2>
             <p>

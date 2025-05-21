@@ -22,12 +22,12 @@ const Cassava = () => {
           <h1 data-aos="zoom-in" className="text-3xl md:text-5xl font-bold mb-4">Cassava Chips</h1>
 
           <div className="flex justify-center mt-8 gap-4 flex-wrap">
-            <Link data-aos="zoom-in" href="https://wa.me/2348123456789">
+            <Link data-aos="zoom-in" href="https://wa.me/2348136851352">
               <Button className="bg-[#CC2837] hover:scale-105 transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                 Message Us
               </Button>
             </Link>
-            <Link data-aos="zoom-in" href="tel:2348123456789">
+            <Link data-aos="zoom-in" href="tel:2348136851352">
               <Button className="border border-white bg-transparent hover:bg-white hover:text-black transition text-sm px-7 py-3 rounded-full text-white font-semibold">
                 Contact Us
               </Button>
@@ -247,7 +247,7 @@ const Cassava = () => {
             <div className="mt-12">
               <a
               data-aos="zoom-in"
-                href="https://wa.me/2348123456789"
+                href="https://wa.me/2348136851352"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#CC2837] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#e0424f] transition"

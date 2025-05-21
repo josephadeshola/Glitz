@@ -18,7 +18,7 @@ const TermsAndConditionsPage = () => {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative z-20 px-4 md:px-8 text-center max-w-3xl">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Terms and Conditions
+            Terms of Service
           </h1>
           <p className="text-md md:text-lg leading-relaxed mb-6">
             By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.
@@ -31,7 +31,6 @@ const TermsAndConditionsPage = () => {
         </div>
       </section>
 
-      {/* Terms Content */}
       <section className="px-3 md:px-4 lg:px-24 py-10 lg:py-20 bg-white text-black">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">1. Introduction</h2>
