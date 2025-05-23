@@ -78,7 +78,7 @@ const RawCashew = () => {
                 <div className="overflow-x-auto mt-6">
                     <h2 className="text-xl md:text-2xl font-bold mb-3">Top Cashew Exporting Countries</h2>
                     <table className="min-w-full bg-white border border-gray-300 text-sm text-left text-gray-700">
-                        <thead className="bg-gray-100 text-gray-800">
+                        <thead className="bg-[#CC2837] text-white">
                             <tr>
                                 <th className="px-4 py-2 border-b">Country</th>
                                 <th className="px-4 py-2 border-b">Export Volume (2023)</th>
