@@ -10,7 +10,7 @@ const kernelsProductPage = () => {
     return (
         <>
             <div className="relative w-full overflow-auto">
-                <div className="fixed top-0 left-0 w-full h-[80vh] z-0">
+                <div className="fixed top-0 left-0 w-full lg:h-[80vh] h-[90vh] z-0">
                     <Image
                         src="/images/chatcashew.webp"
                         fill
@@ -18,7 +18,7 @@ const kernelsProductPage = () => {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/60 " />
+                    <div className="absolute inset-0 bg-black/60"/>
                 </div>
 
                 <div className="relative z-10 pt-[95vh]">

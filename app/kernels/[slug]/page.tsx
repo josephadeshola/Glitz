@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { useState } from "react";
 import { useParams } from "next/navigation";
-
+import Marquee from "react-fast-marquee";
 export default function Page() {
   const params = useParams();
   const { slug } = params;
@@ -22,13 +22,16 @@ export default function Page() {
     <div className="text-gray-800">
       <div className="min-h-[60vh] bg-gradient-to-b from-[#cccdcfd0] via-gray-200 to-white py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 items-center grid-cols-1 md:grid-cols-2">
-          <h1 data-aos="zoom-in" className="text-4xl sm:text-4xl md:text-5xl mt-10 lg:mt-1 text-center block md:hidden font-extrabold text-[#CC2837]">
+          <h1
+            data-aos="zoom-in"
+            className="text-4xl sm:text-4xl md:text-5xl mt-10 lg:mt-1 text-center block md:hidden font-extrabold text-[#CC2837]"
+          >
             {product.name}
           </h1>
 
           <div className="relative w-[70%] sm:w-64 md:w-80 lg:w-full max-w-[500px] aspect-square mx-auto shadow-xl rounded-full overflow-hidden border-4 border-gray-200">
             <Image
-            data-aos="zoom-in"
+              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
@@ -37,62 +40,75 @@ export default function Page() {
           </div>
 
           <div className="space-y-5 text-center md:text-left">
-            <h1 data-aos="zoom-in" className="text-3xl sm:text-4xl md:text-5xl hidden md:block font-extrabold text-[#CC2837]">
+            <h1
+              data-aos="zoom-in"
+              className="text-3xl sm:text-4xl md:text-5xl hidden md:block font-extrabold text-[#CC2837]"
+            >
               {product.name}
             </h1>
-            <p data-aos="fade-up" className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
-              We take pride in supplying quality Raw cashew nuts that are sustainably sourced and traceable.
+            <p
+              data-aos="fade-up"
+              className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]"
+            >
+              We take pride in supplying quality Raw cashew nuts that are
+              sustainably sourced and traceable.
             </p>
-            <p data-aos="zoom-in" className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]">
+            <p
+              data-aos="zoom-in"
+              className="text-sm sm:text-base md:text-lg px-3 font-bold text-[#CC2837]"
+            >
               {product.description || "No description available."}
             </p>
-            
           </div>
         </div>
       </div>
 
-      
       <div className="relative z-10 bg-gradient-to-b from-[#CC2837] via-[#881F2A] to-black rounded-b-lg text-white py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="space-y-6">
-            <h2  data-aos="zoom-in" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <h2
+              data-aos="zoom-in"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6"
+            >
               {product.specification?.paramiter}
             </h2>
 
             <ul className="space-y-4 text-base sm:text-lg font-medium">
-              {Object.entries(product.specification || {}).map(([key, value]) => {
-                if (key === "size" && value) {
-                  return (
-                    <div data-aos="zoom-in" key={key}>
-                      <div className="flex gap-3 items-center">
-                        <FaDotCircle className="text-xl sm:text-2xl text-gray-400" />
-                        <div className="font-semibold capitalize">{key}:</div>
+              {Object.entries(product.specification || {}).map(
+                ([key, value]) => {
+                  if (key === "size" && value) {
+                    return (
+                      <div data-aos="zoom-in" key={key}>
+                        <div className="flex gap-3 items-center">
+                          <FaDotCircle className="text-xl sm:text-2xl text-gray-400" />
+                          <div className="font-semibold capitalize">{key}:</div>
+                        </div>
+                        <p className="ms-9">{value}</p>
                       </div>
-                      <p className="ms-9">{value}</p>
-                    </div>
-                  );
-                }
+                    );
+                  }
 
-                if (key !== "size" && key !== "paramiter") {
-                  return (
-                    <div data-aos="zoom-in" key={key}>
-                      <div className="flex gap-3 items-center">
-                        <FaDotCircle className="text-xl text-gray-400" />
-                        <div className="font-semibold capitalize">{key}:</div>
+                  if (key !== "size" && key !== "paramiter") {
+                    return (
+                      <div data-aos="zoom-in" key={key}>
+                        <div className="flex gap-3 items-center">
+                          <FaDotCircle className="text-xl text-gray-400" />
+                          <div className="font-semibold capitalize">{key}:</div>
+                        </div>
+                        <p className="ms-9">{value || "N/A"}</p>
                       </div>
-                      <p className="ms-9">{value || "N/A"}</p>
-                    </div>
-                  );
-                }
+                    );
+                  }
 
-                return null;
-              })}
+                  return null;
+                }
+              )}
             </ul>
           </div>
 
           <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] shadow-xl rounded-2xl overflow-hidden border-4 border-white">
             <Image
-            data-aos="zoom-in"
+              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               fill
@@ -127,7 +143,7 @@ export default function Page() {
               </div>
             )}
             <img
-            data-aos="zoom-in"
+              data-aos="zoom-in"
               src={product.image}
               alt={product.name}
               className="object-contain w-full h-full transition-transform duration-300 hover:scale-125 cursor-zoom-in"
@@ -142,11 +158,31 @@ export default function Page() {
           </div>
         </div>
       )}
-      {/* <div data-aos="zoom-in" className="glitz-container lg:mt-14 border  border-red-500">
-        <div className="glitz-text rounded px-3 bg-white">
-            <Image src="/images/download.png" width={200} height={200} alt="glitz image"/>
-          </div>
-      </div> */}
+      <Marquee speed={50} gradient={false} pauseOnHover>
+        <div
+          className="glitz-container mx-4 p-2 rounded bg-white"
+          data-aos="zoom-in"
+        >
+          <Image
+            src="/images/download.png"
+            width={200}
+            height={200}
+            alt="glitz image"
+          />
+        </div>
+        <div
+          className="glitz-container mx-4 p-2 rounded bg-white"
+          data-aos="zoom-in"
+        >
+          <Image
+            src="/images/download.png"
+            width={200}
+            height={200}
+            alt="glitz image"
+          />
+        </div>
+      </Marquee>
+
       <section className="bg-white">
         <Footer
           heading="Partner with Us for Seamless Agro-community Trade"
