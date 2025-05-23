@@ -1,13 +1,11 @@
 import Image from "next/image";
-import {
-  AiFillStar
-} from "react-icons/ai";
+import Marquee from "react-fast-marquee";
+import { AiFillStar } from "react-icons/ai";
 import { FcCustomerSupport } from "react-icons/fc";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 
 const testimonials = [
   {
@@ -62,7 +60,6 @@ const testimonials = [
   },
 ];
 
-
 const Customers = () => {
   return (
     <>
@@ -82,48 +79,31 @@ const Customers = () => {
             saying!
           </p>
         </div>
-        <div className="max-w-6xl mx-auto my-5 px-4 sm:px-6">
-      <div className="relative">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          spaceBetween={30}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white p-6 text-center h-[50vh] rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-                <p className="text-[50px] text-center text-[#CC2837] font-semibold mb-4">
-                <FcCustomerSupport className="text-center item-center"/>
-                </p>
-                <p className="text-gray-700 text-center text-md lg:text-md mt-5 mb-4">
+        <div className="max-w-6xl mx-auto my-10 px-4 sm:px-6">
+          <Marquee speed={50} gradient={false} pauseOnHover>
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="w-[300px] sm:w-[350px] md:w-[400px] bg-white mx-4 p-6 rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <div className="text-5xl text-[#CC2837] flex justify-center mb-4">
+                  <FcCustomerSupport />
+                </div>
+                <p className="text-gray-700 text-center text-sm sm:text-base mb-6">
                   {testimonial.message}
                 </p>
-                <div className="flex items-center justify-center text-yellow-400">
+                <div className="flex justify-center text-yellow-400 mb-2">
                   {Array.from({ length: 5 }, (_, i) => (
-                    <AiFillStar key={i} className="text-xl" />
+                    <AiFillStar key={i} className="text-lg" />
                   ))}
                 </div>
-                <p className="text-gray-500 text-sm">{testimonial.date}</p>
+                <p className="text-gray-400 text-sm text-center">
+                  {testimonial.date}
+                </p>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-
+            ))}
+          </Marquee>
+        </div>
       </div>
       <div className="text-black lg:mt-14 mt-5">
         <p
