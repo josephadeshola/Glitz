@@ -3,6 +3,7 @@ import { Button } from "@heroui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useMemo } from "react";
 import { FaGlobe, FaHandshake, FaExchangeAlt, FaTimes } from "react-icons/fa";
 import procurementImg from "@/public/images/procurement.webp";
 import exportImg from "@/public/images/exportoffer.webp";
@@ -30,7 +31,7 @@ const services: Service[] = [
   {
     id: "export",
     title: "Export Services",
-    image: exportImg ,
+    image: exportImg,
     icon: <FaGlobe className="text-blue-600 text-3xl" />,
     summary:
       "Global logistics, certified documentation, and port-to-port handling.",
@@ -88,6 +89,16 @@ const Cards = () => {
       if (intervalRef2.current) clearInterval(intervalRef2.current);
     };
   }, [emblaApi2]);
+
+
+  const shuffledProducts = useMemo(() => {
+    const shuffled = [...products];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, []);
 
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const openModal = (service: any) => {
@@ -177,7 +188,7 @@ const Cards = () => {
           modules={[Autoplay]}
           className="lg:px-4"
         >
-          {products.map((item, index) => (
+          {shuffledProducts.map((item, index) => (
             <SwiperSlide key={index}>
               <Link href={`/products/${item.slug}`}>
                 <div className="p-4">

@@ -22,7 +22,7 @@ const ProductPage = () => {
         </div>
 
         <div className="relative z-10 pt-[95vh]">
-          <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[75vh] lg:-mt-[60vh] mb-12">
+          <div className="text-white text-center max-w-3xl mx-auto px-4 md:px-8 -mt-[55vh] lg:-mt-[60vh] mb-12">
             <h1
               data-aos="zoom-in"
               className="text-4xl md:text-4xl lg:text-[70px] font-bold mb-4"
